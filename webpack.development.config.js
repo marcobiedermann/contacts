@@ -4,6 +4,7 @@ module.exports = {
   devServer: {
     contentBase: 'client',
   },
+  devtool: 'cheap-module-source-map',
   entry: {
     main: [
       path.resolve(__dirname, 'client/assets/js/index'),
