@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/marcobiedermann/contacts/issues"
   },
-  "homepage": "https://github.com/marcobiedermann/contacts#readme"
+  "homepage": "https://github.com/marcobiedermann/contacts#readme",
+  "devDependencies": {
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0"
+  }
 }
