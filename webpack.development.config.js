@@ -13,6 +13,7 @@ module.exports = {
     filename: 'assets/js/[name].js',
     path: path.resolve(__dirname, 'server/public'),
   },
+  mode: 'development',
   module: {
     rules: [
       {
