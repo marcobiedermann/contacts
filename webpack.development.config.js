@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+  devServer: {
+    contentBase: 'client',
+  },
   entry: {
     main: [
       path.resolve(__dirname, 'client/assets/js/index'),
