@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Contacts from './components/Contacts';
 
-const App = () => (
-  <div>
-    Hello, world!
-  </div>
-);
+const contacts = [
+  {},
+  {},
+  {},
+];
 
-render(<App />, document.getElementById('root'));
+render(<Contacts contacts={contacts} />, document.getElementById('root'));
