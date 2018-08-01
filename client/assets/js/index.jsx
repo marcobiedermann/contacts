@@ -1,18 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import uuidv4 from 'uuid/v4';
-import Contacts from './components/Contacts';
+import IndexPage from './pages/Index';
 
-const contacts = [
-  {
-    id: uuidv4(),
-  },
-  {
-    id: uuidv4(),
-  },
-  {
-    id: uuidv4(),
-  },
-];
-
-render(<Contacts contacts={contacts} />, document.getElementById('root'));
+render(<IndexPage />, document.getElementById('root'));
