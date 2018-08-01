@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Contact from '../Contact';
 
@@ -12,5 +13,17 @@ const Contacts = ({ contacts }) => (
     </ul>
   </div>
 );
+
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+Contacts.defaultProps = {
+  contacts: [],
+};
 
 export default Contacts;
