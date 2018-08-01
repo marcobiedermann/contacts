@@ -1,16 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
+import uuidv4 from 'uuid/v4';
 import Contacts from './components/Contacts';
 
 const contacts = [
   {
-    id: '1',
+    id: uuidv4(),
   },
   {
-    id: '2',
+    id: uuidv4(),
   },
   {
-    id: '3',
+    id: uuidv4(),
   },
 ];
 
