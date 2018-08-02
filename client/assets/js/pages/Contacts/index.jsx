@@ -1,21 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import uuidv4 from 'uuid/v4';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
-
-const contacts = [
-  {
-    id: uuidv4(),
-  },
-  {
-    id: uuidv4(),
-  },
-  {
-    id: uuidv4(),
-  },
-];
+import contacts from '../../data/contacts';
 
 const ContactsPage = ({ match }) => (
   <div>
