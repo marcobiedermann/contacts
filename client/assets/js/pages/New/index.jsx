@@ -1,8 +1,9 @@
 import React from 'react';
+import ContactNew from '../../components/ContactNew';
 
 const NewPage = () => (
   <div>
-    NewPage
+    <ContactNew />
   </div>
 );
 
