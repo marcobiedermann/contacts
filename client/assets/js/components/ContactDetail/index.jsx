@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Contact = ({
+const ContactDetail = ({
   address,
   email,
   id,
@@ -46,7 +46,7 @@ const Contact = ({
   </div>
 );
 
-Contact.propTypes = {
+ContactDetail.propTypes = {
   address: PropTypes.shape(),
   email: PropTypes.string,
   id: PropTypes.string.isRequired,
@@ -54,11 +54,11 @@ Contact.propTypes = {
   phone: PropTypes.string,
 };
 
-Contact.defaultProps = {
+ContactDetail.defaultProps = {
   address: null,
   email: '',
   name: null,
   phone: '',
 };
 
-export default Contact;
+export default ContactDetail;

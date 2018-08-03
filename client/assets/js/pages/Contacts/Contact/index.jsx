@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import EditPage from './Edit';
-import Contact from '../../../components/Contact';
+import ContactDetail from '../../../components/ContactDetail';
 import contacts from '../../../data/contacts';
 
 const ContactPage = ({ match }) => {
@@ -17,7 +17,7 @@ const ContactPage = ({ match }) => {
       <Route
         path="/contacts/:id"
         component={() => (
-          <Contact {...contact} />
+          <ContactDetail {...contact} />
         )}
       />
     </Switch>
