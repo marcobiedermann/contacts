@@ -36,6 +36,13 @@ const Contact = ({
         {phone}
       </li>
     </ul>
+    <ul>
+      <li>
+        <Link to={`/contacts/${id}/edit`}>
+          Edit
+        </Link>
+      </li>
+    </ul>
   </div>
 );
 
