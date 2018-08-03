@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Router from '../Router';
-import contacts from '../../data/contacts';
+import contacts from '../../data/contacts.json';
 
 class Root extends Component {
   constructor(props) {
