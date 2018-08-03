@@ -14,6 +14,11 @@ const Navigation = () => (
           Contacts
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/new" activeClassName="is-active" exact>
+          New
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );
