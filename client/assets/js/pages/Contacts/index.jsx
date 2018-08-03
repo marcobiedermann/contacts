@@ -1,15 +1,15 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
-import contacts from '../../data/contacts';
 
-const ContactsPage = () => (
+const ContactsPage = ({ contacts }) => (
   <div>
     <Switch>
       <Route
         path="/contacts/:id"
-        component={ContactPage}
+        component={props => <ContactPage contacts={contacts} {...props} />}
       />
       <Route
         path="/contacts"
@@ -20,5 +20,14 @@ const ContactsPage = () => (
     </Switch>
   </div>
 );
+
+ContactsPage.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape()),
+};
+
+ContactsPage.defaultProps = {
+  contacts: [],
+};
+
 
 export default ContactsPage;

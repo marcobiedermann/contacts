@@ -3,16 +3,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import EditPage from './Edit';
 import ContactDetail from '../../../components/ContactDetail';
-import contacts from '../../../data/contacts';
 
-const ContactPage = ({ match }) => {
+const ContactPage = ({ contacts, match }) => {
   const contact = contacts.find(c => c.id === match.params.id);
 
   return (
     <Switch>
       <Route
         path="/contacts/:id/edit"
-        component={EditPage}
+        component={() => <EditPage contact={contact} />}
       />
       <Route
         path="/contacts/:id"
@@ -25,10 +24,12 @@ const ContactPage = ({ match }) => {
 };
 
 ContactPage.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape()),
   match: PropTypes.shape(),
 };
 
 ContactPage.defaultProps = {
+  contacts: [],
   match: null,
 };
 
