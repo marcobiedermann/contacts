@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Layout from '../components/Layout';
-import IndexPage from '../pages/Index';
-import ContactsPage from '../pages/Contacts';
-import NewPage from '../pages/New';
+import Layout from '../Layout';
+import IndexPage from '../../pages/Index';
+import ContactsPage from '../../pages/Contacts';
+import NewPage from '../../pages/New';
 
 const Router = () => (
   <BrowserRouter>
