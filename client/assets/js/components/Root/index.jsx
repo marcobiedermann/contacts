@@ -9,13 +9,21 @@ class Root extends Component {
     this.state = {
       contacts,
     };
+
+    this.removeContact = this.removeContact.bind(this);
+  }
+
+  removeContact(id) {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
   }
 
   render() {
     const { contacts } = this.state;
 
     return (
-      <Router contacts={contacts} />
+      <Router contacts={contacts} removeContact={this.removeContact} />
     );
   }
 }

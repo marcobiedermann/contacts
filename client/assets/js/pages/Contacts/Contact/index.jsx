@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import EditPage from './Edit';
 import ContactDetail from '../../../components/ContactDetail';
 
-const ContactPage = ({ contacts, match }) => {
+const ContactPage = ({ contacts, match, removeContact }) => {
   const contact = contacts.find(c => c.id === match.params.id);
 
   return (
@@ -16,7 +16,7 @@ const ContactPage = ({ contacts, match }) => {
       <Route
         path="/contacts/:id"
         component={() => (
-          <ContactDetail {...contact} />
+          <ContactDetail {...contact} removeContact={removeContact} />
         )}
       />
     </Switch>
@@ -26,11 +26,13 @@ const ContactPage = ({ contacts, match }) => {
 ContactPage.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
   match: PropTypes.shape(),
+  removeContact: PropTypes.func,
 };
 
 ContactPage.defaultProps = {
   contacts: [],
   match: null,
+  removeContact: () => {},
 };
 
 export default ContactPage;
