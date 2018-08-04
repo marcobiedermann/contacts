@@ -56,65 +56,108 @@ class ContactNew extends Component {
 
   render() {
     return (
-      <form action="" onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit}>
         <div>
           <label htmlFor="firstName">
             Firstname
-            <input type="text" id="firstName" name="firstName" onInput={this.onInput} />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="lastName">
             Lastname
-            <input type="text" id="lastName" name="lastName" onInput={this.onInput} />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="streetAddress">
             Street
-            <input type="text" id="streetAddress" name="streetAddress" onInput={this.onInput} />
+            <input
+              type="text"
+              id="streetAddress"
+              name="streetAddress"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="zipCode">
             Zip
-            <input type="text" id="zipCode" name="zipCode" onInput={this.onInput} />
+            <input
+              type="text"
+              id="zipCode"
+              name="zipCode"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="city">
             City
-            <input type="text" id="city" name="city" onInput={this.onInput} />
+            <input
+              type="text"
+              id="city"
+              name="city"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="country">
             Country
-            <input type="text" id="country" name="country" onInput={this.onInput} />
+            <input
+              type="text"
+              id="country"
+              name="country"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="email">
             Email
-            <input type="email" id="email" name="email" onInput={this.onInput} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
           <label htmlFor="phone">
             Phone
-            <input type="tel" id="phone" name="phone" onInput={this.onInput} />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              onInput={this.onInput}
+            />
           </label>
         </div>
 
         <div>
-          <input type="submit" value="Save new contact" />
+          <input
+            type="submit"
+            value="Save new contact"
+          />
         </div>
       </form>
     );

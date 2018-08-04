@@ -11,61 +11,104 @@ const ContactEdit = ({
     <div>
       <label htmlFor="firstname">
         Firstname
-        <input type="text" id="firstname" name="firstname" defaultValue={name.firstName} />
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          defaultValue={name.firstName}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="lastname">
         Lastname
-        <input type="text" id="lastname" name="lastname" defaultValue={name.lastName} />
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          defaultValue={name.lastName}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="street">
         Street
-        <input type="text" id="street" name="street" defaultValue={address.streetAddress} />
+        <input
+          type="text"
+          id="street"
+          name="street"
+          defaultValue={address.streetAddress}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="zip">
         Zip
-        <input type="text" id="zip" name="zip" defaultValue={address.zipCode} />
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          defaultValue={address.zipCode}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="city">
         City
-        <input type="text" id="city" name="city" defaultValue={address.city} />
+        <input
+          type="text"
+          id="city"
+          name="city"
+          defaultValue={address.city}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="country">
         Country
-        <input type="text" id="country" name="country" defaultValue={address.country} />
+        <input
+          type="text"
+          id="country"
+          name="country"
+          defaultValue={address.country}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="email">
         Email
-        <input type="email" id="email" name="email" defaultValue={email} />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          defaultValue={email}
+        />
       </label>
     </div>
 
     <div>
       <label htmlFor="phone">
         Phone
-        <input type="tel" id="phone" name="phone" defaultValue={phone} />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          defaultValue={phone}
+        />
       </label>
     </div>
 
     <div>
-      <input type="submit" defaultValue="Save new contact" />
+      <input
+        type="submit"
+        defaultValue="Save new contact"
+      />
     </div>
   </form>
 );
