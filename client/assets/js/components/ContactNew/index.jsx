@@ -49,8 +49,13 @@ class ContactNew extends Component {
   }
 
   onInput(event) {
+    const {
+      name,
+      value,
+    } = event.target;
+
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
   }
 
