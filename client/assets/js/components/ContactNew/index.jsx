@@ -1,67 +1,134 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-const ContactNew = () => (
-  <form action="">
-    <div>
-      <label htmlFor="firstname">
-        Firstname
-        <input type="text" id="firstname" name="firstname" />
-      </label>
-    </div>
+class ContactNew extends Component {
+  constructor(props) {
+    super(props);
 
-    <div>
-      <label htmlFor="lastname">
-        Lastname
-        <input type="text" id="lastname" name="lastname" />
-      </label>
-    </div>
+    this.state = {};
 
-    <div>
-      <label htmlFor="street">
-        Street
-        <input type="text" id="street" name="street" />
-      </label>
-    </div>
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onInput = this.onInput.bind(this);
+  }
 
-    <div>
-      <label htmlFor="zip">
-        Zip
-        <input type="text" id="zip" name="zip" />
-      </label>
-    </div>
+  onSubmit(event) {
+    event.preventDefault();
+    const {
+      addContact,
+      history,
+    } = this.props;
+    const {
+      firstName,
+      lastName,
+      streetAddress,
+      zipCode,
+      city,
+      country,
+      email,
+      phone,
+    } = this.state;
 
-    <div>
-      <label htmlFor="city">
-        City
-        <input type="text" id="city" name="city" />
-      </label>
-    </div>
+    const contact = {
+      name: {
+        firstName,
+        lastName,
+      },
+      address: {
+        streetAddress,
+        zipCode,
+        city,
+        country,
+      },
+      email,
+      phone,
+    };
 
-    <div>
-      <label htmlFor="country">
-        Country
-        <input type="text" id="country" name="country" />
-      </label>
-    </div>
+    addContact(contact);
+    history.push('/contacts');
+  }
 
-    <div>
-      <label htmlFor="email">
-        Email
-        <input type="email" id="email" name="email" />
-      </label>
-    </div>
+  onInput(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
 
-    <div>
-      <label htmlFor="phone">
-        Phone
-        <input type="tel" id="phone" name="phone" />
-      </label>
-    </div>
+  render() {
+    return (
+      <form action="" onSubmit={this.onSubmit}>
+        <div>
+          <label htmlFor="firstName">
+            Firstname
+            <input type="text" id="firstName" name="firstName" onInput={this.onInput} />
+          </label>
+        </div>
 
-    <div>
-      <input type="submit" value="Save new contact" />
-    </div>
-  </form>
-);
+        <div>
+          <label htmlFor="lastName">
+            Lastname
+            <input type="text" id="lastName" name="lastName" onInput={this.onInput} />
+          </label>
+        </div>
 
-export default ContactNew;
+        <div>
+          <label htmlFor="streetAddress">
+            Street
+            <input type="text" id="streetAddress" name="streetAddress" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="zipCode">
+            Zip
+            <input type="text" id="zipCode" name="zipCode" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="city">
+            City
+            <input type="text" id="city" name="city" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="country">
+            Country
+            <input type="text" id="country" name="country" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="email">
+            Email
+            <input type="email" id="email" name="email" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="phone">
+            Phone
+            <input type="tel" id="phone" name="phone" onInput={this.onInput} />
+          </label>
+        </div>
+
+        <div>
+          <input type="submit" value="Save new contact" />
+        </div>
+      </form>
+    );
+  }
+}
+
+ContactNew.propTypes = {
+  addContact: PropTypes.func,
+  history: PropTypes.shape(),
+};
+
+ContactNew.defaultProps = {
+  addContact: () => {},
+  history: null,
+};
+
+export default withRouter(ContactNew);

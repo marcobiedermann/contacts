@@ -11,6 +11,7 @@ class Root extends Component {
       contacts,
     };
 
+    this.addContact = this.addContact.bind(this);
     this.removeContact = this.removeContact.bind(this);
   }
 
@@ -38,7 +39,11 @@ class Root extends Component {
     const { contacts } = this.state;
 
     return (
-      <Router contacts={contacts} removeContact={this.removeContact} />
+      <Router
+        contacts={contacts}
+        addContact={this.addContact}
+        removeContact={this.removeContact}
+      />
     );
   }
 }

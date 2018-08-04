@@ -6,13 +6,33 @@ import IndexPage from '../../pages/Index';
 import ContactsPage from '../../pages/Contacts';
 import NewPage from '../../pages/New';
 
-const Router = ({ contacts, removeContact }) => (
+const Router = ({
+  contacts,
+  addContact,
+  removeContact,
+}) => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route path="/contacts" component={() => <ContactsPage contacts={contacts} removeContact={removeContact} />} />
-        <Route path="/new" component={NewPage} />
-        <Route path="/" component={IndexPage} />
+        <Route
+          path="/contacts"
+          component={() => (
+            <ContactsPage
+              contacts={contacts}
+              removeContact={removeContact}
+            />
+          )}
+        />
+        <Route
+          path="/new"
+          component={() => (
+            <NewPage addContact={addContact} />
+          )}
+        />
+        <Route
+          path="/"
+          component={IndexPage}
+        />
       </Switch>
     </Layout>
   </BrowserRouter>
@@ -20,11 +40,13 @@ const Router = ({ contacts, removeContact }) => (
 
 Router.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
+  addContact: PropTypes.func,
   removeContact: PropTypes.func,
 };
 
 Router.defaultProps = {
   contacts: [],
+  addContact: () => {},
   removeContact: () => {},
 };
 
