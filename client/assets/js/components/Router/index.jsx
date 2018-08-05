@@ -9,6 +9,7 @@ import NewPage from '../../pages/New';
 const Router = ({
   contacts,
   addContact,
+  updateContact,
   removeContact,
 }) => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const Router = ({
           component={() => (
             <ContactsPage
               contacts={contacts}
+              updateContact={updateContact}
               removeContact={removeContact}
             />
           )}
@@ -41,12 +43,14 @@ const Router = ({
 Router.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
   addContact: PropTypes.func,
+  updateContact: PropTypes.func,
   removeContact: PropTypes.func,
 };
 
 Router.defaultProps = {
   contacts: [],
   addContact: () => {},
+  updateContact: () => {},
   removeContact: () => {},
 };
 

@@ -1,3 +1,4 @@
+import deepmerge from 'deepmerge';
 import React, { Component } from 'react';
 import uuidv4 from 'uuid/v4';
 import Router from '../Router';
@@ -12,6 +13,7 @@ class Root extends Component {
     };
 
     this.addContact = this.addContact.bind(this);
+    this.updateContact = this.updateContact.bind(this);
     this.removeContact = this.removeContact.bind(this);
   }
 
@@ -22,10 +24,15 @@ class Root extends Component {
     };
 
     this.setState(prevState => ({
-      contacts: [
-        ...prevState.contacts,
-        contact,
-      ],
+      contacts: [...prevState.contacts, contact],
+    }));
+  }
+
+  updateContact(id, props) {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.map(
+        c => (c.id === id ? deepmerge(c, props) : c),
+      ),
     }));
   }
 
@@ -42,6 +49,7 @@ class Root extends Component {
       <Router
         contacts={contacts}
         addContact={this.addContact}
+        updateContact={this.updateContact}
         removeContact={this.removeContact}
       />
     );

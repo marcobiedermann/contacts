@@ -4,7 +4,11 @@ import { Route, Switch } from 'react-router-dom';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
 
-const ContactsPage = ({ contacts, removeContact }) => (
+const ContactsPage = ({
+  contacts,
+  updateContact,
+  removeContact,
+}) => (
   <div>
     <Switch>
       <Route
@@ -12,6 +16,7 @@ const ContactsPage = ({ contacts, removeContact }) => (
         component={props => (
           <ContactPage
             contacts={contacts}
+            updateContact={updateContact}
             removeContact={removeContact}
             {...props}
           />
@@ -27,11 +32,13 @@ const ContactsPage = ({ contacts, removeContact }) => (
 
 ContactsPage.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
+  updateContact: PropTypes.func,
   removeContact: PropTypes.func,
 };
 
 ContactsPage.defaultProps = {
   contacts: [],
+  updateContact: () => {},
   removeContact: () => {},
 };
 
