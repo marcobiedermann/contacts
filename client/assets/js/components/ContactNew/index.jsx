@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import './style.css';
 
 class ContactNew extends Component {
   constructor(props) {
@@ -61,104 +62,136 @@ class ContactNew extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <div>
-          <label htmlFor="firstName">
+      <form onSubmit={this.onSubmit} className="form">
+        <div className="form__field">
+          <label
+            htmlFor="firstName"
+            className="form__label"
+          >
             Firstname
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="lastName">
+        <div className="form__field">
+          <label
+            htmlFor="lastName"
+            className="form__label"
+          >
             Lastname
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="streetAddress">
+        <div className="form__field">
+          <label
+            htmlFor="streetAddress"
+            className="form__label"
+          >
             Street
-            <input
-              type="text"
-              id="streetAddress"
-              name="streetAddress"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="streetAddress"
+            name="streetAddress"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="zipCode">
+        <div className="form__field">
+          <label
+            htmlFor="zipCode"
+            className="form__label"
+          >
             Zip
-            <input
-              type="text"
-              id="zipCode"
-              name="zipCode"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="city">
+        <div className="form__field">
+          <label
+            htmlFor="city"
+            className="form__label"
+          >
             City
-            <input
-              type="text"
-              id="city"
-              name="city"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="country">
+        <div className="form__field">
+          <label
+            htmlFor="country"
+            className="form__label"
+          >
             Country
-            <input
-              type="text"
-              id="country"
-              name="country"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="email">
+        <div className="form__field">
+          <label
+            htmlFor="email"
+            className="form__label"
+          >
             Email
-            <input
-              type="email"
-              id="email"
-              name="email"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="phone">
+        <div className="form__field">
+          <label
+            htmlFor="phone"
+            className="form__label"
+          >
             Phone
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            className="form__field"
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
+        <div className="form__field">
           <input
             type="submit"
             value="Save new contact"

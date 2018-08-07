@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ContactPreview from '../ContactPreview';
+import './style.css';
 
 const Contacts = ({ contacts }) => (
   <div className="contacts">
-    <ul>
+    <ul className="contacts__list">
       {contacts.map(contact => (
-        <li key={contact.id}>
+        <li className="contacts__item" key={contact.id}>
           <ContactPreview {...contact} />
         </li>
       ))}

@@ -1,32 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
+import './style.css';
 
 const ContactsPage = ({
   contacts,
   updateContact,
   removeContact,
 }) => (
-  <div>
-    <Switch>
-      <Route
-        path="/contacts/:id"
-        component={props => (
-          <ContactPage
-            contacts={contacts}
-            updateContact={updateContact}
-            removeContact={removeContact}
-            {...props}
-          />
-        )}
-      />
-      <Route
-        path="/contacts"
-        component={() => <Contacts contacts={contacts} />}
-      />
-    </Switch>
+  <div className="contacts-page">
+    <Route
+      path="/contacts"
+      component={() => <Contacts contacts={contacts} />}
+    />
+    <Route
+      path="/contacts/:id"
+      component={props => (
+        <ContactPage
+          contacts={contacts}
+          updateContact={updateContact}
+          removeContact={removeContact}
+          {...props}
+        />
+      )}
+    />
   </div>
 );
 

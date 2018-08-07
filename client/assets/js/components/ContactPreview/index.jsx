@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './style.css';
 
 const ContactPreview = ({
   id,
   name,
 }) => (
-  <div className="contact">
-    <h1>
-      <Link to={`/contacts/${id}`}>
+  <div className="contact contact--preview">
+    <h2 className="contact__name">
+      <NavLink to={`/contacts/${id}`} className="contact__link" activeClassName="is-active">
         {name.firstName}
         {' '}
         {name.lastName}
-      </Link>
-    </h1>
+      </NavLink>
+    </h2>
   </div>
 );
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import './style.css';
 
 class ContactEdit extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class ContactEdit extends Component {
     };
 
     updateContact(id, contact);
-    history.push('/contacts');
+    history.push(`/contacts/${id}`);
   }
 
   onInput(event) {
@@ -83,115 +84,147 @@ class ContactEdit extends Component {
     } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <div>
-          <label htmlFor="firstName">
+      <form onSubmit={this.onSubmit} className="form">
+        <div className="form__field">
+          <label
+            htmlFor="firstName"
+            className="form__label"
+          >
             Firstname
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              defaultValue={firstName}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            className="form__input"
+            defaultValue={firstName}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="lastName">
+        <div className="form__field">
+          <label
+            htmlFor="lastName"
+            className="form__label"
+          >
             Lastname
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              defaultValue={lastName}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            className="form__input"
+            defaultValue={lastName}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="streetAddress">
+        <div className="form__field">
+          <label
+            htmlFor="streetAddress"
+            className="form__label"
+          >
             Street
-            <input
-              type="text"
-              id="streetAddress"
-              name="streetAddress"
-              defaultValue={streetAddress}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="streetAddress"
+            name="streetAddress"
+            className="form__input"
+            defaultValue={streetAddress}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="zipCode">
+        <div className="form__field">
+          <label
+            htmlFor="zipCode"
+            className="form__label"
+          >
             Zip
-            <input
-              type="text"
-              id="zipCode"
-              name="zipCode"
-              defaultValue={zipCode}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            className="form__input"
+            defaultValue={zipCode}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="city">
+        <div className="form__field">
+          <label
+            htmlFor="city"
+            className="form__label"
+          >
             City
-            <input
-              type="text"
-              id="city"
-              name="city"
-              defaultValue={city}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            className="form__input"
+            defaultValue={city}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="country">
+        <div className="form__field">
+          <label
+            htmlFor="country"
+            className="form__label"
+          >
             Country
-            <input
-              type="text"
-              id="country"
-              name="country"
-              defaultValue={country}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            className="form__input"
+            defaultValue={country}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="email">
+        <div className="form__field">
+          <label
+            htmlFor="email"
+            className="form__label"
+          >
             Email
-            <input
-              type="email"
-              id="email"
-              name="email"
-              defaultValue={email}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="form__input"
+            defaultValue={email}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
-          <label htmlFor="phone">
+        <div className="form__field">
+          <label
+            htmlFor="phone"
+            className="form__label"
+          >
             Phone
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              defaultValue={phone}
-              onInput={this.onInput}
-            />
           </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            className="form__input"
+            defaultValue={phone}
+            onInput={this.onInput}
+          />
         </div>
 
-        <div>
+        <div className="form__field">
           <input
             type="submit"
-            defaultValue="Save new contact"
+            defaultValue="Done"
           />
         </div>
       </form>

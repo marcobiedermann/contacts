@@ -2,18 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './style.css';
 
-const Main = ({ children }) => (
-  <main className="main">
+const Grid = ({ children }) => (
+  <div className="grid">
     {children}
-  </main>
+  </div>
 );
 
-Main.propTypes = {
+Grid.propTypes = {
   children: PropTypes.node,
 };
 
-Main.defaultProps = {
+Grid.defaultProps = {
   children: null,
 };
 
-export default Main;
+export default Grid;

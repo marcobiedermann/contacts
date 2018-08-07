@@ -1,0 +1,14 @@
+.contact__name {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.contact__link {
+  color: inherit;
+  display: block;
+  padding: 0.5em;
+}
+
+.contact__link.is-active {
+  background-color: #d8eefa;
+}

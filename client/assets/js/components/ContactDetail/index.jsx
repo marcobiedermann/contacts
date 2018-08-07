@@ -18,21 +18,32 @@ const ContactDetail = withRouter(({
 
   return (
     <div className="contact">
-      <h1>
-        <Link to={`/contacts/${id}`}>
-          {name.firstName}
-          {' '}
-          {name.lastName}
+      <header>
+        <Link to={`/contacts/${id}/edit`}>
+          Edit
         </Link>
+      </header>
+      <h1>
+        {name.firstName}
+        {' '}
+        {name.lastName}
       </h1>
       <address>
-        {address.streetAddress}
-        <br />
-        {address.zipCode}
-        {' '}
-        {address.city}
-        <br />
-        {address.country}
+        <a
+          href={`https://maps.google.com/?q=${address.streetAddress} ${
+            address.zipCode
+          } ${address.city} ${address.country}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {address.streetAddress}
+          <br />
+          {address.zipCode}
+          {' '}
+          {address.city}
+          <br />
+          {address.country}
+        </a>
       </address>
       <ul>
         <li>
@@ -45,11 +56,6 @@ const ContactDetail = withRouter(({
         </li>
       </ul>
       <ul>
-        <li>
-          <Link to={`/contacts/${id}/edit`}>
-            Edit
-          </Link>
-        </li>
         <li>
           <button type="button" onClick={onClick}>
             Delete

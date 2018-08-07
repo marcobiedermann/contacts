@@ -1,20 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from '../Footer';
+import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
+import './style.css';
 
 const Layout = ({ children }) => (
   <div className="layout">
     <Header>
-      <Navigation />
+      <Grid>
+        <Navigation />
+      </Grid>
     </Header>
     <Main>
-      {children}
+      <Grid>
+        {children}
+      </Grid>
     </Main>
     <Footer>
-      Footer
+      <Grid>
+        Footer
+      </Grid>
     </Footer>
   </div>
 );
