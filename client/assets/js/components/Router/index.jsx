@@ -1,10 +1,12 @@
+import { ConnectedRouter } from 'connected-react-router';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Layout from '../Layout';
 import IndexPage from '../../pages/Index';
 import ContactsPage from '../../pages/Contacts';
 import NewPage from '../../pages/New';
+import history from '../../store/history';
 
 const Router = ({
   contacts,
@@ -12,7 +14,7 @@ const Router = ({
   updateContact,
   removeContact,
 }) => (
-  <BrowserRouter>
+  <ConnectedRouter history={history}>
     <Layout>
       <Switch>
         <Route
@@ -37,7 +39,7 @@ const Router = ({
         />
       </Switch>
     </Layout>
-  </BrowserRouter>
+  </ConnectedRouter>
 );
 
 Router.propTypes = {

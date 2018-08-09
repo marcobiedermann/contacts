@@ -40,8 +40,10 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "connected-react-router": "^4.3.0",
     "deepmerge": "^2.1.1",
     "faker": "^4.1.0",
+    "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
