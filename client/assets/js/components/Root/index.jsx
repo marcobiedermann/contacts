@@ -3,16 +3,13 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import uuidv4 from 'uuid/v4';
 import Router from '../Router';
-import contacts from '../../data/contacts.json';
 import store from '../../store';
 
 class Root extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      contacts,
-    };
+    this.state = {};
 
     this.addContact = this.addContact.bind(this);
     this.updateContact = this.updateContact.bind(this);
@@ -45,12 +42,9 @@ class Root extends Component {
   }
 
   render() {
-    const { contacts } = this.state;
-
     return (
       <Provider store={store}>
         <Router
-          contacts={contacts}
           addContact={this.addContact}
           updateContact={this.updateContact}
           removeContact={this.removeContact}

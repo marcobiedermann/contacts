@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
 import './style.css';
@@ -41,4 +42,8 @@ ContactsPage.defaultProps = {
   removeContact: () => {},
 };
 
-export default ContactsPage;
+const mapStateToProps = state => ({
+  contacts: state.contacts,
+});
+
+export default connect(mapStateToProps)(ContactsPage);

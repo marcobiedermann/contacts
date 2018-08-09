@@ -9,7 +9,6 @@ import NewPage from '../../pages/New';
 import history from '../../store/history';
 
 const Router = ({
-  contacts,
   addContact,
   updateContact,
   removeContact,
@@ -21,7 +20,6 @@ const Router = ({
           path="/contacts"
           component={() => (
             <ContactsPage
-              contacts={contacts}
               updateContact={updateContact}
               removeContact={removeContact}
             />
@@ -43,14 +41,12 @@ const Router = ({
 );
 
 Router.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.shape()),
   addContact: PropTypes.func,
   updateContact: PropTypes.func,
   removeContact: PropTypes.func,
 };
 
 Router.defaultProps = {
-  contacts: [],
   addContact: () => {},
   updateContact: () => {},
   removeContact: () => {},
