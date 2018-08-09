@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -44,6 +46,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'client/index.html',
+    }),
+  ],
   resolve: {
     extensions: [
       '.js',
