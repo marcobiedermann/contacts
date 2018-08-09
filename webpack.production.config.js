@@ -38,6 +38,17 @@ module.exports = {
                 sourceMap: true,
               },
             },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  ctx: {
+                    cssnano: {},
+                  },
+                },
+                sourceMap: true,
+              },
+            },
           ],
         }),
       },
