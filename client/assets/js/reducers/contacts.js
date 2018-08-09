@@ -5,9 +5,8 @@ import {
   REMOVE_CONTACT,
   UPDATE_CONTACT,
 } from '../constants/contacts';
-import contactsData from '../data/contacts.json';
 
-const initialState = contactsData;
+const initialState = [];
 
 const contacts = (state = initialState, action) => {
   switch (action.type) {
