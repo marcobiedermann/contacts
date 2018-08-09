@@ -1,8 +1,10 @@
 import deepmerge from 'deepmerge';
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import uuidv4 from 'uuid/v4';
 import Router from '../Router';
 import contacts from '../../data/contacts.json';
+import store from '../../store';
 
 class Root extends Component {
   constructor(props) {
@@ -46,12 +48,14 @@ class Root extends Component {
     const { contacts } = this.state;
 
     return (
-      <Router
-        contacts={contacts}
-        addContact={this.addContact}
-        updateContact={this.updateContact}
-        removeContact={this.removeContact}
-      />
+      <Provider store={store}>
+        <Router
+          contacts={contacts}
+          addContact={this.addContact}
+          updateContact={this.updateContact}
+          removeContact={this.removeContact}
+        />
+      </Provider>
     );
   }
 }
