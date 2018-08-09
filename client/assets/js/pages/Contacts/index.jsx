@@ -8,8 +8,6 @@ import './style.css';
 
 const ContactsPage = ({
   contacts,
-  updateContact,
-  removeContact,
 }) => (
   <div className="contacts-page">
     <Route
@@ -21,8 +19,6 @@ const ContactsPage = ({
       component={props => (
         <ContactPage
           contacts={contacts}
-          updateContact={updateContact}
-          removeContact={removeContact}
           {...props}
         />
       )}
@@ -32,14 +28,10 @@ const ContactsPage = ({
 
 ContactsPage.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
-  updateContact: PropTypes.func,
-  removeContact: PropTypes.func,
 };
 
 ContactsPage.defaultProps = {
   contacts: [],
-  updateContact: () => {},
-  removeContact: () => {},
 };
 
 const mapStateToProps = state => ({

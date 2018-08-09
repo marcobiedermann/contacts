@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import EditPage from './Edit';
+import { removeContact } from '../../../actions/contacts';
 import ContactDetail from '../../../components/ContactDetail';
 
 const ContactPage = ({
   contacts,
   match,
-  updateContact,
   removeContact,
 }) => {
   const contact = contacts.find(c => c.id === match.params.id);
@@ -19,7 +21,6 @@ const ContactPage = ({
         component={() => (
           <EditPage
             contact={contact}
-            updateContact={updateContact}
           />
         )}
       />
@@ -39,15 +40,17 @@ const ContactPage = ({
 ContactPage.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape()),
   match: PropTypes.shape(),
-  updateContact: PropTypes.func,
   removeContact: PropTypes.func,
 };
 
 ContactPage.defaultProps = {
   contacts: [],
   match: null,
-  updateContact: () => {},
   removeContact: () => {},
 };
 
-export default ContactPage;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  removeContact,
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(ContactPage);

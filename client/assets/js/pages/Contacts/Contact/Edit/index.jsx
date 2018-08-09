@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { updateContact } from '../../../../actions/contacts';
 import ContactEdit from '../../../../components/ContactEdit';
 
 const EditPage = ({
@@ -22,4 +25,8 @@ EditPage.defaultProps = {
   updateContact: () => {},
 };
 
-export default EditPage;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  updateContact,
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(EditPage);
