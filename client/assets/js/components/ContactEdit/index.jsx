@@ -21,6 +21,7 @@ class ContactEdit extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onInput = this.onInput.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onSubmit(event) {
@@ -69,6 +70,17 @@ class ContactEdit extends Component {
     this.setState({
       [name]: value,
     });
+  }
+
+  onClick() {
+    const {
+      removeContact,
+      history,
+    } = this.props;
+    const { id } = this.state;
+
+    removeContact(id);
+    history.push('/contacts');
   }
 
   render() {
@@ -222,6 +234,12 @@ class ContactEdit extends Component {
         </div>
 
         <div className="form__field">
+          <button type="button" onClick={this.onClick}>
+            Delete
+          </button>
+        </div>
+
+        <div className="form__field">
           <input
             type="submit"
             defaultValue="Done"
@@ -239,6 +257,7 @@ ContactEdit.propTypes = {
   history: PropTypes.shape(),
   name: PropTypes.shape(),
   phone: PropTypes.string,
+  removeContact: PropTypes.func,
   updateContact: PropTypes.func,
 };
 
@@ -248,6 +267,7 @@ ContactEdit.defaultProps = {
   history: null,
   name: null,
   phone: '',
+  removeContact: () => {},
   updateContact: () => {},
 };
 
