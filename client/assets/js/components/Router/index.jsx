@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from '../Layout';
 import IndexPage from '../../pages/Index';
 import ContactsPage from '../../pages/Contacts';
+import LoginPage from '../../pages/Login';
 import NewPage from '../../pages/New';
 import history from '../../store/history';
 
@@ -14,6 +15,10 @@ const Router = () => (
         <Route
           path="/contacts"
           component={ContactsPage}
+        />
+        <Route
+          path="/login"
+          component={LoginPage}
         />
         <Route
           path="/new"

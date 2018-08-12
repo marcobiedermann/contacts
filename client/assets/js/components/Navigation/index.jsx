@@ -33,6 +33,15 @@ const Navigation = ({ t }) => (
           {t('new')}
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/login"
+          activeClassName="is-active"
+          exact
+        >
+          {t('login')}
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );
