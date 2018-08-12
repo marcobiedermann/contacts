@@ -1,215 +1,184 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { withFormik, Form, Field } from 'formik';
 import './style.css';
 
-class ContactNew extends Component {
-  constructor(props) {
-    super(props);
+const ContactNew = ({
+  isSubmitting,
+}) => (
+  <Form className="form">
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="name.firstName"
+      >
+        Firstname
+      </label>
+      <Field
+        className="form__input"
+        id="name.firstName"
+        name="name.firstName"
+        type="text"
+      />
+    </div>
 
-    this.state = {};
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="name.lastName"
+      >
+        Lastname
+      </label>
+      <Field
+        className="form__input"
+        id="name.lastName"
+        name="name.lastName"
+        type="text"
+      />
+    </div>
 
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onInput = this.onInput.bind(this);
-  }
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="address.streetAddress"
+      >
+        Street
+      </label>
+      <Field
+        className="form__input"
+        id="address.streetAddress"
+        name="address.streetAddress"
+        type="text"
+      />
+    </div>
 
-  onSubmit(event) {
-    event.preventDefault();
-    const {
-      addContact,
-      history,
-    } = this.props;
-    const {
-      firstName,
-      lastName,
-      streetAddress,
-      zipCode,
-      city,
-      country,
-      email,
-      phone,
-    } = this.state;
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="address.zipCode"
+      >
+        Zip
+      </label>
+      <Field
+        className="form__input"
+        id="address.zipCode"
+        name="address.zipCode"
+        type="text"
+      />
+    </div>
 
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="address.city"
+      >
+        City
+      </label>
+      <Field
+        className="form__input"
+        id="address.city"
+        name="address.city"
+        type="text"
+      />
+    </div>
+
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="address.country"
+      >
+        Country
+      </label>
+      <Field
+        className="form__input"
+        id="address.country"
+        name="address.country"
+        type="text"
+      />
+    </div>
+
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <Field
+        className="form__input"
+        id="email"
+        name="email"
+        type="email"
+      />
+    </div>
+
+    <div className="form__field">
+      <label
+        className="form__label"
+        htmlFor="phone"
+      >
+        Phone
+      </label>
+      <Field
+        className="form__input"
+        id="phone"
+        name="phone"
+        type="tel"
+      />
+    </div>
+
+    <div className="form__field">
+      <input
+        disabled={isSubmitting}
+        type="submit"
+        value="Save new Contact"
+      />
+    </div>
+  </Form>
+);
+
+ContactNew.propTypes = {
+  isSubmitting: PropTypes.bool,
+};
+
+ContactNew.defaultProps = {
+  isSubmitting: false,
+};
+
+export default withRouter(withFormik({
+  mapPropsToValues: ({ addContact, history }) => ({
+    addContact,
+    history,
+    name: {
+      firstName: '',
+      lastName: '',
+    },
+    address: {
+      streetAddress: '',
+      zipCode: '',
+      city: '',
+      country: '',
+    },
+    email: '',
+    phone: '',
+  }),
+  handleSubmit({
+    addContact,
+    history,
+    name,
+    address,
+    email,
+    phone,
+  }) {
     const contact = {
-      name: {
-        firstName,
-        lastName,
-      },
-      address: {
-        streetAddress,
-        zipCode,
-        city,
-        country,
-      },
+      name,
+      address,
       email,
       phone,
     };
 
     addContact(contact);
     history.push('/contacts');
-  }
-
-  onInput(event) {
-    const {
-      name,
-      value,
-    } = event.target;
-
-    this.setState({
-      [name]: value,
-    });
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.onSubmit} className="form">
-        <div className="form__field">
-          <label
-            htmlFor="firstName"
-            className="form__label"
-          >
-            Firstname
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="lastName"
-            className="form__label"
-          >
-            Lastname
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="streetAddress"
-            className="form__label"
-          >
-            Street
-          </label>
-          <input
-            type="text"
-            id="streetAddress"
-            name="streetAddress"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="zipCode"
-            className="form__label"
-          >
-            Zip
-          </label>
-          <input
-            type="text"
-            id="zipCode"
-            name="zipCode"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="city"
-            className="form__label"
-          >
-            City
-          </label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="country"
-            className="form__label"
-          >
-            Country
-          </label>
-          <input
-            type="text"
-            id="country"
-            name="country"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="email"
-            className="form__label"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <label
-            htmlFor="phone"
-            className="form__label"
-          >
-            Phone
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className="form__field"
-            onInput={this.onInput}
-          />
-        </div>
-
-        <div className="form__field">
-          <input
-            type="submit"
-            value="Save new contact"
-          />
-        </div>
-      </form>
-    );
-  }
-}
-
-ContactNew.propTypes = {
-  addContact: PropTypes.func,
-  history: PropTypes.shape(),
-};
-
-ContactNew.defaultProps = {
-  addContact: () => {},
-  history: null,
-};
-
-export default withRouter(ContactNew);
+  },
+})(ContactNew));
