@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const ContactDetail = ({
-  address, email, id, name, phone,
+  t, address, email, id, name, phone,
 }) => (
   <div className="contact">
     <header>
       <Link to={`/contacts/${id}/edit`}>
-        Edit
+        {t('edit')}
       </Link>
     </header>
     <h1>
@@ -52,6 +53,7 @@ ContactDetail.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.shape(),
   phone: PropTypes.string,
+  t: PropTypes.func,
 };
 
 ContactDetail.defaultProps = {
@@ -59,6 +61,7 @@ ContactDetail.defaultProps = {
   email: '',
   name: null,
   phone: '',
+  t: () => {},
 };
 
-export default ContactDetail;
+export default translate('common')(ContactDetail);

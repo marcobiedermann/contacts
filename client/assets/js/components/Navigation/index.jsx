@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { translate } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
-const Navigation = () => (
+const Navigation = ({ t }) => (
   <nav>
     <ul>
       <li>
@@ -10,7 +12,7 @@ const Navigation = () => (
           activeClassName="is-active"
           exact
         >
-          Home
+          {t('home')}
         </NavLink>
       </li>
       <li>
@@ -19,7 +21,7 @@ const Navigation = () => (
           activeClassName="is-active"
           exact
         >
-          Contacts
+          {t('contacts')}
         </NavLink>
       </li>
       <li>
@@ -28,11 +30,19 @@ const Navigation = () => (
           activeClassName="is-active"
           exact
         >
-          New
+          {t('new')}
         </NavLink>
       </li>
     </ul>
   </nav>
 );
 
-export default Navigation;
+Navigation.propTypes = {
+  t: PropTypes.func,
+};
+
+Navigation.defaultProps = {
+  t: () => {},
+};
+
+export default translate('pages')(Navigation);

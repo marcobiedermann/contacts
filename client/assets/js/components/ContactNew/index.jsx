@@ -1,11 +1,14 @@
+import { withFormik, Form, Field } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { translate } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
-import { withFormik, Form, Field } from 'formik';
+import { compose } from 'redux';
 import './style.css';
 
 const ContactNew = ({
   isSubmitting,
+  values,
 }) => (
   <Form className="form">
     <div className="form__field">
@@ -132,7 +135,7 @@ const ContactNew = ({
       <input
         disabled={isSubmitting}
         type="submit"
-        value="Save new Contact"
+        value={values.t('save')}
       />
     </div>
   </Form>
@@ -140,45 +143,52 @@ const ContactNew = ({
 
 ContactNew.propTypes = {
   isSubmitting: PropTypes.bool,
+  values: PropTypes.shape(),
 };
 
 ContactNew.defaultProps = {
   isSubmitting: false,
+  values: null,
 };
 
-export default withRouter(withFormik({
-  mapPropsToValues: ({ addContact, history }) => ({
-    addContact,
-    history,
-    name: {
-      firstName: '',
-      lastName: '',
-    },
-    address: {
-      streetAddress: '',
-      zipCode: '',
-      city: '',
-      country: '',
-    },
-    email: '',
-    phone: '',
-  }),
-  handleSubmit({
-    addContact,
-    history,
-    name,
-    address,
-    email,
-    phone,
-  }) {
-    const contact = {
+export default compose(
+  translate('common'),
+  withRouter,
+  withFormik({
+    mapPropsToValues: ({ t, addContact, history }) => ({
+      t,
+      addContact,
+      history,
+      name: {
+        firstName: '',
+        lastName: '',
+      },
+      address: {
+        streetAddress: '',
+        zipCode: '',
+        city: '',
+        country: '',
+      },
+      email: '',
+      phone: '',
+    }),
+    handleSubmit({
+      addContact,
+      history,
       name,
       address,
       email,
       phone,
-    };
+    }) {
+      const contact = {
+        name,
+        address,
+        email,
+        phone,
+      };
 
-    addContact(contact);
-    history.push('/contacts');
-  },
-})(ContactNew));
+      addContact(contact);
+      history.push('/contacts');
+    },
+  }),
+)(ContactNew);

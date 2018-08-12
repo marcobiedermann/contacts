@@ -1,7 +1,9 @@
+import { withFormik, Form, Field } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { translate } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
-import { withFormik, Form, Field } from 'formik';
+import { compose } from 'redux';
 import './style.css';
 
 const ContactEdit = ({ values, isSubmitting }) => {
@@ -136,7 +138,7 @@ const ContactEdit = ({ values, isSubmitting }) => {
 
       <div className="form__field">
         <button type="button" onClick={onSubmit}>
-          Delete
+          {values.t('delete')}
         </button>
       </div>
 
@@ -144,7 +146,7 @@ const ContactEdit = ({ values, isSubmitting }) => {
         <input
           disabled={isSubmitting}
           type="submit"
-          value="Done"
+          value={values.t('save')}
         />
       </div>
     </Form>
@@ -161,36 +163,41 @@ ContactEdit.defaultProps = {
   values: null,
 };
 
-export default withRouter(withFormik({
-  mapPropsToValues: ({
-    updateContact, removeContact, history, id, name, address, email, phone,
-  }) => ({
-    updateContact,
-    removeContact,
-    history,
-    id,
-    name,
-    address,
-    email,
-    phone,
-  }),
-  handleSubmit({
-    updateContact,
-    history,
-    id,
-    name,
-    address,
-    email,
-    phone,
-  }) {
-    const contact = {
+export default compose(
+  translate('common'),
+  withRouter,
+  withFormik({
+    mapPropsToValues: ({
+      t, updateContact, removeContact, history, id, name, address, email, phone,
+    }) => ({
+      t,
+      updateContact,
+      removeContact,
+      history,
+      id,
       name,
       address,
       email,
       phone,
-    };
+    }),
+    handleSubmit({
+      updateContact,
+      history,
+      id,
+      name,
+      address,
+      email,
+      phone,
+    }) {
+      const contact = {
+        name,
+        address,
+        email,
+        phone,
+      };
 
-    updateContact(id, contact);
-    history.push('/contacts');
-  },
-})(ContactEdit));
+      updateContact(id, contact);
+      history.push('/contacts');
+    },
+  }),
+)(ContactEdit);
