@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
+import styles from './style.css';
 
 const Grid = ({ children }) => (
-  <div className="grid">
+  <div className={styles.grid}>
     {children}
   </div>
 );

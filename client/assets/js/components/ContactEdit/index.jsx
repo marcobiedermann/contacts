@@ -4,7 +4,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import './style.css';
+import styles from './style.css';
 
 const ContactEdit = ({ values, isSubmitting }) => {
   const onSubmit = () => {
@@ -16,133 +16,133 @@ const ContactEdit = ({ values, isSubmitting }) => {
 
   return (
     <Form>
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="name.firstName"
         >
           Firstname
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="name.firstName"
           name="name.firstName"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="name.lastName"
         >
           Lastname
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="name.lastName"
           name="name.lastName"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="address.streetAddress"
         >
           Street
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="address.streetAddress"
           name="address.streetAddress"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="address.zipCode"
         >
           Zip
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="address.zipCode"
           name="address.zipCode"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="address.city"
         >
           City
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="address.city"
           name="address.city"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="address.country"
         >
           Country
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="address.country"
           name="address.country"
           type="text"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="email"
         >
           Email
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="email"
           name="email"
           type="email"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <label
-          className="form__label"
+          className={styles.form__label}
           htmlFor="phone"
         >
           Phone
         </label>
         <Field
-          className="form__input"
+          className={styles.form__input}
           id="phone"
           name="phone"
           type="tel"
         />
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <button type="button" onClick={onSubmit}>
           {values.t('delete')}
         </button>
       </div>
 
-      <div className="form__field">
+      <div className={styles.form__field}>
         <input
           disabled={isSubmitting}
           type="submit"

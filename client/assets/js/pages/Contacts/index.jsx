@@ -4,12 +4,12 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ContactPage from './Contact';
 import Contacts from '../../components/Contacts';
-import './style.css';
+import styles from './style.css';
 
 const ContactsPage = ({
   contacts,
 }) => (
-  <div className="contacts-page">
+  <div className={styles['contacts-page']}>
     <Route
       path="/contacts"
       component={() => <Contacts contacts={contacts} />}

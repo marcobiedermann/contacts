@@ -1,15 +1,16 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './style.css';
+import styles from './style.css';
 
 const ContactPreview = ({
   id,
   name,
 }) => (
-  <div className="contact contact--preview">
-    <h2 className="contact__name">
-      <NavLink to={`/contacts/${id}`} className="contact__link" activeClassName="is-active">
+  <div>
+    <h2 className={styles.contact__name}>
+      <NavLink to={`/contacts/${id}`} className={styles.contact__link} activeClassName="is-active">
         {name.firstName}
         {' '}
         {name.lastName}

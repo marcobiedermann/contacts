@@ -3,7 +3,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 
 const Header = ({ children, i18n }) => (
-  <header className="header">
+  <header>
     {children}
     <ul>
       <li>

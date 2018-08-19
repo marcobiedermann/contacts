@@ -5,10 +5,10 @@ import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import './style.css';
+import styles from './style.css';
 
 const Layout = ({ children }) => (
-  <div className="layout">
+  <div className={styles.layout}>
     <Header>
       <Grid>
         <Navigation />

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ContactDetail = ({
   t, address, email, id, name, phone,
 }) => (
-  <div className="contact">
+  <div>
     <header>
       <Link to={`/contacts/${id}/edit`}>
         {t('edit')}
