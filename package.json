@@ -42,7 +42,6 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "connected-react-router": "^4.3.0",
     "deepmerge": "^2.1.1",
     "formik": "^1.0.2",
