@@ -8,7 +8,7 @@
     "develop": "webpack-dev-server --config webpack.development.config.js",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:js",
-    "test": "npm run lint"
+    "test": "npm run lint && jest"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "@babel/core": "^7.0.0-beta.55",
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-react": "^7.0.0-beta.55",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0-beta.4",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
@@ -35,7 +37,9 @@
     "eslint-plugin-react": "^7.10.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^4.0.0-alpha",
+    "jest": "^23.5.0",
     "postcss-loader": "^3.0.0",
+    "react-test-renderer": "^16.4.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
