@@ -5,6 +5,7 @@ import { translate } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import styles from './style.css';
+import Label from '../Label';
 
 const ContactEdit = ({ values, isSubmitting }) => {
   const onSubmit = () => {
@@ -17,12 +18,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
   return (
     <Form>
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="name.firstName"
         >
           Firstname
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="name.firstName"
@@ -32,12 +32,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="name.lastName"
         >
           Lastname
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="name.lastName"
@@ -47,12 +46,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="address.streetAddress"
         >
           Street
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="address.streetAddress"
@@ -62,12 +60,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="address.zipCode"
         >
           Zip
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="address.zipCode"
@@ -77,12 +74,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="address.city"
         >
           City
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="address.city"
@@ -92,12 +88,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="address.country"
         >
           Country
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="address.country"
@@ -107,12 +102,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="email"
         >
           Email
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="email"
@@ -122,12 +116,11 @@ const ContactEdit = ({ values, isSubmitting }) => {
       </div>
 
       <div className={styles.form__field}>
-        <label
-          className={styles.form__label}
+        <Label
           htmlFor="phone"
         >
           Phone
-        </label>
+        </Label>
         <Field
           className={styles.form__input}
           id="phone"
