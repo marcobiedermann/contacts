@@ -6,13 +6,14 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import styles from './style.css';
 import Label from '../Label';
+import * as routes from '../../constants/routes';
 
 const ContactEdit = ({ values, isSubmitting }) => {
   const onSubmit = () => {
     const { removeContact, history, id } = values;
 
     removeContact(id);
-    history.push('/contacts');
+    history.push(routes.CONTACTS);
   };
 
   return (
@@ -190,7 +191,7 @@ export default compose(
       };
 
       updateContact(id, contact);
-      history.push('/contacts');
+      history.push(routes.CONTACTS);
     },
   }),
 )(ContactEdit);

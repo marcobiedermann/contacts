@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './style.css';
+import * as routes from '../../constants/routes';
 
 const ContactPreview = ({
   id,
@@ -9,7 +10,7 @@ const ContactPreview = ({
 }) => (
   <div>
     <h2 className={styles.contact__name}>
-      <NavLink to={`/contacts/${id}`} className={styles.contact__link} activeClassName="is-active">
+      <NavLink to={`${routes.CONTACTS}/${id}`} className={styles.contact__link} activeClassName="is-active">
         {name.firstName}
         {' '}
         {name.lastName}

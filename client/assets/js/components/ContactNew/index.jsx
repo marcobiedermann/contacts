@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import styles from './style.css';
 import Label from '../Label';
+import * as routes from '../../constants/routes';
 
 const ContactNew = ({
   isSubmitting,
@@ -181,7 +182,7 @@ export default compose(
       };
 
       addContact(contact);
-      history.push('/contacts');
+      history.push(routes.CONTACTS);
     },
   }),
 )(ContactNew);

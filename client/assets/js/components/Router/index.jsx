@@ -2,6 +2,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Layout from '../Layout';
+import * as routes from '../../constants/routes';
 import IndexPage from '../../pages/Index';
 import ContactsPage from '../../pages/Contacts';
 import LoginPage from '../../pages/Login';
@@ -13,19 +14,19 @@ const Router = () => (
     <Layout>
       <Switch>
         <Route
-          path="/contacts"
+          path={routes.CONTACTS}
           component={ContactsPage}
         />
         <Route
-          path="/login"
+          path={routes.LOGIN}
           component={LoginPage}
         />
         <Route
-          path="/new"
+          path={routes.NEW}
           component={NewPage}
         />
         <Route
-          path="/"
+          path={routes.INDEX}
           component={IndexPage}
         />
       </Switch>

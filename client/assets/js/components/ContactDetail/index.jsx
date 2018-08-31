@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import * as routes from '../../constants/routes';
 
 const ContactDetail = ({
   t, address, email, id, name, phone,
 }) => (
   <div>
     <header>
-      <Link to={`/contacts/${id}/edit`}>
+      <Link to={`${routes.CONTACTS}/${id}/edit`}>
         {t('edit')}
       </Link>
     </header>

@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { translate } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import * as routes from '../../constants/routes';
 
 const Navigation = ({ t }) => (
   <nav>
     <ul>
       <li>
         <NavLink
-          to="/"
+          to={routes.INDEX}
           activeClassName="is-active"
           exact
         >
@@ -17,7 +18,7 @@ const Navigation = ({ t }) => (
       </li>
       <li>
         <NavLink
-          to="/contacts"
+          to={routes.CONTACTS}
           activeClassName="is-active"
           exact
         >
@@ -26,7 +27,7 @@ const Navigation = ({ t }) => (
       </li>
       <li>
         <NavLink
-          to="/new"
+          to={routes.NEW}
           activeClassName="is-active"
           exact
         >
@@ -35,7 +36,7 @@ const Navigation = ({ t }) => (
       </li>
       <li>
         <NavLink
-          to="/login"
+          to={routes.LOGIN}
           activeClassName="is-active"
           exact
         >
