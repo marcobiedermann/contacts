@@ -20,7 +20,7 @@ const ContactDetail = ({
     </h1>
     <address>
       <a
-        href={`https://maps.google.com/?q=${address.streetAddress} ${
+        href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${
           address.zipCode
         } ${address.city} ${address.country}`}
         target="_blank"
