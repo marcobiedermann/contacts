@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Label from '../../components/Label';
-import { register } from '../../actions/auth';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -22,12 +19,6 @@ class RegisterPage extends Component {
     });
 
     console.log(this.state);
-  }
-
-  onSubmit(event) {
-    event.preventDefault();
-
-    this.props.register(this.state);
   }
 
   render() {
@@ -58,12 +49,4 @@ class RegisterPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.firebase.auth,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  register,
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
+export default RegisterPage;
