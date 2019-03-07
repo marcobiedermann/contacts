@@ -43,6 +43,15 @@ const Navigation = ({ t }) => (
           {t('login')}
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to={routes.REGISTER}
+          activeClassName="is-active"
+          exact
+        >
+          {t('register')}
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );

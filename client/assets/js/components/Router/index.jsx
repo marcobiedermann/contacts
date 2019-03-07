@@ -7,6 +7,7 @@ import IndexPage from '../../pages/Index';
 import ContactsPage from '../../pages/Contacts';
 import LoginPage from '../../pages/Login';
 import NewPage from '../../pages/New';
+import RegisterPage from '../../pages/Register';
 import history from '../../store/history';
 
 const Router = () => (
@@ -24,6 +25,10 @@ const Router = () => (
         <Route
           path={routes.NEW}
           component={NewPage}
+        />
+        <Route
+          path={routes.REGISTER}
+          component={RegisterPage}
         />
         <Route
           path={routes.INDEX}

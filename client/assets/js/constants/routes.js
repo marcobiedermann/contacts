@@ -4,3 +4,4 @@ export const CONTACT_EDIT = '/contacts/:id/edit';
 export const INDEX = '/';
 export const LOGIN = '/login';
 export const NEW = '/new';
+export const REGISTER = '/register';
