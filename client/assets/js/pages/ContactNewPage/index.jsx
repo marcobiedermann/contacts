@@ -5,17 +5,17 @@ import { bindActionCreators } from 'redux';
 import { addContact } from '../../actions/contacts';
 import ContactNew from '../../components/ContactNew';
 
-const NewPage = ({ addContact }) => (
+const ContactNewPage = ({ addContact }) => (
   <div>
     <ContactNew addContact={addContact} />
   </div>
 );
 
-NewPage.propTypes = {
+ContactNewPage.propTypes = {
   addContact: PropTypes.func,
 };
 
-NewPage.defaultProps = {
+ContactNewPage.defaultProps = {
   addContact: () => {},
 };
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   addContact,
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(NewPage);
+export default connect(null, mapDispatchToProps)(ContactNewPage);

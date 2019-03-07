@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ContactPage from './Contact';
+import { Route } from 'react-router-dom';
 import Contacts from '../../components/Contacts';
+import ContactPage from './ContactPage';
 import styles from './style.css';
 
 const ContactsPage = ({

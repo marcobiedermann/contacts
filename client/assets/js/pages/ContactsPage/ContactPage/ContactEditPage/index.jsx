@@ -2,13 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {
-  removeContact,
-  updateContact,
-} from '../../../../actions/contacts';
+import { removeContact, updateContact } from '../../../../actions/contacts';
 import ContactEdit from '../../../../components/ContactEdit';
 
-const EditPage = ({
+const ContactEditPage = ({
   contact,
   removeContact,
   updateContact,
@@ -20,13 +17,13 @@ const EditPage = ({
   />
 );
 
-EditPage.propTypes = {
+ContactEditPage.propTypes = {
   contact: PropTypes.shape(),
   removeContact: PropTypes.func,
   updateContact: PropTypes.func,
 };
 
-EditPage.defaultProps = {
+ContactEditPage.defaultProps = {
   contact: null,
   removeContact: () => {},
   updateContact: () => {},
@@ -37,4 +34,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   updateContact,
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(EditPage);
+export default connect(null, mapDispatchToProps)(ContactEditPage);
