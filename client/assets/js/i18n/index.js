@@ -1,25 +1,24 @@
 import i18n from 'i18next';
-import commonDe from './de/common.json';
-import commonEn from './en/common.json';
-import pagesDe from './de/pages.json';
-import pagesEn from './en/pages.json';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-xhr-backend';
+import { initReactI18next } from 'react-i18next';
 
-i18n.init({
-  debug: true,
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
-  },
-  resources: {
-    de: {
-      common: commonDe,
-      pages: pagesDe,
+i18n
+  .use(Backend)
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    backend: {
+      loadPath: 'assets/data/locales/{{lng}}/{{ns}}.json',
     },
-    en: {
-      common: commonEn,
-      pages: pagesEn,
+    debug: true,
+    fallbackLng: 'en',
+    load: 'languageOnly',
+    interpolation: {
+      escapeValue: false,
     },
-  },
-});
+    ns: ['common', 'pages'],
+    defaultNS: 'common',
+  });
 
 export default i18n;

@@ -1,67 +1,62 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import { translate } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
-const Navigation = ({ t }) => (
-  <nav>
-    <ul>
-      <li>
-        <NavLink
-          to={routes.INDEX}
-          activeClassName="is-active"
-          exact
-        >
-          {t('home')}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={routes.CONTACTS}
-          activeClassName="is-active"
-          exact
-        >
-          {t('contacts')}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={routes.NEW}
-          activeClassName="is-active"
-          exact
-        >
-          {t('new')}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={routes.LOGIN}
-          activeClassName="is-active"
-          exact
-        >
-          {t('login')}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={routes.REGISTER}
-          activeClassName="is-active"
-          exact
-        >
-          {t('register')}
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-);
+const Navigation = () => {
+  const { t } = useTranslation();
 
-Navigation.propTypes = {
-  t: PropTypes.func,
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink
+            to={routes.INDEX}
+            activeClassName="is-active"
+            exact
+          >
+            {t('pages:home')}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={routes.CONTACTS}
+            activeClassName="is-active"
+            exact
+          >
+            {t('pages:contacts')}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={routes.NEW}
+            activeClassName="is-active"
+            exact
+          >
+            {t('pages:new')}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={routes.LOGIN}
+            activeClassName="is-active"
+            exact
+          >
+            {t('pages:login')}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={routes.REGISTER}
+            activeClassName="is-active"
+            exact
+          >
+            {t('pages:register')}
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
-Navigation.defaultProps = {
-  t: () => {},
-};
-
-export default translate('pages')(Navigation);
+export default Navigation;

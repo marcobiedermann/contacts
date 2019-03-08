@@ -1,33 +1,36 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { translate } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-const Header = ({ children, i18n }) => (
-  <header>
-    {children}
-    <ul>
-      <li>
-        <button type="button" onClick={() => i18n.changeLanguage('en')}>
-          en
-        </button>
-      </li>
-      <li>
-        <button type="button" onClick={() => i18n.changeLanguage('de')}>
-          de
-        </button>
-      </li>
-    </ul>
-  </header>
-);
+const Header = (props) => {
+  const { children } = props;
+  const { i18n } = useTranslation();
+
+  return (
+    <header>
+      {children}
+      <ul>
+        <li>
+          <button type="button" onClick={() => i18n.changeLanguage('en')}>
+            en
+          </button>
+        </li>
+        <li>
+          <button type="button" onClick={() => i18n.changeLanguage('de')}>
+            de
+          </button>
+        </li>
+      </ul>
+    </header>
+  );
+};
 
 Header.propTypes = {
   children: PropTypes.node,
-  i18n: PropTypes.shape(),
 };
 
 Header.defaultProps = {
   children: null,
-  i18n: null,
 };
 
-export default translate('common')(Header);
+export default Header;

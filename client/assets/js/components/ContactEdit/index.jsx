@@ -1,14 +1,16 @@
-import { withFormik, Form, Field } from 'formik';
+import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { translate } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import styles from './style.css';
-import Label from '../Label';
 import * as routes from '../../constants/routes';
+import Label from '../Label';
+import styles from './style.css';
 
-const ContactEdit = ({ values, isSubmitting }) => {
+const ContactEdit = (props) => {
+  const { values, isSubmitting } = props;
+  const { t } = useTranslation();
   const onSubmit = () => {
     const { removeContact, history, id } = values;
 
@@ -132,7 +134,7 @@ const ContactEdit = ({ values, isSubmitting }) => {
 
       <div className={styles.form__field}>
         <button type="button" onClick={onSubmit}>
-          {values.t('delete')}
+          {t('common:delete')}
         </button>
       </div>
 
@@ -140,7 +142,7 @@ const ContactEdit = ({ values, isSubmitting }) => {
         <input
           disabled={isSubmitting}
           type="submit"
-          value={values.t('save')}
+          value={t('common:save')}
         />
       </div>
     </Form>
@@ -158,7 +160,6 @@ ContactEdit.defaultProps = {
 };
 
 export default compose(
-  translate('common'),
   withRouter,
   withFormik({
     mapPropsToValues: ({
