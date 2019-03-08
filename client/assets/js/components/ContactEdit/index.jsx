@@ -8,7 +8,7 @@ import * as routes from '../../constants/routes';
 import Label from '../Label';
 import styles from './style.css';
 
-const ContactEdit = (props) => {
+const ContactEdit = props => {
   const { values, isSubmitting } = props;
   const { t } = useTranslation();
   const onSubmit = () => {
@@ -21,11 +21,7 @@ const ContactEdit = (props) => {
   return (
     <Form>
       <div className={styles.form__field}>
-        <Label
-          htmlFor="name.firstName"
-        >
-          Firstname
-        </Label>
+        <Label htmlFor="name.firstName">Firstname</Label>
         <Field
           className={styles.form__input}
           id="name.firstName"
@@ -35,25 +31,12 @@ const ContactEdit = (props) => {
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="name.lastName"
-        >
-          Lastname
-        </Label>
-        <Field
-          className={styles.form__input}
-          id="name.lastName"
-          name="name.lastName"
-          type="text"
-        />
+        <Label htmlFor="name.lastName">Lastname</Label>
+        <Field className={styles.form__input} id="name.lastName" name="name.lastName" type="text" />
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="address.streetAddress"
-        >
-          Street
-        </Label>
+        <Label htmlFor="address.streetAddress">Street</Label>
         <Field
           className={styles.form__input}
           id="address.streetAddress"
@@ -63,11 +46,7 @@ const ContactEdit = (props) => {
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="address.zipCode"
-        >
-          Zip
-        </Label>
+        <Label htmlFor="address.zipCode">Zip</Label>
         <Field
           className={styles.form__input}
           id="address.zipCode"
@@ -77,25 +56,12 @@ const ContactEdit = (props) => {
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="address.city"
-        >
-          City
-        </Label>
-        <Field
-          className={styles.form__input}
-          id="address.city"
-          name="address.city"
-          type="text"
-        />
+        <Label htmlFor="address.city">City</Label>
+        <Field className={styles.form__input} id="address.city" name="address.city" type="text" />
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="address.country"
-        >
-          Country
-        </Label>
+        <Label htmlFor="address.country">Country</Label>
         <Field
           className={styles.form__input}
           id="address.country"
@@ -105,31 +71,13 @@ const ContactEdit = (props) => {
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="email"
-        >
-          Email
-        </Label>
-        <Field
-          className={styles.form__input}
-          id="email"
-          name="email"
-          type="email"
-        />
+        <Label htmlFor="email">Email</Label>
+        <Field className={styles.form__input} id="email" name="email" type="email" />
       </div>
 
       <div className={styles.form__field}>
-        <Label
-          htmlFor="phone"
-        >
-          Phone
-        </Label>
-        <Field
-          className={styles.form__input}
-          id="phone"
-          name="phone"
-          type="tel"
-        />
+        <Label htmlFor="phone">Phone</Label>
+        <Field className={styles.form__input} id="phone" name="phone" type="tel" />
       </div>
 
       <div className={styles.form__field}>
@@ -139,11 +87,7 @@ const ContactEdit = (props) => {
       </div>
 
       <div className={styles.form__field}>
-        <input
-          disabled={isSubmitting}
-          type="submit"
-          value={t('common:save')}
-        />
+        <input disabled={isSubmitting} type="submit" value={t('common:save')} />
       </div>
     </Form>
   );
@@ -163,7 +107,15 @@ export default compose(
   withRouter,
   withFormik({
     mapPropsToValues: ({
-      t, updateContact, removeContact, history, id, name, address, email, phone,
+      t,
+      updateContact,
+      removeContact,
+      history,
+      id,
+      name,
+      address,
+      email,
+      phone,
     }) => ({
       t,
       updateContact,
@@ -175,15 +127,7 @@ export default compose(
       email,
       phone,
     }),
-    handleSubmit({
-      updateContact,
-      history,
-      id,
-      name,
-      address,
-      email,
-      phone,
-    }) {
+    handleSubmit({ updateContact, history, id, name, address, email, phone }) {
       const contact = {
         name,
         address,

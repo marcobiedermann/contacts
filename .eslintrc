@@ -1,10 +1,17 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
   "env": {
     "browser": true,
     "jest": true,
     "node": true
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "no-shadow": "off",
     "jsx-a11y/label-has-for": [2, {

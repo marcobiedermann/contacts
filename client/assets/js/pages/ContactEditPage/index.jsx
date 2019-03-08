@@ -5,17 +5,11 @@ import { bindActionCreators } from 'redux';
 import { removeContact, updateContact } from '../../actions/contacts';
 import ContactEdit from '../../components/ContactEdit';
 
-const ContactEditPage = ({
-  contact,
-  removeContact,
-  updateContact,
-}) => (
-  <ContactEdit
-    {...contact}
-    removeContact={removeContact}
-    updateContact={updateContact}
-  />
-);
+const ContactEditPage = props => {
+  const { contact, removeContact, updateContact } = props;
+
+  return <ContactEdit {...contact} removeContact={removeContact} updateContact={updateContact} />;
+};
 
 ContactEditPage.propTypes = {
   contact: PropTypes.shape(),
@@ -29,9 +23,16 @@ ContactEditPage.defaultProps = {
   updateContact: () => {},
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  removeContact,
-  updateContact,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      removeContact,
+      updateContact,
+    },
+    dispatch,
+  );
 
-export default connect(null, mapDispatchToProps)(ContactEditPage);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(ContactEditPage);

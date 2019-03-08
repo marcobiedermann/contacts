@@ -7,25 +7,25 @@ import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.css';
 
-const Layout = ({ children }) => (
-  <div className={styles.layout}>
-    <Header>
-      <Grid>
-        <Navigation />
-      </Grid>
-    </Header>
-    <Main>
-      <Grid>
-        {children}
-      </Grid>
-    </Main>
-    <Footer>
-      <Grid>
-        Footer
-      </Grid>
-    </Footer>
-  </div>
-);
+const Layout = props => {
+  const { children } = props;
+
+  return (
+    <div className={styles.layout}>
+      <Header>
+        <Grid>
+          <Navigation />
+        </Grid>
+      </Header>
+      <Main>
+        <Grid>{children}</Grid>
+      </Main>
+      <Footer>
+        <Grid>Footer</Grid>
+      </Footer>
+    </div>
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node,

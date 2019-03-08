@@ -3,17 +3,21 @@ import React from 'react';
 import ContactPreview from '../ContactPreview';
 import styles from './style.css';
 
-const Contacts = ({ contacts }) => (
-  <div className={styles.contacts}>
-    <ul className={styles.contacts__list}>
-      {contacts.map(contact => (
-        <li className={styles.contacts__item} key={contact.id}>
-          <ContactPreview {...contact} />
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const Contacts = props => {
+  const { contacts } = props;
+
+  return (
+    <div className={styles.contacts}>
+      <ul className={styles.contacts__list}>
+        {contacts.map(contact => (
+          <li className={styles.contacts__item} key={contact.id}>
+            <ContactPreview {...contact} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 Contacts.propTypes = {
   contacts: PropTypes.arrayOf(

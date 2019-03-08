@@ -5,11 +5,15 @@ import { bindActionCreators } from 'redux';
 import { addContact } from '../../actions/contacts';
 import ContactNew from '../../components/ContactNew';
 
-const ContactNewPage = ({ addContact }) => (
-  <div>
-    <ContactNew addContact={addContact} />
-  </div>
-);
+const ContactNewPage = props => {
+  const { addContact } = props;
+
+  return (
+    <div>
+      <ContactNew addContact={addContact} />
+    </div>
+  );
+};
 
 ContactNewPage.propTypes = {
   addContact: PropTypes.func,
@@ -19,8 +23,15 @@ ContactNewPage.defaultProps = {
   addContact: () => {},
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  addContact,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addContact,
+    },
+    dispatch,
+  );
 
-export default connect(null, mapDispatchToProps)(ContactNewPage);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(ContactNewPage);

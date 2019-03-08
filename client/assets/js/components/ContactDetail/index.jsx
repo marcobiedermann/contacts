@@ -4,23 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
-const ContactDetail = (props) => {
-  const {
-    address, email, id, name, phone,
-  } = props;
+const ContactDetail = props => {
+  const { address, email, id, name, phone } = props;
   const { t } = useTranslation();
 
   return (
     <div>
       <header>
-        <Link to={`${routes.CONTACTS}/${id}/edit`}>
-          {t('common:edit')}
-        </Link>
+        <Link to={`${routes.CONTACTS}/${id}/edit`}>{t('common:edit')}</Link>
       </header>
       <h1>
-        {name.firstName}
-        {' '}
-        {name.lastName}
+        {name.firstName} {name.lastName}
       </h1>
       <address>
         <a
@@ -32,22 +26,16 @@ const ContactDetail = (props) => {
         >
           {address.streetAddress}
           <br />
-          {address.zipCode}
-          {' '}
-          {address.city}
+          {address.zipCode} {address.city}
           <br />
           {address.country}
         </a>
       </address>
       <ul>
         <li>
-          <a href={`mailto:${email}`}>
-            {email}
-          </a>
+          <a href={`mailto:${email}`}>{email}</a>
         </li>
-        <li>
-          {phone}
-        </li>
+        <li>{phone}</li>
       </ul>
     </div>
   );

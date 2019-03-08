@@ -4,28 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 import ContactDetail from '../../components/ContactDetail';
 import EditPage from '../ContactEditPage';
 
-const ContactPage = ({
-  contacts,
-  match,
-}) => {
+const ContactPage = props => {
+  const { contacts, match } = props;
   const contact = contacts.find(c => c.id === match.params.id);
 
   return (
     <Switch>
-      <Route
-        path="/contacts/:id/edit"
-        component={() => (
-          <EditPage
-            contact={contact}
-          />
-        )}
-      />
-      <Route
-        path="/contacts/:id"
-        component={() => (
-          <ContactDetail {...contact} />
-        )}
-      />
+      <Route path="/contacts/:id/edit" component={() => <EditPage contact={contact} />} />
+      <Route path="/contacts/:id" component={() => <ContactDetail {...contact} />} />
     </Switch>
   );
 };

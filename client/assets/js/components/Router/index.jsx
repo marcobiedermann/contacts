@@ -14,26 +14,11 @@ const Router = () => (
   <ConnectedRouter history={history}>
     <Layout>
       <Switch>
-        <Route
-          path={routes.CONTACTS}
-          component={ContactsPage}
-        />
-        <Route
-          path={routes.LOGIN}
-          component={LoginPage}
-        />
-        <Route
-          path={routes.NEW}
-          component={ContactNewPage}
-        />
-        <Route
-          path={routes.REGISTER}
-          component={RegisterPage}
-        />
-        <Route
-          path={routes.INDEX}
-          component={IndexPage}
-        />
+        <Route path={routes.CONTACTS} component={ContactsPage} />
+        <Route path={routes.LOGIN} component={LoginPage} />
+        <Route path={routes.NEW} component={ContactNewPage} />
+        <Route path={routes.REGISTER} component={RegisterPage} />
+        <Route path={routes.INDEX} component={IndexPage} />
       </Switch>
     </Layout>
   </ConnectedRouter>
