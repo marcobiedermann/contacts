@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ContactDetail from '../../../components/ContactDetail';
-import EditPage from './ContactEditPage';
+import ContactDetail from '../../components/ContactDetail';
+import EditPage from '../ContactEditPage';
 
 const ContactPage = ({
   contacts,

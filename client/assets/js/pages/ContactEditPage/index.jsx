@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { removeContact, updateContact } from '../../../../actions/contacts';
-import ContactEdit from '../../../../components/ContactEdit';
+import { removeContact, updateContact } from '../../actions/contacts';
+import ContactEdit from '../../components/ContactEdit';
 
 const ContactEditPage = ({
   contact,

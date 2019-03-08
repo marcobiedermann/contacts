@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Contacts from '../../components/Contacts';
-import ContactPage from './ContactPage';
+import ContactPage from '../ContactPage';
 import styles from './style.css';
 
 const ContactsPage = ({
