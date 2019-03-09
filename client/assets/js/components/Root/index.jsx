@@ -23,11 +23,11 @@ const rrfProps = {
 const Root = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
           <Router />
-        </Suspense>
-      </ReactReduxFirebaseProvider>
+        </ReactReduxFirebaseProvider>
+      </Suspense>
     </PersistGate>
   </Provider>
 );

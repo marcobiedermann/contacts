@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Contacts from '../../components/Contacts';
 import ContactPage from '../ContactPage';
@@ -28,8 +27,4 @@ ContactsPage.defaultProps = {
   contacts: [],
 };
 
-const mapStateToProps = state => ({
-  contacts: state.contacts,
-});
-
-export default connect(mapStateToProps)(ContactsPage);
+export default ContactsPage;
