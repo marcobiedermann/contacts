@@ -1,52 +1,47 @@
-import React, { Component } from 'react';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Label from '../../components/Label';
 
-class RegisterPage extends Component {
-  constructor(props) {
-    super(props);
+const RegisterPage = () => {
+  return (
+    <Formik
+      onSubmit={(values, actions) => {
+        actions.setSubmitting(false);
+      }}
+      render={props => {
+        const { isSubmitting } = props;
 
-    this.state = {};
+        return (
+          <Form>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Field type="email" name="email" />
+              <ErrorMessage name="email" />
+            </div>
 
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+            <div>
+              <Label htmlFor="password">Password</Label>
+              <Field type="password" name="password" />
+              <ErrorMessage name="password" />
+            </div>
 
-  onChange(event) {
-    const { name, value } = event.target;
+            <div>
+              <input type="submit" disabled={isSubmitting} />
+            </div>
+          </Form>
+        );
+      }}
+    />
+  );
+};
 
-    this.setState({
-      [name]: value,
-    });
+RegisterPage.propTypes = {
+  isSubmitting: PropTypes.bool,
+};
 
-    console.log(this.state);
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <div>
-            <Label htmlFor="email">Email</Label>
-            <input type="email" name="email" onChange={this.onChange} />
-          </div>
-
-          <div>
-            <Label htmlFor="password">Password</Label>
-            <input type="password" name="password" onChange={this.onChange} />
-          </div>
-
-          <div>
-            <Label htmlFor="name">Name</Label>
-            <input type="text" name="name" onChange={this.onChange} />
-          </div>
-
-          <div>
-            <input type="submit" />
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+RegisterPage.defaultProps = {
+  isSubmitting: false,
+};
 
 export default RegisterPage;
