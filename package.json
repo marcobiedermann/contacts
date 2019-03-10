@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.production.config.js",
+    "build": "webpack --config webpack.production.config.js",
     "develop": "webpack-dev-server --config webpack.development.config.js",
     "format": "prettier --write '**/*.{css,html,js,jsx,json}'",
     "lint:js": "eslint '**/*.{js,jsx}'",
@@ -30,6 +30,7 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
+    "dotenv-webpack": "^1.7.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
