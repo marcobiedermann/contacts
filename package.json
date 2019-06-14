@@ -58,7 +58,7 @@
     "firebase": "^6.1.1",
     "formik": "^1.5.1",
     "history": "^4.9.0",
-    "i18next": "^15.0.7",
+    "i18next": "^17.0.3",
     "i18next-browser-languagedetector": "^3.0.1",
     "i18next-xhr-backend": "^3.0.0",
     "prop-types": "^15.7.2",
