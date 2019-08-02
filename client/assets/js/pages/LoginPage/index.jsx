@@ -23,7 +23,7 @@ const LoginPage = props => {
             });
             console.log(response);
           } catch (error) {
-            console.error(error)
+            console.error(error);
           }
 
           actions.setSubmitting(false);

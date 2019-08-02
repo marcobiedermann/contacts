@@ -11,10 +11,7 @@ const ContactsPage = props => {
   return (
     <div className={styles['contacts-page']}>
       <Route path="/contacts" component={() => <Contacts contacts={contacts} />} />
-      <Route
-        path="/contacts/:id"
-        component={props => <ContactPage contacts={contacts} {...props} />}
-      />
+      <Route path="/contacts/:id" component={props => <ContactPage contacts={contacts} {...props} />} />
     </div>
   );
 };

@@ -16,12 +16,7 @@ const ContactNew = props => {
     <Form className={styles.form}>
       <div className={styles.form__field}>
         <Label htmlFor="name.firstName">Firstname</Label>
-        <Field
-          className={styles.form__input}
-          id="name.firstName"
-          name="name.firstName"
-          type="text"
-        />
+        <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />
       </div>
 
       <div className={styles.form__field}>
@@ -31,22 +26,12 @@ const ContactNew = props => {
 
       <div className={styles.form__field}>
         <Label htmlFor="address.streetAddress">Street</Label>
-        <Field
-          className={styles.form__input}
-          id="address.streetAddress"
-          name="address.streetAddress"
-          type="text"
-        />
+        <Field className={styles.form__input} id="address.streetAddress" name="address.streetAddress" type="text" />
       </div>
 
       <div className={styles.form__field}>
         <Label htmlFor="address.zipCode">Zip</Label>
-        <Field
-          className={styles.form__input}
-          id="address.zipCode"
-          name="address.zipCode"
-          type="text"
-        />
+        <Field className={styles.form__input} id="address.zipCode" name="address.zipCode" type="text" />
       </div>
 
       <div className={styles.form__field}>
@@ -56,12 +41,7 @@ const ContactNew = props => {
 
       <div className={styles.form__field}>
         <Label htmlFor="address.country">Country</Label>
-        <Field
-          className={styles.form__input}
-          id="address.country"
-          name="address.country"
-          type="text"
-        />
+        <Field className={styles.form__input} id="address.country" name="address.country" type="text" />
       </div>
 
       <div className={styles.form__field}>

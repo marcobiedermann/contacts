@@ -18,9 +18,9 @@ const ContactDetail = props => {
       </h1>
       <address>
         <a
-          href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${
-            address.zipCode
-          } ${address.city} ${address.country}`}
+          href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${address.zipCode} ${
+            address.city
+          } ${address.country}`}
           target="_blank"
           rel="noopener noreferrer"
         >

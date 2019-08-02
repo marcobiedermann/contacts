@@ -10,11 +10,7 @@ const ContactPreview = props => {
   return (
     <div>
       <h2 className={styles.contact__name}>
-        <NavLink
-          to={`${routes.CONTACTS}/${id}`}
-          className={styles.contact__link}
-          activeClassName="is-active"
-        >
+        <NavLink to={`${routes.CONTACTS}/${id}`} className={styles.contact__link} activeClassName="is-active">
           {name.firstName} {name.lastName}
         </NavLink>
       </h2>
