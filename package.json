@@ -9,7 +9,8 @@
     "format": "prettier --write '**/*.{css,html,js,jsx,json}'",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:js",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "test:ci": "npm test && codecov"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "codecov": "^3.5.0",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
     "dotenv-webpack": "^1.7.0",
