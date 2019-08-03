@@ -13,29 +13,35 @@ const ContactDetail = props => {
       <header>
         <Link to={`${routes.CONTACTS}/${id}/edit`}>{t('common:edit')}</Link>
       </header>
-      <h1>
-        {name.firstName} {name.lastName}
-      </h1>
-      <address>
-        <a
-          href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${address.zipCode} ${
-            address.city
-          } ${address.country}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {address.streetAddress}
-          <br />
-          {address.zipCode} {address.city}
-          <br />
-          {address.country}
-        </a>
-      </address>
+      {name && (
+        <h1>
+          {name.firstName} {name.lastName}
+        </h1>
+      )}
+      {address && (
+        <address>
+          <a
+            href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${address.zipCode} ${
+              address.city
+            } ${address.country}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {address.streetAddress}
+            <br />
+            {address.zipCode} {address.city}
+            <br />
+            {address.country}
+          </a>
+        </address>
+      )}
       <ul>
-        <li>
-          <a href={`mailto:${email}`}>{email}</a>
-        </li>
-        <li>{phone}</li>
+        {email && (
+          <li>
+            <a href={`mailto:${email}`}>{email}</a>
+          </li>
+        )}
+        {phone && <li>{phone}</li>}
       </ul>
     </div>
   );
