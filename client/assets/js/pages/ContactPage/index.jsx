@@ -5,8 +5,7 @@ import ContactDetail from '../../components/ContactDetail';
 import EditPage from '../ContactEditPage';
 
 const ContactPage = props => {
-  const { contacts, match } = props;
-  const contact = contacts.find(c => c.id === match.params.id);
+  const { contact } = props;
 
   return (
     <Switch>
@@ -17,13 +16,11 @@ const ContactPage = props => {
 };
 
 ContactPage.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.shape()),
-  match: PropTypes.shape(),
+  contact: PropTypes.shape(),
 };
 
 ContactPage.defaultProps = {
-  contacts: [],
-  match: null,
+  contact: null,
 };
 
 export default ContactPage;
