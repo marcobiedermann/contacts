@@ -6,6 +6,7 @@ import reducers from '../reducers';
 import history from './history';
 
 const persistConfig = {
+  blacklist: ['router'],
   key: 'root',
   storage,
 };
