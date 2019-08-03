@@ -2,6 +2,7 @@
   "home": "Home",
   "contacts": "Contacts",
   "login": "Login",
+  "logout": "Logout",
   "new": "New",
   "register": "Register"
 }

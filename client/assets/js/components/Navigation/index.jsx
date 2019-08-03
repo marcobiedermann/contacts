@@ -34,6 +34,11 @@ const Navigation = () => {
             {t('pages:register')}
           </NavLink>
         </li>
+        <li>
+          <NavLink to={routes.LOGOUT} activeClassName="is-active" exact>
+            {t('pages:logout')}
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
