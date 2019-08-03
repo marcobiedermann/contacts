@@ -7,6 +7,7 @@ module.exports = merge(baseConfig, {
   devServer: {
     contentBase: 'client',
     historyApiFallback: true,
+    open: true,
   },
   devtool: 'cheap-module-source-map',
   mode: 'development',
