@@ -59,7 +59,7 @@
     "@babel/polyfill": "^7.4.4",
     "connected-react-router": "^6.5.2",
     "deepmerge": "^4.0.0",
-    "firebase": "^6.3.0",
+    "firebase": "^7.0.0",
     "formik": "^1.5.8",
     "history": "^4.9.0",
     "i18next": "^17.0.6",
