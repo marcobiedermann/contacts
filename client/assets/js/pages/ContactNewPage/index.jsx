@@ -31,7 +31,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ContactNewPage);
+export default connect(null, mapDispatchToProps)(ContactNewPage);
