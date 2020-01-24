@@ -32,7 +32,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ContactEditPage);
+export default connect(null, mapDispatchToProps)(ContactEditPage);
