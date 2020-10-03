@@ -9,7 +9,7 @@ const RegisterPage = () => {
       onSubmit={(values, actions) => {
         actions.setSubmitting(false);
       }}
-      render={props => {
+      render={(props) => {
         const { isSubmitting } = props;
 
         return (

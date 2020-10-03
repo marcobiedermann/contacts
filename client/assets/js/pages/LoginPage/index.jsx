@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Label from '../../components/Label';
 
-const LoginPage = props => {
+const LoginPage = (props) => {
   const { firebase } = props;
 
   return (
@@ -28,7 +28,7 @@ const LoginPage = props => {
 
           actions.setSubmitting(false);
         }}
-        render={props => {
+        render={(props) => {
           const { isSubmitting } = props;
 
           return (

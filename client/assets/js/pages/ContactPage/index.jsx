@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import ContactDetail from '../../components/ContactDetail';
 import EditPage from '../ContactEditPage';
 
-const ContactPage = props => {
+const ContactPage = (props) => {
   const { contact } = props;
 
   return (

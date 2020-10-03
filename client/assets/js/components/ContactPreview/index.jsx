@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import styles from './style.css';
 
-const ContactPreview = props => {
+const ContactPreview = (props) => {
   const { id, name } = props;
 
   return (

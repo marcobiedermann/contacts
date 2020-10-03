@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import ContactPage from '../../pages/ContactPage';
 
 export default compose(
-  firestoreConnect(props => {
+  firestoreConnect((props) => {
     const { contactId } = props;
 
     return [`contacts/${contactId}`];

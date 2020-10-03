@@ -8,7 +8,7 @@ import * as routes from '../../constants/routes';
 import Label from '../Label';
 import styles from './style.css';
 
-const ContactEdit = props => {
+const ContactEdit = (props) => {
   const { values, isSubmitting } = props;
   const { t } = useTranslation();
   const onSubmit = () => {

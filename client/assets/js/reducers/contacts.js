@@ -1,5 +1,5 @@
 import deepmerge from 'deepmerge';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { ADD_CONTACT, REMOVE_CONTACT, UPDATE_CONTACT } from '../constants/action-types';
 
 const initialState = [];
@@ -16,11 +16,11 @@ const contacts = (state = initialState, action) => {
     }
 
     case REMOVE_CONTACT: {
-      return state.filter(contact => contact.id !== action.id);
+      return state.filter((contact) => contact.id !== action.id);
     }
 
     case UPDATE_CONTACT: {
-      return state.map(c => (c.id === action.id ? deepmerge(c, action.props) : c));
+      return state.map((c) => (c.id === action.id ? deepmerge(c, action.props) : c));
     }
 
     default: {

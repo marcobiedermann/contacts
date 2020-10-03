@@ -7,7 +7,7 @@ import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.css';
 
-const Layout = props => {
+const Layout = (props) => {
   const { children } = props;
 
   return (

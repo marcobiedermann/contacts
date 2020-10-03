@@ -5,12 +5,12 @@ import Contacts from '../../components/Contacts';
 import ContactPage from '../../containers/ContactPage';
 import styles from './style.css';
 
-const ContactsPage = props => {
+const ContactsPage = (props) => {
   const { contacts } = props;
 
   return (
     <div className={styles['contacts-page']}>
-      <Route path="/contacts/:id" render={props => <ContactPage {...props} contactId={props.match.params.id} />} />
+      <Route path="/contacts/:id" render={(props) => <ContactPage {...props} contactId={props.match.params.id} />} />
       <Route path="/contacts" component={() => <Contacts contacts={contacts} />} />
     </div>
   );

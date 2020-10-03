@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
 import contacts from './contacts';
 
-const reducers = history =>
+const reducers = (history) =>
   combineReducers({
     contacts,
     firebase: firebaseReducer,

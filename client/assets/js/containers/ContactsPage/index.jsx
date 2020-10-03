@@ -5,7 +5,7 @@ import ContactsPage from '../../pages/ContactsPage';
 
 export default compose(
   firestoreConnect(() => ['contacts']),
-  connect(state => ({
+  connect((state) => ({
     contacts: state.firestore.ordered.contacts,
   })),
 )(ContactsPage);

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const LogoutPage = props => {
+const LogoutPage = (props) => {
   const { firebase } = props;
 
   firebase.logout();

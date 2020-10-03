@@ -8,7 +8,7 @@ import * as routes from '../../constants/routes';
 import Label from '../Label';
 import styles from './style.css';
 
-const ContactNew = props => {
+const ContactNew = (props) => {
   const { isSubmitting } = props;
   const { t } = useTranslation();
 

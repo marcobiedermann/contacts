@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './style.css';
 
-const Grid = props => {
+const Grid = (props) => {
   const { children } = props;
 
   return <div className={styles.grid}>{children}</div>;

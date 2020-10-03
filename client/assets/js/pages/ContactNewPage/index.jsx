@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { addContact } from '../../actions/contacts';
 import ContactNew from '../../components/ContactNew';
 
-const ContactNewPage = props => {
+const ContactNewPage = (props) => {
   const { addContact } = props;
 
   return (
@@ -23,7 +23,7 @@ ContactNewPage.defaultProps = {
   addContact: () => {},
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       addContact,

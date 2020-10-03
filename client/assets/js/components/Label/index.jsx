@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './style.css';
 
-const Label = props => {
+const Label = (props) => {
   const { children, htmlFor, ...otherProps } = props;
 
   return (
