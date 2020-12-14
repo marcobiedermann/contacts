@@ -3,20 +3,20 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, 'client/assets/js/index')],
+    main: [path.resolve(__dirname, './src/assets/js/index')],
   },
   output: {
     filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'server/public'),
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: 'ts-loader',
           },
         ],
       },
@@ -24,6 +24,6 @@ module.exports = {
   },
   plugins: [new Dotenv()],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };

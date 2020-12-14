@@ -73,7 +73,7 @@ module.exports = merge(baseConfig, {
         trimCustomFragments: true,
         useShortDoctype: true,
       },
-      template: 'client/index.html',
+      template: 'src/index.html',
     }),
   ],
 });
