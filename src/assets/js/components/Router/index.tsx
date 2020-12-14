@@ -1,5 +1,5 @@
 import { ConnectedRouter } from 'connected-react-router';
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import ContactsPage from '../../containers/ContactsPage';
@@ -11,7 +11,7 @@ import RegisterPage from '../../pages/RegisterPage';
 import history from '../../store/history';
 import Layout from '../Layout';
 
-const Router = () => (
+const Router: FC = () => (
   <ConnectedRouter history={history}>
     <Layout>
       <Switch>

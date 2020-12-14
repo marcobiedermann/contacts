@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
-const Navigation = () => {
+const Navigation: FC = () => {
   const { t } = useTranslation();
 
   return (

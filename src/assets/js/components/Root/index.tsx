@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { FC, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
@@ -20,7 +20,7 @@ const rrfProps = {
   createFirestoreInstance,
 };
 
-const Root = () => (
+const Root: FC = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <Suspense fallback={<Loader />}>

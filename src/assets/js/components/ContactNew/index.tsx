@@ -1,6 +1,5 @@
 import { Field, Form, withFormik } from 'formik';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -8,7 +7,7 @@ import * as routes from '../../constants/routes';
 import Label from '../Label';
 import styles from './style.css';
 
-const ContactNew = (props) => {
+const ContactNew: FC = (props) => {
   const { isSubmitting } = props;
   const { t } = useTranslation();
 
@@ -59,14 +58,6 @@ const ContactNew = (props) => {
       </div>
     </Form>
   );
-};
-
-ContactNew.propTypes = {
-  isSubmitting: PropTypes.bool,
-};
-
-ContactNew.defaultProps = {
-  isSubmitting: false,
 };
 
 export default compose(

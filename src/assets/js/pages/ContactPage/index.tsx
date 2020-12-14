@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ContactDetail from '../../components/ContactDetail';
 import EditPage from '../ContactEditPage';
 
-const ContactPage = (props) => {
+const ContactPage: FC = (props) => {
   const { contact } = props;
 
   return (
@@ -13,14 +12,6 @@ const ContactPage = (props) => {
       <Route path="/contacts/:id" component={() => <ContactDetail {...contact} />} />
     </Switch>
   );
-};
-
-ContactPage.propTypes = {
-  contact: PropTypes.shape(),
-};
-
-ContactPage.defaultProps = {
-  contact: null,
 };
 
 export default ContactPage;

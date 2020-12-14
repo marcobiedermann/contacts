@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -7,7 +6,7 @@ import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.css';
 
-const Layout = (props) => {
+const Layout: FC = (props) => {
   const { children } = props;
 
   return (
@@ -25,14 +24,6 @@ const Layout = (props) => {
       </Footer>
     </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node,
-};
-
-Layout.defaultProps = {
-  children: null,
 };
 
 export default Layout;

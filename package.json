@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/marcobiedermann/contacts#readme",
   "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
     "codecov": "^3.7.2",
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
@@ -61,7 +64,6 @@
     "i18next": "^19.8.0",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3",

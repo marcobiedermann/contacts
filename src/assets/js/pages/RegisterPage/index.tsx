@@ -1,9 +1,8 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import Label from '../../components/Label';
 
-const RegisterPage = () => {
+const RegisterPage: FC = () => {
   return (
     <Formik
       onSubmit={(values, actions) => {
@@ -34,14 +33,6 @@ const RegisterPage = () => {
       }}
     />
   );
-};
-
-RegisterPage.propTypes = {
-  isSubmitting: PropTypes.bool,
-};
-
-RegisterPage.defaultProps = {
-  isSubmitting: false,
 };
 
 export default RegisterPage;

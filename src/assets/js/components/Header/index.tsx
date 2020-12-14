@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Header = (props) => {
+const Header: FC = (props) => {
   const { children } = props;
   const { i18n } = useTranslation();
 
@@ -23,14 +22,6 @@ const Header = (props) => {
       </ul>
     </header>
   );
-};
-
-Header.propTypes = {
-  children: PropTypes.node,
-};
-
-Header.defaultProps = {
-  children: null,
 };
 
 export default Header;

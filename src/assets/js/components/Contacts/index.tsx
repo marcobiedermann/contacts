@@ -1,9 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import ContactPreview from '../ContactPreview';
+import React, { FC } from 'react';
+import ContactPreview, { ContactPreviewProps } from '../ContactPreview';
 import styles from './style.css';
 
-const Contacts = (props) => {
+export interface ContactsProps {
+  contacts: ContactPreviewProps[];
+}
+
+const Contacts: FC<ContactsProps> = (props) => {
   const { contacts } = props;
 
   return (
@@ -17,18 +20,6 @@ const Contacts = (props) => {
       </ul>
     </div>
   );
-};
-
-Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  ),
-};
-
-Contacts.defaultProps = {
-  contacts: [],
 };
 
 export default Contacts;

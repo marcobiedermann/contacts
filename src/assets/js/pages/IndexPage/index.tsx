@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const IndexPage = () => <div>IndexPage</div>;
+const IndexPage: FC = () => <div>IndexPage</div>;
 
 export default IndexPage;

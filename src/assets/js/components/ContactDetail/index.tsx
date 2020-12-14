@@ -1,10 +1,25 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
-const ContactDetail = (props) => {
+export interface ContactDetailProps {
+  address?: {
+    city: string;
+    country: string;
+    streetAddress: string;
+    zipCode: string;
+  };
+  email?: string;
+  id: string;
+  name: {
+    firstName: string;
+    lastName: string;
+  };
+  phone?: string;
+}
+
+const ContactDetail: FC<ContactDetailProps> = (props) => {
   const { address, email, id, name, phone } = props;
   const { t } = useTranslation();
 
@@ -45,21 +60,6 @@ const ContactDetail = (props) => {
       </ul>
     </div>
   );
-};
-
-ContactDetail.propTypes = {
-  address: PropTypes.shape(),
-  email: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.shape(),
-  phone: PropTypes.string,
-};
-
-ContactDetail.defaultProps = {
-  address: null,
-  email: '',
-  name: null,
-  phone: '',
 };
 
 export default ContactDetail;

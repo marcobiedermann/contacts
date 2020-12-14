@@ -1,10 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import styles from './style.css';
 
-const ContactPreview = (props) => {
+export interface ContactPreviewProps {
+  id: string;
+  name: {
+    firstName: string;
+    lastName: string;
+  };
+}
+
+const ContactPreview: FC<ContactPreviewProps> = (props) => {
   const { id, name } = props;
 
   return (
@@ -16,15 +23,6 @@ const ContactPreview = (props) => {
       </h2>
     </div>
   );
-};
-
-ContactPreview.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.shape(),
-};
-
-ContactPreview.defaultProps = {
-  name: null,
 };
 
 export default ContactPreview;

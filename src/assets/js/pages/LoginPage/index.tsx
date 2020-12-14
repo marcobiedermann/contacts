@@ -1,9 +1,8 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import Label from '../../components/Label';
 
-const LoginPage = (props) => {
+const LoginPage: FC = (props) => {
   const { firebase } = props;
 
   return (
@@ -57,16 +56,6 @@ const LoginPage = (props) => {
       </button>
     </div>
   );
-};
-
-LoginPage.propTypes = {
-  firebase: PropTypes.shape(),
-  isSubmitting: PropTypes.bool,
-};
-
-LoginPage.defaultProps = {
-  firebase: null,
-  isSubmitting: false,
 };
 
 export default LoginPage;
