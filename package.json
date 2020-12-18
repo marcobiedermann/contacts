@@ -11,8 +11,8 @@
     "generate": "npm run generate:css",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm run lint:js",
-    "test": "jest",
-    "test:ci": "npm test && codecov"
+    "report-coverage": "codecov",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
