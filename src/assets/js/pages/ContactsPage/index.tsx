@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Route } from 'react-router-dom';
 import Contacts from '../../components/Contacts';
 import ContactPage from '../../containers/ContactPage';
-import styles from './style.css';
+import styles from './style.module.css';
 
 const ContactsPage: FC = (props) => {
   const { contacts } = props;

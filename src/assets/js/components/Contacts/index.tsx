@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import ContactPreview, { ContactPreviewProps } from '../ContactPreview';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface ContactsProps {
   contacts: ContactPreviewProps[];

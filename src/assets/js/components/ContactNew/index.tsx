@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import * as routes from '../../constants/routes';
 import Label from '../Label';
-import styles from './style.css';
+import styles from './style.module.css';
 
 const ContactNew: FC = (props) => {
   const { isSubmitting } = props;

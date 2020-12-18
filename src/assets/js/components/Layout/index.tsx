@@ -4,7 +4,7 @@ import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import styles from './style.css';
+import styles from './style.module.css';
 
 const Layout: FC = (props) => {
   const { children } = props;
