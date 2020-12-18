@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, LabelHTMLAttributes } from 'react';
 import styles from './style.module.css';
 
-const Label: FC = (props) => {
-  const { htmlFor, ...otherProps } = props;
+export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {}
 
-  return <label className={styles.label} htmlFor={htmlFor} {...otherProps} />;
+const Label: FC<LabelProps> = (props) => {
+  return <label className={styles.label} {...props} />;
 };
 
 export default Label;
