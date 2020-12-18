@@ -1,17 +1,26 @@
 import React, { FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import ContactDetail from '../../components/ContactDetail';
-import EditPage from '../ContactEditPage';
+import Loader from '../../components/Loader';
 
-const ContactPage: FC = (props) => {
-  const { contact } = props;
+interface Params {
+  contactId: string;
+}
 
-  return (
-    <Switch>
-      <Route path="/contacts/:id/edit" component={() => <EditPage contact={contact} />} />
-      <Route path="/contacts/:id" component={() => <ContactDetail {...contact} />} />
-    </Switch>
-  );
+const ContactPage: FC = () => {
+  const { contactId } = useParams<Params>();
+  const firestore = useFirestore();
+  const ref = firestore.doc(`contacts/${contactId}`);
+  const { status, data } = useFirestoreDocDataOnce<any>(ref);
+
+  if (status === 'loading') {
+    return <Loader />;
+  }
+
+  console.log({ data });
+
+  return <ContactDetail {...data} />;
 };
 
 export default ContactPage;

@@ -1,10 +1,16 @@
+import firebase from 'firebase';
 import React, { FC } from 'react';
 import { Redirect } from 'react-router-dom';
+import { useAuth } from 'reactfire';
 
-const LogoutPage: FC = (props) => {
-  const { firebase } = props;
+function signOut(auth: firebase.auth.Auth): void {
+  auth.signOut().then(() => console.log('signed out'));
+}
 
-  firebase.logout();
+const LogoutPage: FC = () => {
+  const auth = useAuth();
+
+  signOut(auth);
 
   return <Redirect to="/" />;
 };

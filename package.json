@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
+    "check": "tsc --noEmit",
     "develop": "webpack serve --config webpack.development.config.js",
     "format": "prettier --write .",
     "generate:css": "tcm -p 'src/**/*.module.css' .",
@@ -69,7 +70,9 @@
     "i18next-xhr-backend": "^3.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-firebaseui": "^4.1.0",
     "react-i18next": "^11.8.4",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "reactfire": "^3.0.0-rc.0"
   }
 }

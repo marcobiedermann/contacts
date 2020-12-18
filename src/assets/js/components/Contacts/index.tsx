@@ -10,7 +10,7 @@ const Contacts: FC<ContactsProps> = (props) => {
   const { contacts } = props;
 
   return (
-    <div className={styles.contacts}>
+    <div>
       <ul className={styles.contacts__list}>
         {contacts.map((contact) => (
           <li className={styles.contacts__item} key={contact.id}>

@@ -1,13 +1,22 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
-import Label from '../../components/Label';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { useAuth } from 'reactfire';
 
-const LoginPage: FC = (props) => {
-  const { firebase } = props;
+const LoginPage: FC = () => {
+  const auth = useAuth;
+
+  const uiConfig = {
+    signInFlow: 'popup',
+    signInOptions: [auth.GoogleAuthProvider.PROVIDER_ID],
+    callbacks: {
+      signInSuccessWithAuthResult: () => false,
+    },
+  };
 
   return (
     <div>
-      <Formik
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
+      {/* <Formik
         initialValues={{
           email: '',
           password: '',
@@ -53,7 +62,7 @@ const LoginPage: FC = (props) => {
       />
       <button onClick={() => firebase.login({ provider: 'github', type: 'popup' })} type="button">
         Login with GitHub
-      </button>
+      </button> */}
     </div>
   );
 };

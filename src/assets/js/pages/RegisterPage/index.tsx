@@ -5,10 +5,16 @@ import Label from '../../components/Label';
 const RegisterPage: FC = () => {
   return (
     <Formik
+      initialValues={{}}
       onSubmit={(values, actions) => {
-        actions.setSubmitting(false);
+        const { setSubmitting } = actions;
+
+        console.log({ values });
+
+        setSubmitting(false);
       }}
-      render={(props) => {
+    >
+      {(props) => {
         const { isSubmitting } = props;
 
         return (
@@ -26,12 +32,14 @@ const RegisterPage: FC = () => {
             </div>
 
             <div>
-              <input type="submit" disabled={isSubmitting} />
+              <button type="submit" disabled={isSubmitting}>
+                Register
+              </button>
             </div>
           </Form>
         );
       }}
-    />
+    </Formik>
   );
 };
 

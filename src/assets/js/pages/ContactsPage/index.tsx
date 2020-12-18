@@ -1,16 +1,23 @@
 import React, { FC } from 'react';
-import { Route } from 'react-router-dom';
+import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import Contacts from '../../components/Contacts';
-import ContactPage from '../../containers/ContactPage';
+import Loader from '../../components/Loader';
 import styles from './style.module.css';
 
-const ContactsPage: FC = (props) => {
-  const { contacts } = props;
+const ContactsPage: FC = () => {
+  const firestore = useFirestore();
+  const ref = firestore.doc('contacts');
+  const { status, data } = useFirestoreDocDataOnce<any>(ref);
+
+  if (status === 'loading') {
+    return <Loader />;
+  }
+
+  console.log({ data });
 
   return (
     <div className={styles['contacts-page']}>
-      <Route path="/contacts/:id" render={(props) => <ContactPage {...props} contactId={props.match.params.id} />} />
-      <Route path="/contacts" component={() => <Contacts contacts={contacts} />} />
+      <Contacts {...data} />
     </div>
   );
 };
