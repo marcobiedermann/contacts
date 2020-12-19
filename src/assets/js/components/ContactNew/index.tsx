@@ -1,19 +1,35 @@
 import { Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFirestore } from 'reactfire';
 import Label from '../Label';
 import styles from './style.module.css';
 
 const ContactNew: FC = () => {
+  const firestore = useFirestore();
+  const contactsCollection = firestore.collection('contacts');
   const { t } = useTranslation();
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={{
+        address: {
+          city: '',
+          country: '',
+          streetAddress: '',
+          zipCode: '',
+        },
+        email: '',
+        name: {
+          firstName: '',
+          lastName: '',
+        },
+        phone: '',
+      }}
       onSubmit={(values, actions) => {
         const { setSubmitting } = actions;
 
-        console.log({ values });
+        contactsCollection.add(values);
 
         setSubmitting(false);
       }}

@@ -63,6 +63,6 @@ export const REGISTER: Route = {
   path: '/register',
 };
 
-const ROUTES: Route[] = [INDEX, CONTACT_EDIT, CONTACT, CONTACT_NEW, CONTACTS, LOGIN, REGISTER];
+const ROUTES: Route[] = [INDEX, CONTACT_EDIT, CONTACT_NEW, CONTACT, CONTACTS, LOGIN, REGISTER];
 
 export default ROUTES;
