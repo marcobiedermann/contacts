@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Label from '../Label';
 import styles from './style.module.css';
 
-const ContactEdit: FC = () => {
+const ContactEdit: FC = (props) => {
   const { t } = useTranslation();
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={props}
       onSubmit={(values, actions) => {
         const { setSubmitting } = actions;
 

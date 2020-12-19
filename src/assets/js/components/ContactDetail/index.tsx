@@ -26,7 +26,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
   return (
     <div>
       <header>
-        <Link to={`${routes.CONTACTS}/${id}/edit`}>{t('common:edit')}</Link>
+        <Link to={`${routes.CONTACTS.path}/${id}/edit`}>{t('common:edit')}</Link>
       </header>
       {name && (
         <h1>

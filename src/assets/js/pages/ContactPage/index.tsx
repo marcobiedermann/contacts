@@ -12,7 +12,9 @@ const ContactPage: FC = () => {
   const { contactId } = useParams<Params>();
   const firestore = useFirestore();
   const ref = firestore.doc(`contacts/${contactId}`);
-  const { status, data } = useFirestoreDocDataOnce<any>(ref);
+  const { status, data } = useFirestoreDocDataOnce<any>(ref, {
+    idField: 'id',
+  });
 
   if (status === 'loading') {
     return <Loader />;
