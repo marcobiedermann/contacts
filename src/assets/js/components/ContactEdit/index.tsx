@@ -1,10 +1,18 @@
 import { Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFirestore } from 'reactfire';
 import Label from '../Label';
 import styles from './style.module.css';
 
-const ContactEdit: FC = (props) => {
+export interface ContactEdit {
+  id: string;
+}
+
+const ContactEdit: FC<ContactEdit> = (props) => {
+  const { id } = props;
+  const firestore = useFirestore;
+  const ref = firestore().doc(`contacts/${id}`);
   const { t } = useTranslation();
 
   return (
@@ -13,7 +21,7 @@ const ContactEdit: FC = (props) => {
       onSubmit={(values, actions) => {
         const { setSubmitting } = actions;
 
-        console.log({ values });
+        ref.update(values);
 
         setSubmitting(false);
       }}
