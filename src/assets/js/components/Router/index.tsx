@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import Layout from '../Layout';
 
 export interface RouterProps {
   routes: {
     exact?: boolean;
-    component: any;
+    component: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
     name: string;
     path: string;
   }[];

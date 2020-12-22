@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { useAuth } from 'reactfire';
 
 function signOut(auth: firebase.auth.Auth): void {
-  auth.signOut().then(() => console.log('signed out'));
+  auth.signOut();
 }
 
 const LogoutPage: FC = () => {

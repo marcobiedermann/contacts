@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import * as routes from '../../constants/routes';
 import styles from './style.module.css';
 
 export interface ContactPreviewProps {
@@ -17,7 +16,7 @@ const ContactPreview: FC<ContactPreviewProps> = (props) => {
   return (
     <div>
       <h2 className={styles.contact__name}>
-        <NavLink to={`${routes.CONTACTS.path}/${id}`} className={styles.contact__link} activeClassName="is-active">
+        <NavLink to={`/contacts/${id}`} className={styles.contact__link} activeClassName="is-active">
           {name.firstName} {name.lastName}
         </NavLink>
       </h2>

@@ -1,6 +1,6 @@
 import 'firebase/database';
 
-const FIREBASE_API_KEY = process.env.FIREBASE_API_KEY;
+const { FIREBASE_API_KEY } = process.env;
 
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,

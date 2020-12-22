@@ -5,11 +5,11 @@ import { useFirestore } from 'reactfire';
 import Label from '../Label';
 import styles from './style.module.css';
 
-export interface ContactEdit {
+export interface ContactEditProps {
   id: string;
 }
 
-const ContactEdit: FC<ContactEdit> = (props) => {
+const ContactEdit: FC<ContactEditProps> = (props) => {
   const { id } = props;
   const firestore = useFirestore;
   const ref = firestore().doc(`contacts/${id}`);
@@ -26,8 +26,9 @@ const ContactEdit: FC<ContactEdit> = (props) => {
         setSubmitting(false);
       }}
     >
-      {(props) => {
-        const { isSubmitting } = props;
+      {(formikProps) => {
+        const { isSubmitting } = formikProps;
+
         return (
           <Form>
             <div className={styles.form__field}>

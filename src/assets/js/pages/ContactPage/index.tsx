@@ -20,8 +20,6 @@ const ContactPage: FC = () => {
     return <Loader />;
   }
 
-  console.log({ data });
-
   return <ContactDetail {...data} />;
 };
 

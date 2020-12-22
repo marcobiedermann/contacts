@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import * as routes from '../../constants/routes';
 
 export interface ContactDetailProps {
   address?: {
@@ -26,7 +25,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
   return (
     <div>
       <header>
-        <Link to={`${routes.CONTACTS.path}/${id}/edit`}>{t('common:edit')}</Link>
+        <Link to={`/contacts/${id}/edit`}>{t('common:edit')}</Link>
       </header>
       {name && (
         <h1>

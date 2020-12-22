@@ -15,8 +15,6 @@ const ContactsPage: FC = () => {
     return <Loader />;
   }
 
-  console.log({ data });
-
   return (
     <div className={styles['contacts-page']}>
       <Contacts contacts={data} />
