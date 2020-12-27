@@ -1,7 +1,8 @@
+import { FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
-import ContactEdit from '../../components/ContactEdit';
+import ContactEdit, { Values } from '../../components/ContactEdit';
 import Loader from '../../components/Loader';
 
 interface Params {
@@ -16,11 +17,21 @@ const ContactEditPage: FC = () => {
     idField: 'id',
   });
 
+  const initialValues: Values = data;
+
+  function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void {
+    const { setSubmitting } = formikHelpers;
+
+    ref.update(values);
+
+    setSubmitting(false);
+  }
+
   if (status === 'loading') {
     return <Loader />;
   }
 
-  return <ContactEdit {...data} />;
+  return <ContactEdit initialValues={initialValues} onSubmit={onSubmit} />;
 };
 
 export default ContactEditPage;

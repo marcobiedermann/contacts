@@ -1,41 +1,37 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFirestore } from 'reactfire';
 import Label from '../Label';
 import styles from './style.module.css';
 
-const ContactNew: FC = () => {
-  const firestore = useFirestore();
-  const contactsCollection = firestore.collection('contacts');
+export interface Values {
+  address: {
+    city: string;
+    country: string;
+    streetAddress: string;
+    zipCode: string;
+  };
+  email: string;
+  name: {
+    firstName: string;
+    lastName: string;
+  };
+  phone: string;
+}
+
+export interface ContactNewProps {
+  initialValues: Values;
+  onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void;
+}
+
+const ContactNew: FC<ContactNewProps> = (props) => {
+  const { initialValues, onSubmit } = props;
   const { t } = useTranslation();
 
   return (
-    <Formik
-      initialValues={{
-        address: {
-          city: '',
-          country: '',
-          streetAddress: '',
-          zipCode: '',
-        },
-        email: '',
-        name: {
-          firstName: '',
-          lastName: '',
-        },
-        phone: '',
-      }}
-      onSubmit={(values, actions) => {
-        const { setSubmitting } = actions;
-
-        contactsCollection.add(values);
-
-        setSubmitting(false);
-      }}
-    >
-      {(props) => {
-        const { isSubmitting } = props;
+    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+      {(formikProps) => {
+        const { isSubmitting } = formikProps;
 
         return (
           <Form className={styles.form}>

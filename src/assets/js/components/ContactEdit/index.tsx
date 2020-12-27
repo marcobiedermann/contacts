@@ -1,31 +1,35 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFirestore } from 'reactfire';
 import Label from '../Label';
 import styles from './style.module.css';
 
+export interface Values {
+  address: {
+    city: string;
+    country: string;
+    streetAddress: string;
+    zipCode: string;
+  };
+  email: string;
+  name: {
+    firstName: string;
+    lastName: string;
+  };
+  phone: string;
+}
+
 export interface ContactEditProps {
-  id: string;
+  initialValues: Values;
+  onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void;
 }
 
 const ContactEdit: FC<ContactEditProps> = (props) => {
-  const { id } = props;
-  const firestore = useFirestore;
-  const ref = firestore().doc(`contacts/${id}`);
+  const { initialValues, onSubmit } = props;
   const { t } = useTranslation();
 
   return (
-    <Formik
-      initialValues={props}
-      onSubmit={(values, actions) => {
-        const { setSubmitting } = actions;
-
-        ref.update(values);
-
-        setSubmitting(false);
-      }}
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {(formikProps) => {
         const { isSubmitting } = formikProps;
 
