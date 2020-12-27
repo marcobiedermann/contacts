@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import Dotenv from 'dotenv-webpack';
+import { resolve } from 'path';
+import { Configuration } from 'webpack';
 
-const Dotenv = require('dotenv-webpack');
-const path = require('path');
-
-module.exports = {
+const config: Configuration = {
   entry: {
-    main: [path.resolve(__dirname, './src/assets/js/index')],
+    main: [resolve(__dirname, 'src/assets/js/index')],
   },
   output: {
     filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, './dist'),
+    path: resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -29,3 +28,5 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
+
+export default config;
