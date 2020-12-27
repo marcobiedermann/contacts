@@ -30,7 +30,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
         const { isSubmitting } = formikProps;
 
         return (
-          <Form>
+          <Form className={styles.form}>
             <div className={styles.form__field}>
               <Label htmlFor="name.firstName">Firstname</Label>
               <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />

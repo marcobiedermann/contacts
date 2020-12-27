@@ -1,19 +1,25 @@
+import classNames from 'classnames';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { CONTACTS, CONTACT_NEW, INDEX, LOGIN, LOGOUT, REGISTER } from '../../constants/routes';
+import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, REGISTER } from '../../constants/routes';
+import styles from './style.module.css';
 
-const Navigation: FC = () => {
+export interface NavigationProps {
+  inline?: boolean;
+}
+
+const Navigation: FC<NavigationProps> = (props) => {
+  const { inline } = props;
   const { t } = useTranslation();
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to={INDEX.path} activeClassName="is-active" exact>
-            {t('pages:home')}
-          </NavLink>
-        </li>
+    <nav className={styles.navigation}>
+      <ul
+        className={classNames(styles.navigation__list, {
+          [styles['navigation__list--inline']]: inline,
+        })}
+      >
         <li>
           <NavLink to={CONTACTS.path} activeClassName="is-active" exact>
             {t('pages:contacts')}

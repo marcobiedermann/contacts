@@ -13,7 +13,7 @@ const Layout: FC = (props) => {
     <div className={styles.layout}>
       <Header>
         <Grid>
-          <Navigation />
+          <Navigation inline />
         </Grid>
       </Header>
       <Main>

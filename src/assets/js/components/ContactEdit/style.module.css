@@ -1,10 +1,11 @@
 .form {
   display: grid;
+  gap: 1em;
 }
 
 .form__field {
   display: grid;
-  grid-gap: 1em;
+  gap: 1em;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: min-content;
 }
