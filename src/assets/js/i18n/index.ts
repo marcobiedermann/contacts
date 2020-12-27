@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .init({
     backend: {
-      loadPath: 'assets/data/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'data/locales/{{lng}}/{{ns}}.json',
     },
     debug: true,
     fallbackLng: 'en',

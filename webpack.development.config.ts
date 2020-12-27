@@ -5,7 +5,7 @@ import baseConfig from './webpack.config';
 
 const config: Configuration = {
   devServer: {
-    contentBase: 'client',
+    contentBase: 'public',
     historyApiFallback: true,
     open: true,
   },

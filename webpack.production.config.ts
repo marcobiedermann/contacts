@@ -1,3 +1,4 @@
+import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { Configuration } from 'webpack';
@@ -34,6 +35,13 @@ const config: Configuration = {
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public',
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       minify: {
         caseSensitive: false,
