@@ -4,5 +4,6 @@
   "login": "Login",
   "logout": "Logout",
   "new": "New",
-  "register": "Register"
+  "register": "Register",
+  "settings": "Settings"
 }

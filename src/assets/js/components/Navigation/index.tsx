@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, REGISTER } from '../../constants/routes';
+import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, REGISTER, SETTINGS } from '../../constants/routes';
 import styles from './style.module.css';
 
 export interface NavigationProps {
@@ -28,6 +28,11 @@ const Navigation: FC<NavigationProps> = (props) => {
         <li>
           <NavLink to={CONTACT_NEW.path} activeClassName="is-active" exact>
             {t('pages:new')}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={SETTINGS.path} activeClassName="is-active" exact>
+            {t('pages:settings')}
           </NavLink>
         </li>
         <li>

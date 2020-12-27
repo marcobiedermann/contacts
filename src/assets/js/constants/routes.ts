@@ -6,6 +6,7 @@ import IndexPage from '../pages/IndexPage';
 import LoginPage from '../pages/LoginPage';
 import LogoutPage from '../pages/LogoutPage';
 import RegisterPage from '../pages/RegisterPage';
+import SettingsPage from '../pages/Settings';
 
 interface Route {
   component: any;
@@ -63,6 +64,12 @@ export const REGISTER: Route = {
   path: '/register',
 };
 
-const ROUTES: Route[] = [INDEX, CONTACT_EDIT, CONTACT_NEW, CONTACT, CONTACTS, LOGIN, REGISTER];
+export const SETTINGS: Route = {
+  component: SettingsPage,
+  name: 'Settings',
+  path: '/settings',
+};
+
+const ROUTES: Route[] = [INDEX, CONTACT_EDIT, CONTACT_NEW, CONTACT, CONTACTS, LOGIN, REGISTER, SETTINGS];
 
 export default ROUTES;
