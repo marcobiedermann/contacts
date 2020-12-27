@@ -1,25 +1,10 @@
 import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import LanguageSwitch from '../../components/LanguageSwitch';
 
-const SettingsPage: FC = () => {
-  const { i18n } = useTranslation();
-
-  return (
-    <div>
-      <ul>
-        <li>
-          <button type="button" onClick={() => i18n.changeLanguage('en')}>
-            en
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={() => i18n.changeLanguage('de')}>
-            de
-          </button>
-        </li>
-      </ul>
-    </div>
-  );
-};
+const SettingsPage: FC = () => (
+  <div>
+    <LanguageSwitch languages={['en', 'de']} />
+  </div>
+);
 
 export default SettingsPage;
