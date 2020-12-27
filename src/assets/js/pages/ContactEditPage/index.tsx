@@ -9,11 +9,31 @@ interface Params {
   contactId: string;
 }
 
+interface Address {
+  city: string;
+  country: string;
+  streetAddress: string;
+  zipCode: string;
+}
+
+interface Name {
+  firstName: string;
+  lastName: string;
+}
+
+interface Document {
+  address: Address;
+  email: string;
+  id: string;
+  name: Name;
+  phone: string;
+}
+
 const ContactEditPage: FC = () => {
   const { contactId } = useParams<Params>();
   const firestore = useFirestore();
   const ref = firestore.doc(`contacts/${contactId}`);
-  const { status, data } = useFirestoreDocDataOnce<any>(ref, {
+  const { status, data } = useFirestoreDocDataOnce<Document>(ref, {
     idField: 'id',
   });
 
