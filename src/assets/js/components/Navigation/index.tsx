@@ -2,15 +2,20 @@ import classNames from 'classnames';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, REGISTER, SETTINGS } from '../../constants/routes';
 import styles from './style.module.css';
+
+interface Route {
+  name: string;
+  path: string;
+}
 
 export interface NavigationProps {
   inline?: boolean;
+  routes: Route[];
 }
 
 const Navigation: FC<NavigationProps> = (props) => {
-  const { inline } = props;
+  const { inline, routes } = props;
   const { t } = useTranslation();
 
   return (
@@ -20,36 +25,17 @@ const Navigation: FC<NavigationProps> = (props) => {
           [styles['navigation__list--inline']]: inline,
         })}
       >
-        <li>
-          <NavLink to={CONTACTS.path} activeClassName="is-active" exact>
-            {t('pages:contacts')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={CONTACT_NEW.path} activeClassName="is-active" exact>
-            {t('pages:new')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={SETTINGS.path} activeClassName="is-active" exact>
-            {t('pages:settings')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={LOGIN.path} activeClassName="is-active" exact>
-            {t('pages:login')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={REGISTER.path} activeClassName="is-active" exact>
-            {t('pages:register')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={LOGOUT.path} activeClassName="is-active" exact>
-            {t('pages:logout')}
-          </NavLink>
-        </li>
+        {routes.map((route) => {
+          const { name, path } = route;
+
+          return (
+            <li key={path}>
+              <NavLink to={path} activeClassName="is-active" exact>
+                {t(name)}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
