@@ -1,6 +1,7 @@
 import { FormikHelpers } from 'formik';
 import React, { FC } from 'react';
-import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link, useParams } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import ContactEdit, { Values } from '../../components/ContactEdit';
 import Loader from '../../components/Loader';
@@ -36,6 +37,7 @@ const ContactEditPage: FC = () => {
   const { status, data } = useFirestoreDocDataOnce<Document>(ref, {
     idField: 'id',
   });
+  const { t } = useTranslation();
 
   const initialValues: Values = data;
 
@@ -51,7 +53,14 @@ const ContactEditPage: FC = () => {
     return <Loader />;
   }
 
-  return <ContactEdit initialValues={initialValues} onSubmit={onSubmit} />;
+  return (
+    <div>
+      <header>
+        <Link to={`/contacts/${contactId}`}>{t('common:cancel')}</Link>
+      </header>
+      <ContactEdit initialValues={initialValues} onSubmit={onSubmit} />
+    </div>
+  );
 };
 
 export default ContactEditPage;

@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import Contacts from '../../components/Contacts';
 import Loader from '../../components/Loader';
+import ContactEditPage from '../ContactEditPage';
+import ContactNewPage from '../ContactNewPage';
+import ContactPage from '../ContactPage';
 import styles from './style.module.css';
 
 interface Address {
@@ -38,6 +42,17 @@ const ContactsPage: FC = () => {
   return (
     <div className={styles['contacts-page']}>
       <Contacts contacts={data} />
+      <Switch>
+        <Route path="/contacts/:contactId/edit">
+          <ContactEditPage />
+        </Route>
+        <Route path="/contacts/new">
+          <ContactNewPage />
+        </Route>
+        <Route path="/contacts/:contactId">
+          <ContactPage />
+        </Route>
+      </Switch>
     </div>
   );
 };
