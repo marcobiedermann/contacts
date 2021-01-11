@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import ContactDetail from '../../components/ContactDetail';
@@ -39,12 +41,20 @@ const ContactPage: FC<RouteComponentProps<Params>> = (props) => {
   const { status, data } = useFirestoreDocDataOnce<Document>(ref, {
     idField: 'id',
   });
+  const { t } = useTranslation();
 
   if (status === 'loading') {
     return <Loader />;
   }
 
-  return <ContactDetail {...data} />;
+  return (
+    <div>
+      <Helmet>
+        <title>{t('pages:contact')}</title>
+      </Helmet>
+      <ContactDetail {...data} />
+    </div>
+  );
 };
 
 export default ContactPage;

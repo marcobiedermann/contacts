@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import Contacts from '../../components/Contacts';
@@ -34,6 +36,7 @@ const ContactsPage: FC<RouteComponentProps> = () => {
   const { data, status } = useFirestoreCollectionData<Document>(ref, {
     idField: 'id',
   });
+  const { t } = useTranslation();
 
   if (status === 'loading') {
     return <Loader />;
@@ -41,6 +44,9 @@ const ContactsPage: FC<RouteComponentProps> = () => {
 
   return (
     <div className={styles['contacts-page']}>
+      <Helmet>
+        <title>{t('pages:contacts')}</title>
+      </Helmet>
       <Contacts contacts={data} />
       <Switch>
         <Route path="/contacts/:contactId/edit" component={ContactEditPage} />

@@ -30,13 +30,13 @@ export const CONTACTS: Route = {
 
 export const CONTACT: Route = {
   component: ContactPage,
-  name: 'Contact',
+  name: 'pages:contact',
   path: '/contacts/:contactId',
 };
 
 export const CONTACT_EDIT: Route = {
   component: ContactEditPage,
-  name: 'Edit',
+  name: 'pages:edit',
   path: '/contacts/:contactId/edit',
 };
 

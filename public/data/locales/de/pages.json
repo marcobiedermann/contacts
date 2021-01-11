@@ -1,6 +1,8 @@
 {
-  "home": "Home",
+  "contact": "Kontakt",
   "contacts": "Kontakte",
+  "edit": "Bearbeiten",
+  "home": "Home",
   "login": "Einloggen",
   "logout": "Ausloggen",
   "new": "Neu",

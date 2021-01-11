@@ -1,5 +1,6 @@
 import { FormikHelpers } from 'formik';
 import React, { FC } from 'react';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
@@ -59,6 +60,9 @@ const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>{t('pages:edit')}</title>
+      </Helmet>
       <header>
         <Link to={`/contacts/${contactId}`}>{t('common:cancel')}</Link>
       </header>
