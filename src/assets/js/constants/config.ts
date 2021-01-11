@@ -1,6 +1,6 @@
 import { name, version } from '../../../../package.json';
 
-const { FIREBASE_API_KEY, NODE_ENV } = process.env;
+const { NODE_ENV } = process.env;
 
 interface Config {
   environment: string;
@@ -14,7 +14,8 @@ interface Config {
 const config: Config = {
   environment: NODE_ENV || 'development',
   firebase: {
-    apiKey: FIREBASE_API_KEY,
+    apiKey: process.env.FIREBASE_API_KEY,
+    appId: '1:131106526511:web:8603a3c9e0b29bc1297dda',
     authDomain: 'contacts-27c78.firebaseapp.com',
     databaseURL: 'https://contacts-27c78.firebaseio.com',
     messagingSenderId: '131106526511',
