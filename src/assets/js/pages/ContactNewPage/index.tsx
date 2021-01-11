@@ -1,9 +1,10 @@
 import { FormikHelpers } from 'formik';
 import React, { FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { useFirestore } from 'reactfire';
 import ContactNew, { Values } from '../../components/ContactNew';
 
-const ContactNewPage: FC = () => {
+const ContactNewPage: FC<RouteComponentProps> = () => {
   const firestore = useFirestore();
   const contactsCollection = firestore.collection('contacts');
 

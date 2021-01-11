@@ -1,7 +1,7 @@
 import { FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import ContactEdit, { Values } from '../../components/ContactEdit';
 import Loader from '../../components/Loader';
@@ -30,8 +30,12 @@ interface Document {
   phone: string;
 }
 
-const ContactEditPage: FC = () => {
-  const { contactId } = useParams<Params>();
+const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
+  const {
+    match: {
+      params: { contactId },
+    },
+  } = props;
   const firestore = useFirestore();
   const ref = firestore.doc(`contacts/${contactId}`);
   const { status, data } = useFirestoreDocDataOnce<Document>(ref, {

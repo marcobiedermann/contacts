@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 
-const IndexPage: FC = () => <Redirect to="/contacts" />;
+const IndexPage: FC<RouteComponentProps> = () => <Redirect to="/contacts" />;
 
 export default IndexPage;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import Contacts from '../../components/Contacts';
 import Loader from '../../components/Loader';
@@ -28,7 +28,7 @@ interface Document {
   phone: string;
 }
 
-const ContactsPage: FC = () => {
+const ContactsPage: FC<RouteComponentProps> = () => {
   const firestore = useFirestore();
   const ref = firestore.collection('contacts');
   const { data, status } = useFirestoreCollectionData<Document>(ref, {
@@ -43,15 +43,9 @@ const ContactsPage: FC = () => {
     <div className={styles['contacts-page']}>
       <Contacts contacts={data} />
       <Switch>
-        <Route path="/contacts/:contactId/edit">
-          <ContactEditPage />
-        </Route>
-        <Route path="/contacts/new">
-          <ContactNewPage />
-        </Route>
-        <Route path="/contacts/:contactId">
-          <ContactPage />
-        </Route>
+        <Route path="/contacts/:contactId/edit" component={ContactEditPage} />
+        <Route path="/contacts/new" component={ContactNewPage} />
+        <Route path="/contacts/:contactId" component={ContactPage} />
       </Switch>
     </div>
   );

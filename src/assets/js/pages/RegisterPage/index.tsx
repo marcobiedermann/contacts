@@ -1,8 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import Label from '../../components/Label';
 
-const RegisterPage: FC = () => (
+const RegisterPage: FC<RouteComponentProps> = () => (
   <Formik
     initialValues={{}}
     onSubmit={(_values, actions) => {

@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { RouteComponentProps } from 'react-router-dom';
 import { useAuth } from 'reactfire';
 
-const LoginPage: FC = () => {
+const LoginPage: FC<RouteComponentProps> = () => {
   const auth = useAuth;
 
   const uiConfig = {
