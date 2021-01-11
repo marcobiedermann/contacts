@@ -1,8 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`label component renders correctly 1`] = `
-<label
-  className="label"
-  htmlFor="input"
-/>
-`;
+exports[`label component renders correctly 1`] = `[Function]`;

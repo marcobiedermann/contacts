@@ -1,13 +1,13 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Label from '.';
 
 describe('label component', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const tree = renderer.create(<Label htmlFor="input" />).toJSON();
+    const { asFragment } = render(<Label htmlFor="input" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment).toMatchSnapshot();
   });
 });
