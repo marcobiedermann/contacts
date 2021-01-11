@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/marcobiedermann/contacts#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.3",
     "@types/classnames": "^2.2.11",
     "@types/copy-webpack-plugin": "^6.4.0",
     "@types/dotenv-webpack": "^5.0.0",
@@ -77,8 +79,6 @@
   "dependencies": {
     "@sentry/react": "^5.29.2",
     "@sentry/tracing": "^5.29.2",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.3",
     "classnames": "^2.2.6",
     "firebase": "^8.2.2",
     "formik": "^2.2.6",
