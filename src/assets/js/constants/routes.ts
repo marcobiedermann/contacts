@@ -18,13 +18,13 @@ interface Route {
 export const INDEX: Route = {
   component: IndexPage,
   exact: true,
-  name: 'Home',
+  name: 'pages:home',
   path: '/',
 };
 
 export const CONTACTS: Route = {
   component: ContactsPage,
-  name: 'Contacts',
+  name: 'pages:contacts',
   path: '/contacts',
 };
 
@@ -42,31 +42,31 @@ export const CONTACT_EDIT: Route = {
 
 export const CONTACT_NEW: Route = {
   component: ContactNewPage,
-  name: 'New',
+  name: 'pages:new',
   path: '/contacts/new',
 };
 
 export const LOGIN: Route = {
   component: LoginPage,
-  name: 'Login',
+  name: 'pages:login',
   path: '/login',
 };
 
 export const LOGOUT: Route = {
   component: LogoutPage,
-  name: 'Logout',
+  name: 'pages:logout',
   path: '/logout',
 };
 
 export const REGISTER: Route = {
   component: RegisterPage,
-  name: 'Register',
+  name: 'pages:register',
   path: '/register',
 };
 
 export const SETTINGS: Route = {
   component: SettingsPage,
-  name: 'Settings',
+  name: 'pages:settings',
   path: '/settings',
 };
 
