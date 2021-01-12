@@ -1,3 +1,4 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -35,6 +36,7 @@ const config: Configuration = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         {
