@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
-import baseConfig from './webpack.config';
+import baseConfig, { paths } from './webpack.config';
 
 const config: Configuration = {
   devServer: {
@@ -35,7 +35,7 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: `${paths.src}/index.html`,
     }),
   ],
 };
