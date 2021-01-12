@@ -2,6 +2,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import baseConfig, { paths } from './webpack.config';
@@ -37,6 +38,10 @@ const config: Configuration = {
         ],
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
