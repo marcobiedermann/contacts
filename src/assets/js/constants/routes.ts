@@ -70,6 +70,6 @@ export const SETTINGS: Route = {
   path: '/settings',
 };
 
-const ROUTES: Route[] = [INDEX, CONTACTS, LOGIN, REGISTER, SETTINGS];
+const ROUTES: Route[] = [INDEX, CONTACTS, LOGIN, LOGOUT, REGISTER, SETTINGS];
 
 export default ROUTES;
