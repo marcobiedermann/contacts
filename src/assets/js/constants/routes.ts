@@ -1,12 +1,4 @@
-import ContactEditPage from '../pages/ContactEditPage';
-import ContactNewPage from '../pages/ContactNewPage';
-import ContactPage from '../pages/ContactPage';
-import ContactsPage from '../pages/ContactsPage';
-import IndexPage from '../pages/IndexPage';
-import LoginPage from '../pages/LoginPage';
-import LogoutPage from '../pages/LogoutPage';
-import RegisterPage from '../pages/RegisterPage';
-import SettingsPage from '../pages/Settings';
+import { lazy } from 'react';
 
 interface Route {
   component: any;
@@ -16,56 +8,56 @@ interface Route {
 }
 
 export const INDEX: Route = {
-  component: IndexPage,
+  component: lazy(() => import('../pages/IndexPage')),
   exact: true,
   name: 'pages:home',
   path: '/',
 };
 
 export const CONTACTS: Route = {
-  component: ContactsPage,
+  component: lazy(() => import('../pages/ContactsPage')),
   name: 'pages:contacts',
   path: '/contacts',
 };
 
 export const CONTACT: Route = {
-  component: ContactPage,
+  component: lazy(() => import('../pages/ContactPage')),
   name: 'pages:contact',
   path: '/contacts/:contactId',
 };
 
 export const CONTACT_EDIT: Route = {
-  component: ContactEditPage,
+  component: lazy(() => import('../pages/ContactEditPage')),
   name: 'pages:edit',
   path: '/contacts/:contactId/edit',
 };
 
 export const CONTACT_NEW: Route = {
-  component: ContactNewPage,
+  component: lazy(() => import('../pages/ContactNewPage')),
   name: 'pages:new',
   path: '/contacts/new',
 };
 
 export const LOGIN: Route = {
-  component: LoginPage,
+  component: lazy(() => import('../pages/LoginPage')),
   name: 'pages:login',
   path: '/login',
 };
 
 export const LOGOUT: Route = {
-  component: LogoutPage,
+  component: lazy(() => import('../pages/LogoutPage')),
   name: 'pages:logout',
   path: '/logout',
 };
 
 export const REGISTER: Route = {
-  component: RegisterPage,
+  component: lazy(() => import('../pages/RegisterPage')),
   name: 'pages:register',
   path: '/register',
 };
 
 export const SETTINGS: Route = {
-  component: SettingsPage,
+  component: lazy(() => import('../pages/Settings')),
   name: 'pages:settings',
   path: '/settings',
 };
