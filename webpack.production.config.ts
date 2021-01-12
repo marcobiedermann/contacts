@@ -32,9 +32,6 @@ const config: Configuration = {
               sourceMap: true,
             },
           },
-          {
-            loader: 'postcss-loader',
-          },
         ],
       },
     ],
@@ -86,7 +83,7 @@ const config: Configuration = {
       template: `${paths.src}/index.html`,
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: 'assets/css/[name].[contenthash:8].css',
     }),
   ],
 };

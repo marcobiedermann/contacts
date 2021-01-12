@@ -14,7 +14,7 @@ const config: Configuration = {
     main: [`${paths.src}/assets/js/index`],
   },
   output: {
-    filename: 'assets/js/[name].js',
+    filename: 'assets/js/[name].[contenthash:8].js',
     path: paths.dist,
   },
   module: {
