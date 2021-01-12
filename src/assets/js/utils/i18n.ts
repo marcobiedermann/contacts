@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-xhr-backend';
 import { initReactI18next } from 'react-i18next';
-import { isDevelopment } from '../utiles/environment';
+import { isDevelopment } from './environment';
 
 i18n
   .use(Backend)
