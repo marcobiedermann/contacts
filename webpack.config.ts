@@ -1,6 +1,7 @@
 import Dotenv from 'dotenv-webpack';
 import { resolve } from 'path';
 import { Configuration } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const paths = {
   dist: resolve(__dirname, 'dist'),
@@ -30,6 +31,7 @@ const config: Configuration = {
     ],
   },
   plugins: [
+    new BundleAnalyzerPlugin(),
     new Dotenv({
       systemvars: true,
     }),
