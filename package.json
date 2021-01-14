@@ -1,8 +1,8 @@
 {
   "name": "contacts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Contact management tool built using React, Firebase and TypeScript.",
+  "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.config.ts",
     "check": "tsc --noEmit",
@@ -19,8 +19,14 @@
     "type": "git",
     "url": "git+https://github.com/marcobiedermann/contacts.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "app",
+    "contacts",
+    "firebase",
+    "react",
+    "typescript"
+  ],
+  "author": "Marco Biedermann",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcobiedermann/contacts/issues"
