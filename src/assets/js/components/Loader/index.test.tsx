@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Label from '.';
+import Loader from '.';
 
-describe('label component', () => {
+describe('loader component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Label htmlFor="input">Label</Label>);
+    const { asFragment } = render(<Loader />);
 
     expect(asFragment()).toMatchSnapshot();
   });

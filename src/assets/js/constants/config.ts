@@ -1,7 +1,5 @@
 import { name, version } from '../../../../package.json';
 
-const { NODE_ENV } = process.env;
-
 interface Config {
   environment: string;
   firebase: {
@@ -12,7 +10,7 @@ interface Config {
 }
 
 const config: Config = {
-  environment: NODE_ENV || 'development',
+  environment: process.env.NODE_ENV || 'development',
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY,
     appId: '1:131106526511:web:8603a3c9e0b29bc1297dda',

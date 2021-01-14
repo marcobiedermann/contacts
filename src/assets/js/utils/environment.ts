@@ -1,11 +1,9 @@
-import config from '../constants/config';
-
-function isDevelopment(): boolean {
-  return config.environment === 'development';
+function isDevelopment(environment: string): boolean {
+  return environment === 'development';
 }
 
-function isProduction(): boolean {
-  return config.environment === 'production';
+function isProduction(environment: string): boolean {
+  return environment === 'production';
 }
 
 export { isDevelopment, isProduction };

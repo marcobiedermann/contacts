@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigation component should render correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="navigation"
+  >
+    <ul
+      class="navigation__list"
+    >
+      <li>
+        <a
+          aria-current="page"
+          class="is-active"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

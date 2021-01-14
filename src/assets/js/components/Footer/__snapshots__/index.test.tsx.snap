@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`footer component renders correctly 1`] = `[Function]`;
+exports[`footer component should render correctly 1`] = `
+<DocumentFragment>
+  <footer>
+    Footer
+  </footer>
+</DocumentFragment>
+`;

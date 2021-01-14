@@ -3,11 +3,11 @@ import React from 'react';
 import Main from '.';
 
 describe('main component', () => {
-  it('renders correctly', () => {
+  it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Main />);
+    const { asFragment } = render(<Main>Main</Main>);
 
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

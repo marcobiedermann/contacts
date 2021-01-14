@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contact preview component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="contact__name"
+    >
+      <a
+        class="contact__link"
+        href="/contacts/1"
+      >
+        John Doe
+      </a>
+    </h2>
+  </div>
+</DocumentFragment>
+`;

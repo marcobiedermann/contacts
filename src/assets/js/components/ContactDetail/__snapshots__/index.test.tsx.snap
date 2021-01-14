@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contact detail component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <header>
+      <a
+        href="/contacts/1/edit"
+      >
+        common:edit
+      </a>
+    </header>
+    <h1>
+      John Doe
+    </h1>
+    <ul
+      class="details"
+    >
+      <li>
+        <a
+          href="tel:+1 234 56789"
+        >
+          +1 234 56789
+        </a>
+      </li>
+      <li>
+        <a
+          href="mailto:john.doe@gmail.com"
+        >
+          john.doe@gmail.com
+        </a>
+      </li>
+      <li>
+        <address>
+          <a
+            href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Main Street
+            <br />
+            10001 New York City
+            <br />
+            USA
+          </a>
+        </address>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

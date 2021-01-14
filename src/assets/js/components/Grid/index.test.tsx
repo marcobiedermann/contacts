@@ -3,11 +3,11 @@ import React from 'react';
 import Grid from '.';
 
 describe('grid component', () => {
-  it('renders correctly', () => {
+  it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Grid />);
+    const { asFragment } = render(<Grid>Grid</Grid>);
 
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

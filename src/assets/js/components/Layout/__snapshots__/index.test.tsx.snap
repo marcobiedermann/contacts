@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="layout"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="grid"
+      >
+        <nav
+          class="navigation"
+        >
+          <ul
+            class="navigation__list navigation__list--inline"
+          >
+            <li>
+              <a
+                href="/contacts"
+              >
+                pages:contacts
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contacts/new"
+              >
+                pages:new
+              </a>
+            </li>
+            <li>
+              <a
+                href="/settings"
+              >
+                pages:settings
+              </a>
+            </li>
+            <li>
+              <a
+                href="/login"
+              >
+                pages:login
+              </a>
+            </li>
+            <li>
+              <a
+                href="/logout"
+              >
+                pages:logout
+              </a>
+            </li>
+            <li>
+              <a
+                href="/register"
+              >
+                pages:register
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main
+      class="main"
+    >
+      <div
+        class="grid"
+      >
+        Layout
+      </div>
+    </main>
+    <footer>
+      <div
+        class="grid"
+      >
+        Footer
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

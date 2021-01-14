@@ -1,4 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import type { Config } from '@jest/types';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:

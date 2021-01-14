@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`grid component should render correctly 1`] = `
+exports[`login page component should redirect to \`/\` 1`] = `
 <DocumentFragment>
-  <div
-    class="grid"
-  >
-    Grid
+  <div>
+    loading …
   </div>
 </DocumentFragment>
 `;

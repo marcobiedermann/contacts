@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setting page component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <ul>
+      <li>
+        <button
+          type="button"
+        >
+          en
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+        >
+          de
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

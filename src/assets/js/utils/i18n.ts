@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-xhr-backend';
 import { initReactI18next } from 'react-i18next';
+import config from '../constants/config';
 import { isDevelopment } from './environment';
 
 i18n
@@ -12,7 +13,7 @@ i18n
     backend: {
       loadPath: 'data/locales/{{lng}}/{{ns}}.json',
     },
-    debug: isDevelopment(),
+    debug: isDevelopment(config.environment),
     fallbackLng: 'en',
     load: 'languageOnly',
     interpolation: {
