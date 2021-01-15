@@ -1,14 +1,17 @@
 import React, { FC } from 'react';
 
 export interface AddressProps {
-  city: string;
-  country: string;
-  streetAddress: string;
-  zipCode: string;
+  value: {
+    city: string;
+    country: string;
+    streetAddress: string;
+    zipCode: string;
+  };
 }
 
 const Address: FC<AddressProps> = (props) => {
-  const { city, country, streetAddress, zipCode } = props;
+  const { value } = props;
+  const { city, country, streetAddress, zipCode } = value;
 
   return (
     <address>

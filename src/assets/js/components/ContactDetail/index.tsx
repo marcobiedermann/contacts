@@ -1,13 +1,18 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Address, { AddressProps } from '../Address';
+import Address from '../Address';
 import Email from '../Email';
 import Phone from '../Phone';
 import styles from './style.module.css';
 
 export interface ContactDetailProps {
-  address?: AddressProps;
+  address?: {
+    city: string;
+    country: string;
+    streetAddress: string;
+    zipCode: string;
+  };
   email?: string;
   id: string;
   name: {
@@ -44,7 +49,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
         )}
         {address && (
           <li>
-            <Address {...address} />
+            <Address value={address} />
           </li>
         )}
       </ul>

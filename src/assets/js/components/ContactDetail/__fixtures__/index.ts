@@ -9,7 +9,7 @@ const props: ContactDetailProps = {
     firstName: 'John',
     lastName: 'Doe',
   },
-  address,
+  address: address.value,
   email: email.value,
   phone: phone.value,
 };
