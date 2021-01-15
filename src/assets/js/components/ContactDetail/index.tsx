@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Address, { AddressProps } from '../Address';
+import Email from '../Email';
 import styles from './style.module.css';
 
 export interface ContactDetailProps {
@@ -37,7 +38,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
         )}
         {email && (
           <li>
-            <a href={`mailto:${email}`}>{email}</a>
+            <Email value={email} />
           </li>
         )}
         {address && (
