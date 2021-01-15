@@ -1,4 +1,5 @@
 import { ContactDetailProps } from '..';
+import address from '../../Address/__fixtures__';
 
 const props: ContactDetailProps = {
   id: '1',
@@ -6,12 +7,7 @@ const props: ContactDetailProps = {
     firstName: 'John',
     lastName: 'Doe',
   },
-  address: {
-    city: 'New York City',
-    country: 'USA',
-    streetAddress: 'Main Street',
-    zipCode: '10001',
-  },
+  address,
   email: 'john.doe@gmail.com',
   phone: '+1 234 56789',
 };

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`address component should render correctly 1`] = `
+<DocumentFragment>
+  <address>
+    <a
+      href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Main Street
+      <br />
+      10001 New York City
+      <br />
+      USA
+    </a>
+  </address>
+</DocumentFragment>
+`;

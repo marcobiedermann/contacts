@@ -1,15 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import Address, { AddressProps } from '../Address';
 import styles from './style.module.css';
 
 export interface ContactDetailProps {
-  address?: {
-    city: string;
-    country: string;
-    streetAddress: string;
-    zipCode: string;
-  };
+  address?: AddressProps;
   email?: string;
   id: string;
   name: {
@@ -46,21 +42,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
         )}
         {address && (
           <li>
-            <address>
-              <a
-                href={`https://maps.google.com/?q=${encodeURIComponent(address.streetAddress)} ${address.zipCode} ${
-                  address.city
-                } ${address.country}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {address.streetAddress}
-                <br />
-                {address.zipCode} {address.city}
-                <br />
-                {address.country}
-              </a>
-            </address>
+            <Address {...address} />
           </li>
         )}
       </ul>
