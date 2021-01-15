@@ -12,6 +12,7 @@ Contact management tool built using React, Firebase and TypeScript.
 
 - [Setup](#setup)
 - [Usage](#usage)
+- [Models](#models)
 - [License](#license)
 
 ## Setup
@@ -46,6 +47,44 @@ Run tests using [Jest](https://jestjs.io/) testing framework.
 
 ```sh
 npm test
+```
+
+## Models
+
+### Contact
+
+Contact model structure containing example data.
+
+```json
+{
+  "name": {
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "addresses": [
+    {
+      "type": "home",
+      "value": {
+        "city": "New York City",
+        "country": "US",
+        "street": "Main Street 1",
+        "zip": "12345"
+      }
+    }
+  ],
+  "emails": [
+    {
+      "type": "home",
+      "value": "john.doe@gmail.com"
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "value": "+1 234 56789"
+    }
+  ]
+}
 ```
 
 ## License
