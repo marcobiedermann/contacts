@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface LanguageSwitchProps {
+export interface LanguageSwitchProps {
   languages: string[];
 }
 
