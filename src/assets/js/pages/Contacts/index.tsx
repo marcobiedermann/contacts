@@ -1,13 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, lazy } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import Contacts from '../../components/Contacts';
 import Loader from '../../components/Loader';
-import ContactEditPage from '../ContactEditPage';
-import ContactNewPage from '../ContactNewPage';
-import ContactPage from '../ContactPage';
 import styles from './style.module.css';
 
 interface Address {
@@ -49,9 +46,9 @@ const ContactsPage: FC<RouteComponentProps> = () => {
       </Helmet>
       <Contacts contacts={data} />
       <Switch>
-        <Route path="/contacts/:contactId/edit" component={ContactEditPage} />
-        <Route path="/contacts/new" component={ContactNewPage} />
-        <Route path="/contacts/:contactId" component={ContactPage} />
+        <Route path="/contacts/:contactId/edit" component={lazy(() => import('../ContactEdit'))} />
+        <Route path="/contacts/new" component={lazy(() => import('../ContactNew'))} />
+        <Route path="/contacts/:contactId" component={lazy(() => import('../Contact'))} />
       </Switch>
     </div>
   );
