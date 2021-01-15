@@ -16,12 +16,12 @@ const LogoutPage: FC<RouteComponentProps> = () => {
   signOut(auth);
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:logout')}</title>
       </Helmet>
       <Redirect to="/" />;
-    </div>
+    </>
   );
 };
 

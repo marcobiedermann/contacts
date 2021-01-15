@@ -17,12 +17,12 @@ const LoginPage: FC<RouteComponentProps> = () => {
   };
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:login')}</title>
       </Helmet>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
-    </div>
+    </>
   );
 };
 

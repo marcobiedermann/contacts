@@ -59,7 +59,7 @@ const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:edit')}</title>
       </Helmet>
@@ -67,7 +67,7 @@ const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
         <Link to={`/contacts/${contactId}`}>{t('common:cancel')}</Link>
       </header>
       <ContactEdit initialValues={initialValues} onSubmit={onSubmit} />
-    </div>
+    </>
   );
 };
 

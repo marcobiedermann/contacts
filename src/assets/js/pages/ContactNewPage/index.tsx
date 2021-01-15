@@ -35,12 +35,12 @@ const ContactNewPage: FC<RouteComponentProps> = () => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:new')}</title>
       </Helmet>
       <ContactNew initialValues={initialValues} onSubmit={onSubmit} />
-    </div>
+    </>
   );
 };
 

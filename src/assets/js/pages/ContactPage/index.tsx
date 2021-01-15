@@ -48,12 +48,12 @@ const ContactPage: FC<RouteComponentProps<Params>> = (props) => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:contact')}</title>
       </Helmet>
       <ContactDetail {...data} />
-    </div>
+    </>
   );
 };
 

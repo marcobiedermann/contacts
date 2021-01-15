@@ -7,12 +7,12 @@ const IndexPage: FC<RouteComponentProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:home')}</title>
       </Helmet>
       <Redirect to="/contacts" />;
-    </div>
+    </>
   );
 };
 

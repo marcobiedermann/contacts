@@ -9,7 +9,7 @@ const RegisterPage: FC<RouteComponentProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:register')}</title>
       </Helmet>
@@ -47,7 +47,7 @@ const RegisterPage: FC<RouteComponentProps> = () => {
           );
         }}
       </Formik>
-    </div>
+    </>
   );
 };
 

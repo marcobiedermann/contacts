@@ -8,12 +8,12 @@ const SettingsPage: FC<RouteComponentProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{t('pages:settings')}</title>
       </Helmet>
       <LanguageSwitch languages={['en', 'de']} />
-    </div>
+    </>
   );
 };
 
