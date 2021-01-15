@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Address, { AddressProps } from '../Address';
 import Email from '../Email';
+import Phone from '../Phone';
 import styles from './style.module.css';
 
 export interface ContactDetailProps {
@@ -33,7 +34,7 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
       <ul className={styles.details}>
         {phone && (
           <li>
-            <a href={`tel:${phone}`}>{phone}</a>
+            <Phone value={phone} />
           </li>
         )}
         {email && (
