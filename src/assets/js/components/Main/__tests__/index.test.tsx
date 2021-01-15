@@ -1,13 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import ContactNew from '.';
-import props from './__fixtures__';
+import Main from '..';
 
-describe('contact new component', () => {
+describe('main component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<ContactNew {...props} />);
+    const { asFragment } = render(<Main>Main</Main>);
 
     expect(asFragment()).toMatchSnapshot();
   });

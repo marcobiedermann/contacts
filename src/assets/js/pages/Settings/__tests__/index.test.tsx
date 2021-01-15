@@ -1,16 +1,15 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import ContactPreview from '.';
-import props from './__fixtures__';
+import { MemoryRouter, Route } from 'react-router-dom';
+import SettingsPage from '..';
 
-describe('contact preview component', () => {
+describe('setting page component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
     const { asFragment } = render(
       <MemoryRouter>
-        <ContactPreview {...props} />
+        <Route component={SettingsPage} />
       </MemoryRouter>,
     );
 

@@ -1,13 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import LanguageSwitch from '.';
-import props from './__fixtures__';
+import Label from '..';
 
-describe('language switch component', () => {
+describe('label component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<LanguageSwitch {...props} />);
+    const { asFragment } = render(<Label htmlFor="input">Label</Label>);
 
     expect(asFragment()).toMatchSnapshot();
   });

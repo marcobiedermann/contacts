@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-import IndexPage from '.';
+import IndexPage from '..';
 
 describe('index page component', () => {
   it('should redirect to `/contacts`', () => {

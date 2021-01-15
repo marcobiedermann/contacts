@@ -1,12 +1,13 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Footer from '.';
+import ContactEdit from '..';
+import props from '../__fixtures__';
 
-describe('footer component', () => {
+describe('contact edit component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Footer>Footer</Footer>);
+    const { asFragment } = render(<ContactEdit {...props} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

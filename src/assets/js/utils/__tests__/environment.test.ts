@@ -1,4 +1,4 @@
-import { isDevelopment, isProduction } from './environment';
+import { isDevelopment, isProduction } from '../environment';
 
 describe('isDevelopment', () => {
   it('should check if environment is `development`', () => {

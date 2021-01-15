@@ -1,13 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Router from '.';
-import props from './__fixtures__';
+import Grid from '..';
 
-describe('router component', () => {
+describe('grid component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Router {...props} />);
+    const { asFragment } = render(<Grid>Grid</Grid>);
 
     expect(asFragment()).toMatchSnapshot();
   });
