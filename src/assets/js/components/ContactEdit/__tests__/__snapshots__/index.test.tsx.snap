@@ -6,41 +6,49 @@ exports[`contact edit component should render correctly 1`] = `
     action="#"
     class="form"
   >
-    <div
-      class="form__field"
-    >
-      <label
-        class="label"
-        for="name.firstName"
+    <fieldset>
+      <legend>
+        Name
+      </legend>
+      <div
+        class="form__field"
       >
-        Firstname
-      </label>
-      <input
-        class="form__input"
-        id="name.firstName"
-        name="name.firstName"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="form__field"
-    >
-      <label
-        class="label"
-        for="name.lastName"
+        <label
+          class="label"
+          for="name.firstName"
+        >
+          Firstname
+        </label>
+        <input
+          class="form__input"
+          id="name.firstName"
+          name="name.firstName"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form__field"
       >
-        Lastname
-      </label>
-      <input
-        class="form__input"
-        id="name.lastName"
-        name="name.lastName"
-        type="text"
-        value=""
-      />
-    </div>
-    <div>
+        <label
+          class="label"
+          for="name.lastName"
+        >
+          Lastname
+        </label>
+        <input
+          class="form__input"
+          id="name.lastName"
+          name="name.lastName"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Addresses
+      </legend>
       <div>
         <div
           class="form__field"
@@ -147,8 +155,11 @@ exports[`contact edit component should render correctly 1`] = `
       >
         +
       </button>
-    </div>
-    <div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Emails
+      </legend>
       <div>
         <div
           class="form__field"
@@ -204,8 +215,11 @@ exports[`contact edit component should render correctly 1`] = `
       >
         +
       </button>
-    </div>
-    <div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Phones
+      </legend>
       <div>
         <div
           class="form__field"
@@ -261,7 +275,7 @@ exports[`contact edit component should render correctly 1`] = `
       >
         +
       </button>
-    </div>
+    </fieldset>
     <div
       class="form__field"
     >

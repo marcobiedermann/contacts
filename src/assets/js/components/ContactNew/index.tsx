@@ -36,24 +36,30 @@ const ContactNew: FC<ContactNewProps> = (props) => {
 
         return (
           <Form className={styles.form}>
-            <div className={styles.form__field}>
-              <Label htmlFor="name.firstName">Firstname</Label>
-              <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />
-              <ErrorMessage name="name.firstName" component="div" />
-            </div>
+            <fieldset>
+              <legend>Name</legend>
 
-            <div className={styles.form__field}>
-              <Label htmlFor="name.lastName">Lastname</Label>
-              <Field className={styles.form__input} id="name.lastName" name="name.lastName" type="text" />
-              <ErrorMessage name="name.lastName" component="div" />
-            </div>
+              <div className={styles.form__field}>
+                <Label htmlFor="name.firstName">Firstname</Label>
+                <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />
+                <ErrorMessage name="name.firstName" component="div" />
+              </div>
+
+              <div className={styles.form__field}>
+                <Label htmlFor="name.lastName">Lastname</Label>
+                <Field className={styles.form__input} id="name.lastName" name="name.lastName" type="text" />
+                <ErrorMessage name="name.lastName" component="div" />
+              </div>
+            </fieldset>
 
             <FieldArray name="addresses">
               {(arrayHelpers) => {
                 const { push, remove } = arrayHelpers;
 
                 return (
-                  <div>
+                  <fieldset>
+                    <legend>Addresses</legend>
+
                     {values.addresses.map((_address, index) => {
                       const id = `addresses.${index}`;
 
@@ -135,7 +141,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                     >
                       +
                     </button>
-                  </div>
+                  </fieldset>
                 );
               }}
             </FieldArray>
@@ -145,7 +151,9 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                 const { push, remove } = arrayHelpers;
 
                 return (
-                  <div>
+                  <fieldset>
+                    <legend>Emails</legend>
+
                     {values.emails.map((_email, index) => {
                       const id = `emails.${index}`;
 
@@ -189,7 +197,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                     >
                       +
                     </button>
-                  </div>
+                  </fieldset>
                 );
               }}
             </FieldArray>
@@ -199,7 +207,9 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                 const { push, remove } = arrayHelpers;
 
                 return (
-                  <div>
+                  <fieldset>
+                    <legend>Phones</legend>
+
                     {values.phones.map((_phone, index) => {
                       const id = `phones.${index}`;
 
@@ -238,7 +248,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                     >
                       +
                     </button>
-                  </div>
+                  </fieldset>
                 );
               }}
             </FieldArray>
