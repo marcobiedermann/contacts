@@ -55,6 +55,14 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                       return (
                         <div key={id}>
                           <div className={styles.form__field}>
+                            <Label htmlFor={`${id}.type`}>Type</Label>
+                            <Field as="select" className={styles.form__input} id={`${id}.type`} name={`${id}.type`}>
+                              <option value="home">Home</option>
+                              <option value="work">Work</option>
+                            </Field>
+                          </div>
+
+                          <div className={styles.form__field}>
                             <Label htmlFor={`${id}.value.street`}>Street</Label>
                             <Field
                               className={styles.form__input}
@@ -134,6 +142,14 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                       return (
                         <div key={id}>
                           <div className={styles.form__field}>
+                            <Label htmlFor={`${id}.type`}>Type</Label>
+                            <Field as="select" className={styles.form__input} id={`${id}.type`} name={`${id}.type`}>
+                              <option value="home">Home</option>
+                              <option value="work">Work</option>
+                            </Field>
+                          </div>
+
+                          <div className={styles.form__field}>
                             <Label htmlFor={`${id}.value`}>Email</Label>
                             <Field
                               className={styles.form__input}
@@ -177,6 +193,14 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
 
                       return (
                         <div key={id}>
+                          <div className={styles.form__field}>
+                            <Label htmlFor={`${id}.type`}>Type</Label>
+                            <Field as="select" className={styles.form__input} id={`${id}.type`} name={`${id}.type`}>
+                              <option value="home">Home</option>
+                              <option value="work">Work</option>
+                            </Field>
+                          </div>
+
                           <div className={styles.form__field}>
                             <Label htmlFor={`${id}.value`}>Phone</Label>
                             <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="tel" />

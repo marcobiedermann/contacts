@@ -6,9 +6,16 @@ export interface PhoneProps {
 }
 
 const Phone: FC<PhoneProps> = (props) => {
-  const { value } = props;
+  const { type, value } = props;
 
-  return <a href={`tel:${value}`}>{value}</a>;
+  return (
+    <div>
+      <div>{type}</div>
+      <div>
+        <a href={`tel:${value}`}>{value}</a>
+      </div>
+    </div>
+  );
 };
 
 export default Phone;

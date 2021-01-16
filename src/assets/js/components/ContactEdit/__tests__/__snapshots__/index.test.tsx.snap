@@ -47,6 +47,32 @@ exports[`contact edit component should render correctly 1`] = `
         >
           <label
             class="label"
+            for="addresses.0.type"
+          >
+            Type
+          </label>
+          <select
+            class="form__input"
+            id="addresses.0.type"
+            name="addresses.0.type"
+          >
+            <option
+              value="home"
+            >
+              Home
+            </option>
+            <option
+              value="work"
+            >
+              Work
+            </option>
+          </select>
+        </div>
+        <div
+          class="form__field"
+        >
+          <label
+            class="label"
             for="addresses.0.value.street"
           >
             Street
@@ -129,6 +155,32 @@ exports[`contact edit component should render correctly 1`] = `
         >
           <label
             class="label"
+            for="emails.0.type"
+          >
+            Type
+          </label>
+          <select
+            class="form__input"
+            id="emails.0.type"
+            name="emails.0.type"
+          >
+            <option
+              value="home"
+            >
+              Home
+            </option>
+            <option
+              value="work"
+            >
+              Work
+            </option>
+          </select>
+        </div>
+        <div
+          class="form__field"
+        >
+          <label
+            class="label"
             for="emails.0.value"
           >
             Email
@@ -155,6 +207,32 @@ exports[`contact edit component should render correctly 1`] = `
     </div>
     <div>
       <div>
+        <div
+          class="form__field"
+        >
+          <label
+            class="label"
+            for="phones.0.type"
+          >
+            Type
+          </label>
+          <select
+            class="form__input"
+            id="phones.0.type"
+            name="phones.0.type"
+          >
+            <option
+              value="home"
+            >
+              Home
+            </option>
+            <option
+              value="work"
+            >
+              Work
+            </option>
+          </select>
+        </div>
         <div
           class="form__field"
         >

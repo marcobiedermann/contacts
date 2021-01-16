@@ -2,10 +2,17 @@
 
 exports[`email component should render correctly 1`] = `
 <DocumentFragment>
-  <a
-    href="mailto:john.doe@gmail.com"
-  >
-    john.doe@gmail.com
-  </a>
+  <div>
+    <div>
+      home
+    </div>
+    <div>
+      <a
+        href="mailto:john.doe@gmail.com"
+      >
+        john.doe@gmail.com
+      </a>
+    </div>
+  </div>
 </DocumentFragment>
 `;

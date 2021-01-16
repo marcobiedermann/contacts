@@ -11,22 +11,25 @@ export interface AddressProps {
 }
 
 const Address: FC<AddressProps> = (props) => {
-  const { value } = props;
+  const { type, value } = props;
   const { city, country, street, zip } = value;
 
   return (
     <address>
-      <a
-        href={`https://maps.google.com/?q=${encodeURIComponent(street)} ${zip} ${city} ${country}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {street}
-        <br />
-        {zip} {city}
-        <br />
-        {country}
-      </a>
+      <div>{type}</div>
+      <div>
+        <a
+          href={`https://maps.google.com/?q=${encodeURIComponent(street)} ${zip} ${city} ${country}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {street}
+          <br />
+          {zip} {city}
+          <br />
+          {country}
+        </a>
+      </div>
     </address>
   );
 };

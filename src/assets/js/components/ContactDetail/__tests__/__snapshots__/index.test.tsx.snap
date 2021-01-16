@@ -19,22 +19,36 @@ exports[`contact detail component should render correctly 1`] = `
       <li>
         <ul>
           <li>
-            <a
-              href="tel:+1 234 56789"
-            >
-              +1 234 56789
-            </a>
+            <div>
+              <div>
+                home
+              </div>
+              <div>
+                <a
+                  href="tel:+1 234 56789"
+                >
+                  +1 234 56789
+                </a>
+              </div>
+            </div>
           </li>
         </ul>
       </li>
       <li>
         <ul>
           <li>
-            <a
-              href="mailto:john.doe@gmail.com"
-            >
-              john.doe@gmail.com
-            </a>
+            <div>
+              <div>
+                home
+              </div>
+              <div>
+                <a
+                  href="mailto:john.doe@gmail.com"
+                >
+                  john.doe@gmail.com
+                </a>
+              </div>
+            </div>
           </li>
         </ul>
       </li>
@@ -42,17 +56,22 @@ exports[`contact detail component should render correctly 1`] = `
         <ul>
           <li>
             <address>
-              <a
-                href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Main Street
-                <br />
-                10001 New York City
-                <br />
-                USA
-              </a>
+              <div>
+                home
+              </div>
+              <div>
+                <a
+                  href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Main Street
+                  <br />
+                  10001 New York City
+                  <br />
+                  USA
+                </a>
+              </div>
             </address>
           </li>
         </ul>

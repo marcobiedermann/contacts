@@ -6,9 +6,16 @@ export interface EmailProps {
 }
 
 const Email: FC<EmailProps> = (props) => {
-  const { value } = props;
+  const { type, value } = props;
 
-  return <a href={`mailto:${value}`}>{value}</a>;
+  return (
+    <div>
+      <div>{type}</div>
+      <div>
+        <a href={`mailto:${value}`}>{value}</a>
+      </div>
+    </div>
+  );
 };
 
 export default Email;
