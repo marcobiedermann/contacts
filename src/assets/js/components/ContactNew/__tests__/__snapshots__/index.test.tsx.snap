@@ -110,45 +110,79 @@ exports[`contact new component should render correctly 1`] = `
             value=""
           />
         </div>
+        <button
+          type="button"
+        >
+          -
+        </button>
       </div>
+      <button
+        type="button"
+      >
+        +
+      </button>
     </div>
     <div>
-      <div
-        class="form__field"
-      >
-        <label
-          class="label"
-          for="emails.0.value"
+      <div>
+        <div
+          class="form__field"
         >
-          Email
-        </label>
-        <input
-          class="form__input"
-          id="emails.0.value"
-          name="emails.0.value"
-          type="email"
-          value=""
-        />
+          <label
+            class="label"
+            for="emails.0.value"
+          >
+            Email
+          </label>
+          <input
+            class="form__input"
+            id="emails.0.value"
+            name="emails.0.value"
+            type="email"
+            value=""
+          />
+        </div>
+        <button
+          type="button"
+        >
+          -
+        </button>
       </div>
+      <button
+        type="button"
+      >
+        +
+      </button>
     </div>
     <div>
-      <div
-        class="form__field"
-      >
-        <label
-          class="label"
-          for="phones.0.value"
+      <div>
+        <div
+          class="form__field"
         >
-          Phone
-        </label>
-        <input
-          class="form__input"
-          id="phones.0.value"
-          name="phones.0.value"
-          type="tel"
-          value=""
-        />
+          <label
+            class="label"
+            for="phones.0.value"
+          >
+            Phone
+          </label>
+          <input
+            class="form__input"
+            id="phones.0.value"
+            name="phones.0.value"
+            type="tel"
+            value=""
+          />
+        </div>
+        <button
+          type="button"
+        >
+          -
+        </button>
       </div>
+      <button
+        type="button"
+      >
+        +
+      </button>
     </div>
     <div
       class="form__field"

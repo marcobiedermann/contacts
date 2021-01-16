@@ -1,4 +1,4 @@
-import { Field, Form, Formik, FormikHelpers, FieldArray } from 'formik';
+import { Field, FieldArray, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddressProps } from '../Address';
@@ -45,9 +45,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
 
             <FieldArray name="addresses">
               {(arrayHelpers) => {
-                const { insert, remove, push } = arrayHelpers;
-
-                console.log({ insert, remove, push });
+                const { push, remove } = arrayHelpers;
 
                 return (
                   <div>
@@ -95,9 +93,30 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               type="text"
                             />
                           </div>
+
+                          <button type="button" onClick={() => remove(index)}>
+                            -
+                          </button>
                         </div>
                       );
                     })}
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        push({
+                          type: '',
+                          value: {
+                            city: '',
+                            country: '',
+                            street: '',
+                            zip: '',
+                          },
+                        })
+                      }
+                    >
+                      +
+                    </button>
                   </div>
                 );
               }}
@@ -105,9 +124,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
 
             <FieldArray name="emails">
               {(arrayHelpers) => {
-                const { insert, remove, push } = arrayHelpers;
-
-                console.log({ insert, remove, push });
+                const { push, remove } = arrayHelpers;
 
                 return (
                   <div>
@@ -115,12 +132,35 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                       const id = `emails.${index}`;
 
                       return (
-                        <div className={styles.form__field} key={id}>
-                          <Label htmlFor={`${id}.value`}>Email</Label>
-                          <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="email" />
+                        <div key={id}>
+                          <div className={styles.form__field}>
+                            <Label htmlFor={`${id}.value`}>Email</Label>
+                            <Field
+                              className={styles.form__input}
+                              id={`${id}.value`}
+                              name={`${id}.value`}
+                              type="email"
+                            />
+                          </div>
+
+                          <button type="button" onClick={() => remove(index)}>
+                            -
+                          </button>
                         </div>
                       );
                     })}
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        push({
+                          type: '',
+                          value: '',
+                        })
+                      }
+                    >
+                      +
+                    </button>
                   </div>
                 );
               }}
@@ -128,9 +168,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
 
             <FieldArray name="phones">
               {(arrayHelpers) => {
-                const { insert, remove, push } = arrayHelpers;
-
-                console.log({ insert, remove, push });
+                const { push, remove } = arrayHelpers;
 
                 return (
                   <div>
@@ -138,12 +176,30 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                       const id = `phones.${index}`;
 
                       return (
-                        <div className={styles.form__field} key={id}>
-                          <Label htmlFor={`${id}.value`}>Phone</Label>
-                          <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="tel" />
+                        <div key={id}>
+                          <div className={styles.form__field}>
+                            <Label htmlFor={`${id}.value`}>Phone</Label>
+                            <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="tel" />
+                          </div>
+
+                          <button type="button" onClick={() => remove(index)}>
+                            -
+                          </button>
                         </div>
                       );
                     })}
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        push({
+                          type: '',
+                          value: '',
+                        })
+                      }
+                    >
+                      +
+                    </button>
                   </div>
                 );
               }}
