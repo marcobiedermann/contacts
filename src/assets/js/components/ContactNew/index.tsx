@@ -5,6 +5,7 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddressProps } from '../Address';
 import { EmailProps } from '../Email';
+import Error from '../Error';
 import Label from '../Label';
 import { PhoneProps } from '../Phone';
 import styles from './style.module.css';
@@ -42,13 +43,13 @@ const ContactNew: FC<ContactNewProps> = (props) => {
               <div className={styles.form__field}>
                 <Label htmlFor="name.firstName">Firstname</Label>
                 <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />
-                <ErrorMessage name="name.firstName" component="div" />
+                <ErrorMessage name="name.firstName" component={Error} />
               </div>
 
               <div className={styles.form__field}>
                 <Label htmlFor="name.lastName">Lastname</Label>
                 <Field className={styles.form__input} id="name.lastName" name="name.lastName" type="text" />
-                <ErrorMessage name="name.lastName" component="div" />
+                <ErrorMessage name="name.lastName" component={Error} />
               </div>
             </fieldset>
 
@@ -71,7 +72,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
-                            <ErrorMessage name={`${id}.type`} component="div" />
+                            <ErrorMessage name={`${id}.type`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
@@ -82,7 +83,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               name={`${id}.value.street`}
                               type="text"
                             />
-                            <ErrorMessage name={`${id}.value.street`} component="div" />
+                            <ErrorMessage name={`${id}.value.street`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
@@ -93,7 +94,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               name={`${id}.value.zip`}
                               type="text"
                             />
-                            <ErrorMessage name={`${id}.value.zip`} component="div" />
+                            <ErrorMessage name={`${id}.value.zip`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
@@ -104,7 +105,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               name={`${id}.value.city`}
                               type="text"
                             />
-                            <ErrorMessage name={`${id}.value.city`} component="div" />
+                            <ErrorMessage name={`${id}.value.city`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
@@ -115,7 +116,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               name={`${id}.value.country`}
                               type="text"
                             />
-                            <ErrorMessage name={`${id}.value.country`} component="div" />
+                            <ErrorMessage name={`${id}.value.country`} component={Error} />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
@@ -165,7 +166,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
-                            <ErrorMessage name={`${id}.type`} component="div" />
+                            <ErrorMessage name={`${id}.type`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
@@ -176,7 +177,7 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               name={`${id}.value`}
                               type="email"
                             />
-                            <ErrorMessage name={`${id}.value`} component="div" />
+                            <ErrorMessage name={`${id}.value`} component={Error} />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
@@ -221,13 +222,13 @@ const ContactNew: FC<ContactNewProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
-                            <ErrorMessage name={`${id}.type`} component="div" />
+                            <ErrorMessage name={`${id}.type`} component={Error} />
                           </div>
 
                           <div className={styles.form__field}>
                             <Label htmlFor={`${id}.value`}>Phone</Label>
                             <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="tel" />
-                            <ErrorMessage name={`${id}.value`} component="div" />
+                            <ErrorMessage name={`${id}.value`} component={Error} />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
