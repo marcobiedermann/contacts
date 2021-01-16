@@ -17,33 +17,45 @@ exports[`contact detail component should render correctly 1`] = `
       class="details"
     >
       <li>
-        <a
-          href="tel:+1 234 56789"
-        >
-          +1 234 56789
-        </a>
+        <ul>
+          <li>
+            <a
+              href="tel:+1 234 56789"
+            >
+              +1 234 56789
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <a
-          href="mailto:john.doe@gmail.com"
-        >
-          john.doe@gmail.com
-        </a>
+        <ul>
+          <li>
+            <a
+              href="mailto:john.doe@gmail.com"
+            >
+              john.doe@gmail.com
+            </a>
+          </li>
+        </ul>
       </li>
       <li>
-        <address>
-          <a
-            href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Main Street
-            <br />
-            10001 New York City
-            <br />
-            USA
-          </a>
-        </address>
+        <ul>
+          <li>
+            <address>
+              <a
+                href="https://maps.google.com/?q=Main%20Street 10001 New York City USA"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Main Street
+                <br />
+                10001 New York City
+                <br />
+                USA
+              </a>
+            </address>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

@@ -12,18 +12,33 @@ const ContactNewPage: FC<RouteComponentProps> = () => {
   const { t } = useTranslation();
 
   const initialValues: Values = {
-    address: {
-      city: '',
-      country: '',
-      streetAddress: '',
-      zipCode: '',
-    },
-    email: '',
+    addresses: [
+      {
+        type: '',
+        value: {
+          city: '',
+          country: '',
+          street: '',
+          zip: '',
+        },
+      },
+    ],
+    emails: [
+      {
+        type: '',
+        value: '',
+      },
+    ],
     name: {
       firstName: '',
       lastName: '',
     },
-    phone: '',
+    phones: [
+      {
+        type: '',
+        value: '',
+      },
+    ],
   };
 
   function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void {

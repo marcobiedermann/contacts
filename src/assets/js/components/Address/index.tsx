@@ -1,28 +1,29 @@
 import React, { FC } from 'react';
 
 export interface AddressProps {
+  type: string;
   value: {
     city: string;
     country: string;
-    streetAddress: string;
-    zipCode: string;
+    street: string;
+    zip: string;
   };
 }
 
 const Address: FC<AddressProps> = (props) => {
   const { value } = props;
-  const { city, country, streetAddress, zipCode } = value;
+  const { city, country, street, zip } = value;
 
   return (
     <address>
       <a
-        href={`https://maps.google.com/?q=${encodeURIComponent(streetAddress)} ${zipCode} ${city} ${country}`}
+        href={`https://maps.google.com/?q=${encodeURIComponent(street)} ${zip} ${city} ${country}`}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {streetAddress}
+        {street}
         <br />
-        {zipCode} {city}
+        {zip} {city}
         <br />
         {country}
       </a>

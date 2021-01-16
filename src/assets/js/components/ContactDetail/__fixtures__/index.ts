@@ -9,9 +9,9 @@ const props: ContactDetailProps = {
     firstName: 'John',
     lastName: 'Doe',
   },
-  address: address.value,
-  email: email.value,
-  phone: phone.value,
+  addresses: [address],
+  emails: [email],
+  phones: [phone],
 };
 
 export default props;

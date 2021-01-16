@@ -1,29 +1,24 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Address from '../Address';
-import Email from '../Email';
-import Phone from '../Phone';
+import Address, { AddressProps } from '../Address';
+import Email, { EmailProps } from '../Email';
+import Phone, { PhoneProps } from '../Phone';
 import styles from './style.module.css';
 
 export interface ContactDetailProps {
-  address?: {
-    city: string;
-    country: string;
-    streetAddress: string;
-    zipCode: string;
-  };
-  email?: string;
+  addresses: AddressProps[];
+  emails: EmailProps[];
   id: string;
   name: {
     firstName: string;
     lastName: string;
   };
-  phone?: string;
+  phones: PhoneProps[];
 }
 
 const ContactDetail: FC<ContactDetailProps> = (props) => {
-  const { address, email, id, name, phone } = props;
+  const { addresses, emails, id, name, phones } = props;
   const { t } = useTranslation();
 
   return (
@@ -37,19 +32,37 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
         </h1>
       )}
       <ul className={styles.details}>
-        {phone && (
+        {phones.length && (
           <li>
-            <Phone value={phone} />
+            <ul>
+              {phones.map((phone) => (
+                <li key={phone.value}>
+                  <Phone {...phone} />
+                </li>
+              ))}
+            </ul>
           </li>
         )}
-        {email && (
+        {emails.length && (
           <li>
-            <Email value={email} />
+            <ul>
+              {emails.map((email) => (
+                <li key={email.value}>
+                  <Email {...email} />
+                </li>
+              ))}
+            </ul>
           </li>
         )}
-        {address && (
+        {addresses.length && (
           <li>
-            <Address value={address} />
+            <ul>
+              {addresses.map((address) => (
+                <li key={address.value.toString()}>
+                  <Address {...address} />
+                </li>
+              ))}
+            </ul>
           </li>
         )}
       </ul>

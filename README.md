@@ -78,7 +78,7 @@ Contact model structure containing example data.
       "value": "john.doe@gmail.com"
     }
   ],
-  "phoneNumbers": [
+  "phones": [
     {
       "type": "home",
       "value": "+1 234 56789"

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 export interface EmailProps {
+  type: string;
   value: string;
 }
 

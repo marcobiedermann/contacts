@@ -11,10 +11,18 @@ interface Params {
 }
 
 interface Address {
-  city: string;
-  country: string;
-  streetAddress: string;
-  zipCode: string;
+  type: string;
+  value: {
+    city: string;
+    country: string;
+    street: string;
+    zip: string;
+  };
+}
+
+interface Email {
+  type: string;
+  value: string;
 }
 
 interface Name {
@@ -22,12 +30,17 @@ interface Name {
   lastName: string;
 }
 
+interface Phone {
+  type: string;
+  value: string;
+}
+
 interface Document {
-  address: Address;
-  email: string;
+  addresses: Address[];
+  emails: Email[];
   id: string;
   name: Name;
-  phone: string;
+  phones: Phone[];
 }
 
 const ContactPage: FC<RouteComponentProps<Params>> = (props) => {

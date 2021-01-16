@@ -2,18 +2,33 @@ import { ContactEditProps } from '..';
 
 const props: ContactEditProps = {
   initialValues: {
-    address: {
-      city: '',
-      country: '',
-      streetAddress: '',
-      zipCode: '',
-    },
-    email: '',
+    addresses: [
+      {
+        type: '',
+        value: {
+          city: '',
+          country: '',
+          street: '',
+          zip: '',
+        },
+      },
+    ],
+    emails: [
+      {
+        type: '',
+        value: '',
+      },
+    ],
     name: {
       firstName: '',
       lastName: '',
     },
-    phone: '',
+    phones: [
+      {
+        type: '',
+        value: '',
+      },
+    ],
   },
   onSubmit: () => ({}),
 };

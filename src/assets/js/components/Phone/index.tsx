@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 export interface PhoneProps {
+  type: string;
   value: string;
 }
 
