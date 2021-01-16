@@ -1,4 +1,5 @@
 import { ContactEditProps } from '..';
+import validationSchema from '../../../utils/validation';
 
 const props: ContactEditProps = {
   initialValues: {
@@ -31,6 +32,7 @@ const props: ContactEditProps = {
     ],
   },
   onSubmit: () => ({}),
+  validationSchema,
 };
 
 export default props;

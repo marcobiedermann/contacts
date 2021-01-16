@@ -6,6 +6,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { useFirestore, useFirestoreDocDataOnce } from 'reactfire';
 import ContactEdit, { Values } from '../../components/ContactEdit';
 import Loader from '../../components/Loader';
+import validationSchema from '../../utils/validation';
 
 interface Params {
   contactId: string;
@@ -79,7 +80,7 @@ const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
       <header>
         <Link to={`/contacts/${contactId}`}>{t('common:cancel')}</Link>
       </header>
-      <ContactEdit initialValues={initialValues} onSubmit={onSubmit} />
+      <ContactEdit initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} />
     </>
   );
 };

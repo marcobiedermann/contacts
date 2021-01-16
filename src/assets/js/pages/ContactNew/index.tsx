@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
 import { useFirestore } from 'reactfire';
 import ContactNew, { Values } from '../../components/ContactNew';
+import validationSchema from '../../utils/validation';
 
 const ContactNewPage: FC<RouteComponentProps> = () => {
   const firestore = useFirestore();
@@ -54,7 +55,7 @@ const ContactNewPage: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>{t('pages:new')}</title>
       </Helmet>
-      <ContactNew initialValues={initialValues} onSubmit={onSubmit} />
+      <ContactNew initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} />
     </>
   );
 };

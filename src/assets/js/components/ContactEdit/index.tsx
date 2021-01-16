@@ -1,4 +1,4 @@
-import { Field, FieldArray, Form, Formik, FormikHelpers } from 'formik';
+import { ErrorMessage, Field, FieldArray, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddressProps } from '../Address';
@@ -20,14 +20,15 @@ export interface Values {
 export interface ContactEditProps {
   initialValues: Values;
   onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void;
+  validationSchema: any | (() => any);
 }
 
 const ContactEdit: FC<ContactEditProps> = (props) => {
-  const { initialValues, onSubmit } = props;
+  const { initialValues, onSubmit, validationSchema } = props;
   const { t } = useTranslation();
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
       {(formikProps) => {
         const { isSubmitting, values } = formikProps;
 
@@ -36,11 +37,13 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
             <div className={styles.form__field}>
               <Label htmlFor="name.firstName">Firstname</Label>
               <Field className={styles.form__input} id="name.firstName" name="name.firstName" type="text" />
+              <ErrorMessage name="name.firstName" component="div" />
             </div>
 
             <div className={styles.form__field}>
               <Label htmlFor="name.lastName">Lastname</Label>
               <Field className={styles.form__input} id="name.lastName" name="name.lastName" type="text" />
+              <ErrorMessage name="name.lastName" component="div" />
             </div>
 
             <FieldArray name="addresses">
@@ -60,6 +63,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
+                            <ErrorMessage name={`${id}.type`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
@@ -70,6 +74,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               name={`${id}.value.street`}
                               type="text"
                             />
+                            <ErrorMessage name={`${id}.value.street`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
@@ -80,6 +85,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               name={`${id}.value.zip`}
                               type="text"
                             />
+                            <ErrorMessage name={`${id}.value.zip`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
@@ -90,6 +96,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               name={`${id}.value.city`}
                               type="text"
                             />
+                            <ErrorMessage name={`${id}.value.city`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
@@ -100,6 +107,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               name={`${id}.value.country`}
                               type="text"
                             />
+                            <ErrorMessage name={`${id}.value.country`} component="div" />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
@@ -147,6 +155,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
+                            <ErrorMessage name={`${id}.type`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
@@ -157,6 +166,7 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               name={`${id}.value`}
                               type="email"
                             />
+                            <ErrorMessage name={`${id}.value`} component="div" />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
@@ -199,11 +209,13 @@ const ContactEdit: FC<ContactEditProps> = (props) => {
                               <option value="home">Home</option>
                               <option value="work">Work</option>
                             </Field>
+                            <ErrorMessage name={`${id}.type`} component="div" />
                           </div>
 
                           <div className={styles.form__field}>
                             <Label htmlFor={`${id}.value`}>Phone</Label>
                             <Field className={styles.form__input} id={`${id}.value`} name={`${id}.value`} type="tel" />
+                            <ErrorMessage name={`${id}.value`} component="div" />
                           </div>
 
                           <button type="button" onClick={() => remove(index)}>
