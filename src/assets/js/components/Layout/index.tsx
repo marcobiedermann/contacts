@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, REGISTER, SETTINGS } from '../../constants/routes';
+import { CONTACTS, CONTACT_NEW, LOGIN, LOGOUT, SETTINGS } from '../../constants/routes';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -14,7 +14,7 @@ const Layout: FC = (props) => {
     <div className={styles.layout}>
       <Header>
         <Grid>
-          <Navigation inline routes={[CONTACTS, CONTACT_NEW, SETTINGS, LOGIN, LOGOUT, REGISTER]} />
+          <Navigation inline routes={[CONTACTS, CONTACT_NEW, SETTINGS, LOGIN, LOGOUT]} />
         </Grid>
       </Header>
       <Main>

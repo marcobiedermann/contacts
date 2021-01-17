@@ -52,13 +52,6 @@ exports[`router component should render correctly 1`] = `
                 pages:logout
               </a>
             </li>
-            <li>
-              <a
-                href="/register"
-              >
-                pages:register
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

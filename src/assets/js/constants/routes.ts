@@ -50,18 +50,12 @@ export const LOGOUT: Route = {
   path: '/logout',
 };
 
-export const REGISTER: Route = {
-  component: lazy(() => import('../pages/Register')),
-  name: 'pages:register',
-  path: '/register',
-};
-
 export const SETTINGS: Route = {
   component: lazy(() => import('../pages/Settings')),
   name: 'pages:settings',
   path: '/settings',
 };
 
-const ROUTES: Route[] = [INDEX, CONTACTS, LOGIN, LOGOUT, REGISTER, SETTINGS];
+const ROUTES: Route[] = [INDEX, CONTACTS, LOGIN, LOGOUT, SETTINGS];
 
 export default ROUTES;
