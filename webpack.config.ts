@@ -31,7 +31,9 @@ const config: Configuration = {
     ],
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
     new Dotenv({
       systemvars: true,
     }),
