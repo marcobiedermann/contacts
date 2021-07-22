@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`login page component should redirect to \`/\` 1`] = `
-<DocumentFragment>
-  <div>
-    loading …
-  </div>
-</DocumentFragment>
+<div>
+  loading …
+</div>
 `;

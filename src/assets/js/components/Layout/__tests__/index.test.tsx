@@ -9,7 +9,7 @@ describe('layout component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(
+    const { container } = render(
       <I18nextProvider i18n={i18n}>
         <MemoryRouter>
           <Layout>Layout</Layout>
@@ -17,6 +17,6 @@ describe('layout component', () => {
       </I18nextProvider>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

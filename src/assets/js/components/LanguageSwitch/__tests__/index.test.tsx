@@ -7,8 +7,8 @@ describe('language switch component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<LanguageSwitch {...props} />);
+    const { container } = render(<LanguageSwitch {...props} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

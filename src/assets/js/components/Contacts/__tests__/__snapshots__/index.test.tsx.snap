@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`contacts component should render correctly 1`] = `
-<DocumentFragment>
-  <div>
-    <ul
-      class="contacts__list"
+<div>
+  <ul
+    class="contacts__list"
+  >
+    <li
+      class="contacts__item"
     >
-      <li
-        class="contacts__item"
-      >
-        <div>
-          <h2
-            class="contact__name"
+      <div>
+        <h2
+          class="contact__name"
+        >
+          <a
+            class="contact__link"
+            href="/contacts/1"
           >
-            <a
-              class="contact__link"
-              href="/contacts/1"
-            >
-              John Doe
-            </a>
-          </h2>
-        </div>
-      </li>
-    </ul>
-  </div>
-</DocumentFragment>
+            John
+             
+            Doe
+          </a>
+        </h2>
+      </div>
+    </li>
+  </ul>
+</div>
 `;

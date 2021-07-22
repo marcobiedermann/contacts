@@ -6,8 +6,8 @@ describe('grid component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Grid>Grid</Grid>);
+    const { container } = render(<Grid>Grid</Grid>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

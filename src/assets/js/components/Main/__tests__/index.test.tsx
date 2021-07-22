@@ -6,8 +6,8 @@ describe('main component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Main>Main</Main>);
+    const { container } = render(<Main>Main</Main>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

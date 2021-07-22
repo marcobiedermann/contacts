@@ -6,8 +6,8 @@ describe('label component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Label htmlFor="input">Label</Label>);
+    const { container } = render(<Label htmlFor="input">Label</Label>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

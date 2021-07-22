@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`email component should render correctly 1`] = `
-<DocumentFragment>
+<div>
   <div>
-    <div>
-      home
-    </div>
-    <div>
-      <a
-        href="mailto:john.doe@gmail.com"
-      >
-        john.doe@gmail.com
-      </a>
-    </div>
+    home
   </div>
-</DocumentFragment>
+  <div>
+    <a
+      href="mailto:john.doe@gmail.com"
+    >
+      john.doe@gmail.com
+    </a>
+  </div>
+</div>
 `;

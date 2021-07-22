@@ -7,8 +7,8 @@ describe('phone component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Phone {...props} />);
+    const { container } = render(<Phone {...props} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

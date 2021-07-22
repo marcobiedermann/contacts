@@ -8,7 +8,7 @@ describe('login page component', () => {
   it('should redirect to `/`', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(
+    const { container } = render(
       <Providers>
         <MemoryRouter>
           <Route component={LoginPage} />
@@ -16,6 +16,6 @@ describe('login page component', () => {
       </Providers>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

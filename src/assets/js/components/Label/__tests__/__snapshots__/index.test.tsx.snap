@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`label component should render correctly 1`] = `
-<DocumentFragment>
-  <label
-    class="label"
-    for="input"
-  >
-    Label
-  </label>
-</DocumentFragment>
+<label
+  class="label"
+  for="input"
+>
+  Label
+</label>
 `;

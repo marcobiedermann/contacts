@@ -7,12 +7,12 @@ describe('setting page component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(
+    const { container } = render(
       <MemoryRouter>
         <Route component={SettingsPage} />
       </MemoryRouter>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

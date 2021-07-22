@@ -6,8 +6,8 @@ describe('error component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Error>Error Message</Error>);
+    const { container } = render(<Error>Error Message</Error>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

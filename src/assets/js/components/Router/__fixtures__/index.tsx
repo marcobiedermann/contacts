@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { RouterProps } from '..';
 
-const HomePage = () => <div>Home</div>;
+const HomePage: FC = () => <div>Home</div>;
 
 const props: RouterProps = {
   routes: [

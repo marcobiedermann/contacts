@@ -7,8 +7,8 @@ describe('contact new component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<ContactNew {...props} />);
+    const { container } = render(<ContactNew {...props} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

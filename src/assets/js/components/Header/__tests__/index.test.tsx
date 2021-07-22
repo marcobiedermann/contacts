@@ -6,8 +6,8 @@ describe('header component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Header>Header</Header>);
+    const { container } = render(<Header>Header</Header>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

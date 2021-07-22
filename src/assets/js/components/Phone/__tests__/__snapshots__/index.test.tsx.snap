@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`phone component should render correctly 1`] = `
-<DocumentFragment>
+<div>
   <div>
-    <div>
-      home
-    </div>
-    <div>
-      <a
-        href="tel:+1 234 56789"
-      >
-        +1 234 56789
-      </a>
-    </div>
+    home
   </div>
-</DocumentFragment>
+  <div>
+    <a
+      href="tel:+1 234 56789"
+    >
+      +1 234 56789
+    </a>
+  </div>
+</div>
 `;

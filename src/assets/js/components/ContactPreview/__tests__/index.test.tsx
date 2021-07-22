@@ -8,12 +8,12 @@ describe('contact preview component', () => {
   it('should render correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(
+    const { container } = render(
       <MemoryRouter>
         <ContactPreview {...props} />
       </MemoryRouter>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
