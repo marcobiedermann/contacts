@@ -1,10 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router-dom';
 import LanguageSwitch from '../../components/LanguageSwitch';
 
-const SettingsPage: FC<RouteComponentProps> = () => {
+function SettingsPage(): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -15,6 +14,6 @@ const SettingsPage: FC<RouteComponentProps> = () => {
       <LanguageSwitch languages={['en', 'de']} />
     </>
   );
-};
+}
 
 export default SettingsPage;

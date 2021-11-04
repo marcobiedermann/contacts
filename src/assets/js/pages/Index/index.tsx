@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Redirect, RouteComponentProps } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-const IndexPage: FC<RouteComponentProps> = () => {
+function IndexPage(): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,6 @@ const IndexPage: FC<RouteComponentProps> = () => {
       <Redirect to="/contacts" />;
     </>
   );
-};
+}
 
 export default IndexPage;

@@ -1,6 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 
-const Error: FC = (props) => <div className={styles.error} {...props} />;
+export interface ErrorProps {
+  children?: React.ReactNode;
+}
+
+function Error(props: ErrorProps): JSX.Element {
+  return <div className={styles.error} {...props} />;
+}
 
 export default Error;

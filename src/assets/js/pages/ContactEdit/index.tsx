@@ -1,5 +1,5 @@
 import { FormikHelpers } from 'formik';
-import React, { FC, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Link, RouteComponentProps } from 'react-router-dom';
@@ -45,7 +45,9 @@ interface Document {
   phones: Phone[];
 }
 
-const ContactEditPage: FC<RouteComponentProps<Params>> = (props) => {
+export type ContactEditProps = RouteComponentProps<Params>;
+
+function ContactEditPage(props: ContactEditProps): JSX.Element {
   const {
     match: {
       params: { contactId },

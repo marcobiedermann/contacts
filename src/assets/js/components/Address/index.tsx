@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 export interface AddressProps {
   type: string;
@@ -10,7 +10,7 @@ export interface AddressProps {
   };
 }
 
-const Address: FC<AddressProps> = (props) => {
+function Address(props: AddressProps): JSX.Element {
   const { type, value } = props;
   const { city, country, street, zip } = value;
 
@@ -32,6 +32,6 @@ const Address: FC<AddressProps> = (props) => {
       </div>
     </address>
   );
-};
+}
 
 export default Address;

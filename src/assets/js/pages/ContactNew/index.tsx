@@ -1,13 +1,12 @@
 import { FormikHelpers } from 'formik';
-import React, { FC, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router-dom';
 import { useFirestore } from 'reactfire';
 import ContactNew, { Values } from '../../components/ContactNew';
 import validationSchema from '../../utils/validation';
 
-const ContactNewPage: FC<RouteComponentProps> = () => {
+function ContactNewPage(): JSX.Element {
   const firestore = useFirestore();
   const contactsCollection = firestore.collection('contacts');
   const { t } = useTranslation();

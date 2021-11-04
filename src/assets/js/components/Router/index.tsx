@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import Layout from '../Layout';
 
@@ -11,7 +11,7 @@ export interface RouterProps {
   }[];
 }
 
-const Router: FC<RouterProps> = (props) => {
+function Router(props: RouterProps): JSX.Element {
   const { routes } = props;
 
   return (
@@ -27,6 +27,6 @@ const Router: FC<RouterProps> = (props) => {
       </Layout>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

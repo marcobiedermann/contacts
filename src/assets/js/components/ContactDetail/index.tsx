@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Address, { AddressProps } from '../Address';
@@ -17,7 +17,7 @@ export interface ContactDetailProps {
   phones: PhoneProps[];
 }
 
-const ContactDetail: FC<ContactDetailProps> = (props) => {
+function ContactDetail(props: ContactDetailProps): JSX.Element {
   const { addresses, emails, id, name, phones } = props;
   const { t } = useTranslation();
 
@@ -68,6 +68,6 @@ const ContactDetail: FC<ContactDetailProps> = (props) => {
       </ul>
     </div>
   );
-};
+}
 
 export default ContactDetail;

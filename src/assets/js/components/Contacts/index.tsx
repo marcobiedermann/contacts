@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ContactPreview, { ContactPreviewProps } from '../ContactPreview';
 import styles from './style.module.css';
 
@@ -6,7 +6,7 @@ export interface ContactsProps {
   contacts: ContactPreviewProps[];
 }
 
-const Contacts: FC<ContactsProps> = (props) => {
+function Contacts(props: ContactsProps): JSX.Element {
   const { contacts } = props;
 
   return (
@@ -20,6 +20,6 @@ const Contacts: FC<ContactsProps> = (props) => {
       </ul>
     </div>
   );
-};
+}
 
 export default Contacts;

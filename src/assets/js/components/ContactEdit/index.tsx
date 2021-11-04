@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, FieldArray, Form, Formik, FormikHelpers } from 'formik';
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AddressProps } from '../Address';
 import { EmailProps } from '../Email';
@@ -24,7 +24,7 @@ export interface ContactEditProps {
   validationSchema: any | (() => any);
 }
 
-const ContactEdit: FC<ContactEditProps> = (props) => {
+function ContactEdit(props: ContactEditProps): JSX.Element {
   const { initialValues, onSubmit, validationSchema } = props;
   const { t } = useTranslation();
 
