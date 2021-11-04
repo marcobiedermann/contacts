@@ -1,5 +1,5 @@
 import { FormikHelpers } from 'formik';
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
@@ -42,13 +42,13 @@ const ContactNewPage: FC<RouteComponentProps> = () => {
     ],
   };
 
-  function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void {
+  const onSubmit = useCallback((values: Values, formikHelpers: FormikHelpers<Values>) => {
     const { setSubmitting } = formikHelpers;
 
     contactsCollection.add(values);
 
     setSubmitting(false);
-  }
+  }, []);
 
   return (
     <>
