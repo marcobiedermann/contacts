@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router-dom';
@@ -43,7 +43,9 @@ interface Document {
   phones: Phone[];
 }
 
-const ContactPage: FC<RouteComponentProps<Params>> = (props) => {
+export type ContactPageProp = RouteComponentProps<Params>;
+
+function ContactPage(props: ContactPageProp): JSX.Element {
   const {
     match: {
       params: { contactId },
@@ -68,6 +70,6 @@ const ContactPage: FC<RouteComponentProps<Params>> = (props) => {
       <ContactDetail {...data} />
     </>
   );
-};
+}
 
 export default ContactPage;

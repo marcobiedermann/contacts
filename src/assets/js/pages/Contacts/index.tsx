@@ -1,7 +1,7 @@
-import React, { FC, lazy } from 'react';
+import React, { lazy } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Route, RouteComponentProps, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import Contacts from '../../components/Contacts';
 import Loader from '../../components/Loader';
@@ -40,7 +40,7 @@ interface Document {
   phones: Phone[];
 }
 
-const ContactsPage: FC<RouteComponentProps> = () => {
+function ContactsPage(): JSX.Element {
   const firestore = useFirestore();
   const ref = firestore.collection('contacts');
   const { data, status } = useFirestoreCollectionData<Document>(ref, {
@@ -65,6 +65,6 @@ const ContactsPage: FC<RouteComponentProps> = () => {
       </Switch>
     </div>
   );
-};
+}
 
 export default ContactsPage;

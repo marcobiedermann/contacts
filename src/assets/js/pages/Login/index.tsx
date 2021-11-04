@@ -1,11 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { RouteComponentProps } from 'react-router-dom';
 import { useAuth } from 'reactfire';
 
-const LoginPage: FC<RouteComponentProps> = () => {
+function LoginPage(): JSX.Element {
   const auth = useAuth;
   const { t } = useTranslation();
   const uiConfig = {
@@ -24,6 +23,6 @@ const LoginPage: FC<RouteComponentProps> = () => {
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
     </>
   );
-};
+}
 
 export default LoginPage;

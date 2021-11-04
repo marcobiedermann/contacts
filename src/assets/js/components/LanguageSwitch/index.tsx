@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export interface LanguageSwitchProps {
   languages: string[];
 }
 
-const LanguageSwitch: FC<LanguageSwitchProps> = (props) => {
+function LanguageSwitch(props: LanguageSwitchProps): JSX.Element {
   const { languages } = props;
   const { i18n } = useTranslation();
 
@@ -20,6 +20,6 @@ const LanguageSwitch: FC<LanguageSwitchProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default LanguageSwitch;

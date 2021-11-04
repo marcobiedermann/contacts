@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './style.module.css';
 
@@ -10,7 +10,7 @@ export interface ContactPreviewProps {
   };
 }
 
-const ContactPreview: FC<ContactPreviewProps> = (props) => {
+function ContactPreview(props: ContactPreviewProps): JSX.Element {
   const { id, name } = props;
 
   return (
@@ -22,6 +22,6 @@ const ContactPreview: FC<ContactPreviewProps> = (props) => {
       </h2>
     </div>
   );
-};
+}
 
 export default ContactPreview;

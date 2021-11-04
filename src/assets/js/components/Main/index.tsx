@@ -1,6 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 
-const Main: FC = (props) => <main className={styles.main} {...props} />;
+export interface MainProps {
+  children: React.ReactNode;
+}
+
+function Main(props: MainProps): JSX.Element {
+  return <main className={styles.main} {...props} />;
+}
 
 export default Main;

@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 export interface EmailProps {
   type: string;
   value: string;
 }
 
-const Email: FC<EmailProps> = (props) => {
+function Email(props: EmailProps): JSX.Element {
   const { type, value } = props;
 
   return (
@@ -16,6 +16,6 @@ const Email: FC<EmailProps> = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Email;

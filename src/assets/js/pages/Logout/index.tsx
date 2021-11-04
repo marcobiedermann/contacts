@@ -1,15 +1,15 @@
 import firebase from 'firebase';
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Redirect, RouteComponentProps } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useAuth } from 'reactfire';
 
 function signOut(auth: firebase.auth.Auth): Promise<void> {
   return auth.signOut();
 }
 
-const LogoutPage: FC<RouteComponentProps> = () => {
+function LogoutPage(): JSX.Element {
   const auth = useAuth();
   const { t } = useTranslation();
 

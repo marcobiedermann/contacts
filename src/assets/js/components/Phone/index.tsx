@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 export interface PhoneProps {
   type: string;
   value: string;
 }
 
-const Phone: FC<PhoneProps> = (props) => {
+function Phone(props: PhoneProps): JSX.Element {
   const { type, value } = props;
 
   return (
@@ -16,6 +16,6 @@ const Phone: FC<PhoneProps> = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Phone;

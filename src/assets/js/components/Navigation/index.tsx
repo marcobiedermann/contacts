@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import styles from './style.module.css';
@@ -14,7 +14,7 @@ export interface NavigationProps {
   routes: Route[];
 }
 
-const Navigation: FC<NavigationProps> = (props) => {
+function Navigation(props: NavigationProps): JSX.Element {
   const { inline, routes } = props;
   const { t } = useTranslation();
 
