@@ -48,6 +48,7 @@
         "devDependencies": ["**/*.test.tsx", "**/*config.ts"]
       }
     ],
+    "jest/require-hook": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [
       2,
@@ -55,7 +56,8 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/parsers": {

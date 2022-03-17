@@ -16,6 +16,6 @@ describe('index page component', () => {
       </Router>,
     );
 
-    expect(history.location.pathname).toStrictEqual('/contacts');
+    expect(history.location.pathname).toBe('/contacts');
   });
 });
