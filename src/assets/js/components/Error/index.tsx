@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './style.module.css';
 
 export interface ErrorProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 function Error(props: ErrorProps): JSX.Element {

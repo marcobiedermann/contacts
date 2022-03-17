@@ -19,6 +19,6 @@ describe('logout page component', () => {
       </Providers>,
     );
 
-    expect(history.location.pathname).toStrictEqual('/');
+    expect(history.location.pathname).toBe('/');
   });
 });
